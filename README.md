@@ -52,14 +52,14 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 ## 📘 My Learning Platforms & Resources
 
 * **Labs & Hands-on:**
-    * Hack The Box Academy: [(https://app.hackthebox.com/profile/#2566537)]
-    * TryHackMe: [(https://tryhackme.com/p/poseidon.smash)]
+    * Hack The Box Academy: [HTB Profile](https://app.hackthebox.com/profile/#2566537)
+    * TryHackMe: [THM Profile](https://tryhackme.com/p/poseidon.smash)
     * OverTheWire Bandit: [Link to the section in this repo where you document your progress]
-    * PicoCTF: [(https://play.picoctf.org/users/urielbyte)]
+    * PicoCTF: [PicoCTF Profile](https://play.picoctf.org/users/urielbyte)
 
 * **Roadmaps & Knowledge Bases:**
-    * Roadmap.sh: [(https://roadmap.sh/u/urielbyte)]
-    * LabEx and Linux Journey: [(https://labex.io/users/uriel0byte-11746032)]
+    * Roadmap.sh: [Roadmap.sh Profile](https://roadmap.sh/u/urielbyte)
+    * LabEx and Linux Journey: [LabEx Profile](https://labex.io/users/uriel0byte-11746032)
 
 * **Notes & Consolidation:**
     * LogSeq (My internal notes, which are then summarized here in this repo)
@@ -82,6 +82,7 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 -   Completing the "Linux Fundamentals" it's about time to move on to Networking (damn)
 -   Setting up Kali Linux CLI and general settings
 -   Writing my first Bash script for a system administration task (server-stats).
+-   Completing Overthewire Bandit | Asciinema vs. Screenshots
 
 ---
 
