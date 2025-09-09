@@ -5,7 +5,7 @@
 
 ---
 
-## About This Repository
+## 📚 About This Repository
 
 This repository is a public log of my self-paced IT learning journey. My goal is to become a skilled system administrator and eventually move into a cybersecurity role. I use this space to track my progress, document my labs and projects, and organize my notes.
 
@@ -13,43 +13,43 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 
 ---
 
-## Phase 1: Fundamentals (Current Focus)
+## 🎯Phase 1: Fundamentals (Current Focus)
 
 This phase is dedicated to building a strong foundation in core IT concepts and gaining hands-on experience through daily exercises.
 
-- **Linux basics and shell scripting:**
+- **Linux basics and shell scripting**
 - **Networking fundamentals**
-- **Windows:** Windows Server administration, Active Directory, and PowerShell scripting.
-- **Python:** Basic Automation and scripting. 
+- **Windows** Windows Server administration, Active Directory, and PowerShell scripting.
+- **Python** Basic Automation and scripting. 
 
 ---
 
 ## Linux (fun but a lot)
-- [DOING]Linux Journey tutorials: https://linuxjourney.com/
-- []Linux Unhatched on Cisco NetAcad: https://www.netacad.com/courses/linux-unhatched
-- [DOING]HTB Linux Module: https://academy.hackthebox.com/module/details/18
-- [DONE]Introduction to Linux, LinuxFoundationX LFS101x: https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS101x+1T2025
-- [DONE]Linux Survival: https://linuxsurvival.com/linux-tutorial-introduction/
-- [DOING]Roadmap.sh Linux Checkboxes: https://roadmap.sh/linux
+- [DOING] Linux Journey tutorials: https://linuxjourney.com/
+- [] Linux Unhatched on Cisco NetAcad: https://www.netacad.com/courses/linux-unhatched
+- [DOING] HTB Linux Module: https://academy.hackthebox.com/module/details/18
+- [DONE] Introduction to Linux, LinuxFoundationX LFS101x: https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS101x+1T2025
+- [DONE] Linux Survival: https://linuxsurvival.com/linux-tutorial-introduction/
+- [DOING] Roadmap.sh Linux Checkboxes: https://roadmap.sh/linux
 
-- [DOING]LabEx Linux Hands-on Labs: https://labex.io/free-labs/linux
-- [DOING]Overthewire Bandit: https://overthewire.org/wargames/bandit/
+- [DOING] LabEx Linux Hands-on Labs: https://labex.io/free-labs/linux
+- [DOING] Overthewire Bandit: https://overthewire.org/wargames/bandit/
 
 ## Networking (cool but hate it)
-- [DOING]HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
-- []Networking For Hackers! (Common Network Protocols): https://www.youtube.com/watch?v=p3vaaD9pn9I
-- []Networking For Beginners : https://www.youtube.com/watch?v=z_CU-IeOEzU
-- []Watch videos from Professor Messer's [N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
+- [DOING] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
+- [] Networking For Hackers! (Common Network Protocols): https://www.youtube.com/watch?v=p3vaaD9pn9I
+- [] Networking For Beginners : https://www.youtube.com/watch?v=z_CU-IeOEzU
+- [] Watch videos from Professor Messer's [N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
 
 ## Windows
-- []HTB Windows Fundamentals: https://academy.hackthebox.com/module/details/49
-- []THB Windows Fundamentals: https://tryhackme.com/module/windows-fundamentals
+- [] HTB Windows Fundamentals: https://academy.hackthebox.com/module/details/49
+- [] THB Windows Fundamentals: https://tryhackme.com/module/windows-fundamentals
 
 ## Python
-- []Codecademy's Learn Python Track: https://codecademy.com/learn/learn-python
-- []LabEx Learn Python by Labs: https://labex.io/free-labs/python
+- [] Codecademy's Learn Python Track: https://codecademy.com/learn/learn-python
+- [] LabEx Learn Python by Labs: https://labex.io/free-labs/python
 
-## My Learning Platforms & Resources
+## 📘 My Learning Platforms & Resources
 
 * **Labs & Hands-on:**
     * Hack The Box Academy: [(https://app.hackthebox.com/profile/#2566537)]
@@ -66,7 +66,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ---
 
-## Completed Projects & Labs
+## 📌Completed Projects & Labs
 
 This is where I document my completed projects. Each link goes to a sub-folder with a detailed `README.md` explaining the project.
 
@@ -77,7 +77,7 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 ---
 
-## Current Focus / What's Next
+## 📌Current Focus / What's Next
 
 -   Completing the "Linux Fundamentals" it's about time to move on to Networking (damn)
 -   Setting up Kali Linux CLI and general settings
