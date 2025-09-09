@@ -1,6 +1,6 @@
 # My IT Learning Journey
 
-**Name:** [Supawat Huncharoen] [uriel]
+**Name:** [Supawat Huncharoen, uriel]
 **Goal:** Aspiring System Administrator & Cybersecurity Professional
 
 ---
