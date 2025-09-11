@@ -13,6 +13,11 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 
 ---
 
+## 👥 About me
+
+
+---
+
 ## 🎯Phase 1: Fundamentals (Current Focus)
 
 This phase is dedicated to building a strong foundation in core IT concepts and gaining hands-on experience through daily exercises.
