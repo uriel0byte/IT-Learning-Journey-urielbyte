@@ -1,8 +1,5 @@
 # My IT Learning Journey
 
-**Name:** [Supawat Huncharoen, uriel]
-**Goal:** Aspiring System Administrator & Cybersecurity Professional
-
 ---
 
 ## 📚 About This Repository
@@ -15,6 +12,9 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 
 ## 👥 About me
 
+**Name:** [Supawat Huncharoen, uriel]
+
+**Goal:** Aspiring System Administrator & Cybersecurity Professional
 
 ---
 
