@@ -72,20 +72,19 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 This is where I document my completed projects. Each link goes to a sub-folder with a detailed `README.md` explaining the project.
 
-* **[Project/Lab Name 1]** - (e.g., "OverTheWire Bandit - Levels 0-10")
-    * [Link to folder `OverTheWire-Bandit/` in this repo]
-* **[Project/Lab Name 2]** - (e.g., "Basic Web Server Setup on Ubuntu")
-    * [Link to folder `Linux-Labs/Web-Server-Setup/` in this repo]
+* **[OverTheWire Bandit]**
+    * [`OverTheWire-Bandit/`]
+* **[Basic Server performance stats]**
+    * [Server Performance Stats](https://github.com/uriel0byte/Bash-Labs/tree/main/Server-Status.sh)
 
 ---
 
 ## 📌Current Focus / What's Next
 
 -   Completing the "Linux Fundamentals" it's about time to move on to Networking (damn)
--   Setting up Kali Linux CLI and general settings
--   Writing my first Bash script for a system administration task (server-stats).
+-   Start on Networking (sheit)
 -   Completing Overthewire Bandit | Asciinema vs. Screenshots
 
 ---
 
-_Last Updated: [2025-09-10]_
+_Last Updated: [2025-09-12]_
