@@ -4,7 +4,7 @@
 
 ---
 
-## Level 0 -> 1
+# Level 0 -> 1
 
 **Challenge:** The password for the next level is in a file called `readme` in the home directory.
 
@@ -26,7 +26,7 @@
 `cat`
 ---
 
-## Level 1 -> 2
+# Level 1 -> 2
 
 **Challenge:** The password for the next level is stored in a file called - located in the home directory
 
