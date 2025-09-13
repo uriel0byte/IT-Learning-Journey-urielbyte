@@ -1,6 +1,6 @@
-# OverTheWire Bandit Levels 0-10
+# OverTheWire Bandit Levels 0-33
 
-**Goal:** Solve the first 10 levels of the OverTheWire Bandit wargame to practice fundamental Linux commands.
+**Goal:** Solve all levels of the OverTheWire Bandit wargame to practice fundamental Linux commands.
 
 ---
 
