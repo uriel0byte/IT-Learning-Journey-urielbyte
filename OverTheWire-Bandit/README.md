@@ -22,8 +22,8 @@
 **Commands Used:**
 `pwd`
 `ls`
-`cat`
 `file`
+`cat`
 ---
 
 ## Level 1 -> 2
@@ -41,3 +41,10 @@
 8.  Used the `cat` command to read the contents of the `-` file by `cat ./-`.
 
 [![asciicast](https://asciinema.org/a/YEoDfLj1H4YgcSE3VlmVLVwOV.svg)](https://asciinema.org/a/YEoDfLj1H4YgcSE3VlmVLVwOV)
+
+**Commands Used:**
+`pwd`
+`ls`
+`file`
+`cat`
+---
