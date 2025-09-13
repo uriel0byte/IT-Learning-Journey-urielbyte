@@ -36,8 +36,8 @@
 3.  Used the `ls` command to list the files in the current directory.
 4.  Found the `-` file.
 5.  Used `file` to detetrmine the file type
-6.  !The problem with this is our terminal interprets the HYPHEN as flags.
-7.  !Instead of specifying the name of the file, we specify the path to the file, which are Absolute path or Relative path.
+6.  *The problem with this is our terminal interprets the HYPHEN as flags.*
+7.  *Instead of specifying the name of the file, we specify the path to the file, which are Absolute path or Relative path.*
 8.  Used the `cat` command to read the contents of the `-` file by `cat ./-`.
 
 [![asciicast](https://asciinema.org/a/YEoDfLj1H4YgcSE3VlmVLVwOV.svg)](https://asciinema.org/a/YEoDfLj1H4YgcSE3VlmVLVwOV)
