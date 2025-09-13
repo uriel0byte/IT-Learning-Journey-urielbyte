@@ -78,7 +78,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 This is where I document my completed projects. Each link goes to a sub-folder with a detailed `README.md` explaining the project.
 
 * **[OverTheWire Bandit]**
-    * [`/OverTheWire-Bandit/`]
+    * [`OverTheWire-Bandit`]
 * **[Basic Server performance stats]**
     * [Server Performance Stats](https://github.com/uriel0byte/Bash-Labs/tree/main/Server-Status.sh)
 
