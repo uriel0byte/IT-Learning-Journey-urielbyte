@@ -7,6 +7,7 @@
 ## Level 0 -> 1
 
 **Challenge:** The password for the next level is in a file called `readme` in the home directory.
+
 **Methodology:**
 1.  Logged in as `bandit0` using the provided password.
 2.  Used the `ls` command to list the files in the current directory.
