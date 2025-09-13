@@ -48,7 +48,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ## Windows
 - [] HTB Windows Fundamentals: https://academy.hackthebox.com/module/details/49
-- [] THB Windows Fundamentals: https://tryhackme.com/module/windows-fundamentals
+- [] THM Windows Fundamentals: https://tryhackme.com/module/windows-fundamentals
 
 ## Python
 - [] Codecademy's Learn Python Track: https://codecademy.com/learn/learn-python
