@@ -17,7 +17,7 @@
 
 **Commands Used:**
 `ls`
-`cat readme`
+`cat`
 
 ---
 
