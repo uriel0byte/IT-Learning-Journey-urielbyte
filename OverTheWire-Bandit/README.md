@@ -13,7 +13,8 @@
 3.  Found the `readme` file.
 4.  Used the `cat` command to read the contents of the `readme` file.
 5.  Copied the password and used it to log in to the next level.
-  [![asciicast](https://asciinema.org/a/xl1Fu9lGlz8zRAJ1IVZqcyESF.svg)](https://asciinema.org/a/xl1Fu9lGlz8zRAJ1IVZqcyESF)
+
+[![asciicast](https://asciinema.org/a/xl1Fu9lGlz8zRAJ1IVZqcyESF.svg)](https://asciinema.org/a/xl1Fu9lGlz8zRAJ1IVZqcyESF)
 
 **Commands Used:**
 `ls`
