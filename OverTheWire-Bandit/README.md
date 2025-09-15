@@ -130,6 +130,7 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `file07`: A normal ASCII text file ← this one is the most promising
 
 `Others`: Just say "`data`", which usually means it's not readable text (could be binary or garbage)
+
 9. Now we `cat` as usual.
 
 
