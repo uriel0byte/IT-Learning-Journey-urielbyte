@@ -140,16 +140,25 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 3.  So, the command look like this  ```find -type f -exec file {} + | grep "text"```
       **Breakdown of the Command**
     **`find`**: This is the main command used to search for files and directories within a file system.
+    
     **`-type f`**: This option restricts the search to only **files** (not directories, links, or other special file types).
+    
     **`-exec file {} +`**: This part executes the `file` command on all the files found by `find`.
+    
        **`-exec`**: This is an action that runs a command on each file found.
+    
        **`file {}`**: The `file` command determines the **type of a file** (e.g., "ASCII text," "JPEG image data," "shell script"). The `{}` is a placeholder that `find` replaces with the name of each file it finds.
+    
        **`+`**: This is a more efficient way to use `-exec`. It bundles the filenames together and passes them to the `file` command in one go, rather than running the command for each file individually.
+    
     **`|`**: This is a **pipe**. It takes the output of the command on the left (`find ... -exec file {} +`) and uses it as the input for the command on the right (`grep "text"`).
+    
     **`grep "text"`**: This command filters the output from the `file` command, displaying only the lines that contain the string **"text"**. Since the `file` command often describes plain text files as "ASCII text" or "UTF-8 text," this effectively filters for files that are **text-based**.
+    
      **In short,** the `find` command locates files of a specific size, and the `grep` command then filters that list to show only the ones that the system identifies as a text file.
-4.  So the result are `-file00` and `-file07` but the `-file00`: It says `"Non-ISO extended-ASCII text"`, which means it has unusual or outdated character encoding. It might look like gibberish or be unreadable.
-5.  Next we do what we always do `cat` it!
+    
+5.  So the result are `-file00` and `-file07` but the `-file00`: It says `"Non-ISO extended-ASCII text"`, which means it has unusual or outdated character encoding. It might look like gibberish or be unreadable.
+6.  Next we do what we always do `cat` it!
     
 
 [![asciicast](https://asciinema.org/a/ZUOHfWa4qJxvmY3MTp5wUcXqB.svg)](https://asciinema.org/a/ZUOHfWa4qJxvmY3MTp5wUcXqB)
