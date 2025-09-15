@@ -99,7 +99,7 @@ Spaces and other special characters like `*`, `$`, and `&` have a specific meani
 
 **Commands Used:**
 `pwd`
-`ls` `-l` `-a`
+`ls -la`
 `cat`
-`find` `-name`
+`find -name`
 ---
