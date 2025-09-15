@@ -17,12 +17,7 @@ Published - 2025
 4.  Found the `readme` file.
 5.  Used `file` to detetrmine the file type.
 6.  Used the `cat` command to read the contents of the `readme` file.
-7.  Example:
-
-     $ ./ago /etc/passwd
-     /etc/passwd 15 weeks ago
-
-8.  Copied the password and used it to log in to the next level.
+7.  Copied the password and used it to log in to the next level.
 
 [![asciicast](https://asciinema.org/a/6JgAIb20gnx1t2wWjn27kfEk1.svg)](https://asciinema.org/a/6JgAIb20gnx1t2wWjn27kfEk1)
 
