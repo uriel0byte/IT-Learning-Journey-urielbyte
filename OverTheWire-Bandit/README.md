@@ -253,7 +253,7 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
    `/dev/null` → This is a special place in Linux that throws things away. It's like a black hole — anything sent here disappears.
    
 9.  The final command looks like this: `find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null`
-10.  The we `cat` the file by specifying the Absolute path.
+10.  Then we `cat` the file by specifying the Absolute path.
 
 [![asciicast](https://asciinema.org/a/whLGYb4u6g61msqAE6hkpFjkD.svg)](https://asciinema.org/a/whLGYb4u6g61msqAE6hkpFjkD)
 
