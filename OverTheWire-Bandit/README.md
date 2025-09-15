@@ -229,9 +229,9 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 2.  Used the `ls -la` command to list the files in the current directory.
 3.  Found some files but the challenge says that the password is stored somewhere on the server so we have to start searching from root `/`.
 4.  Now we can utilize the knowledge from the last level, but before we do that let's look at the properties of the file again. There are new primaries that we do not know:
-
+   
    `owned by user bandit7` we use `-user <name>`
-
+   
    `owned by group bandit6` we use `-group <groups name>`
    
 5.  So for this level it does not say that the file is `human-readble` file but let's assume that it's atleast store in a `file`
