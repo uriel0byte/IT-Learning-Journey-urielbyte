@@ -103,7 +103,7 @@ Spaces and other special characters like `*`, `$`, and `&` have a specific meani
 `pwd`
 `ls -la`
 `cat`
-`find -name`
+`find <> -name "<>"`
 ---
 
 # Level 4 -> 5
@@ -172,7 +172,7 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `cat`
 `file`
 `grep`
-`find -type <> -exec <> {} +`
+`find <> -type <> -exec <> {} +`
 ---
 
 # Level 5 -> 6
