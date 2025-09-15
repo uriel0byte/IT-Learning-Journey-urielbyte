@@ -1,5 +1,7 @@
 # OverTheWire Bandit Levels 0-33
 
+Published - 2025
+
 **Goal:** Solve all levels of the OverTheWire Bandit wargame to practice fundamental Linux commands.
 
 ---
@@ -84,7 +86,7 @@ Spaces and other special characters like `*`, `$`, and `&` have a specific meani
 2.  Used `pwd` to print current directory path.
 3.  Used the `ls -l` command to list the files in the current directory.
 4.  Found the `inhere` directory.
-5.  Used `cd` to change directory to `inhere` directory.
+5.  Used `cd` to change directory to `inhere` directory then `ls -la`.
 6.  *The key problem is that a hidden file has a `.` as the first character of their file name. A normal `ls` or `ls -l` won't show hidden files*
 7. To solve this, you need can use `ls` with `-a` flag to show hidden files.
 8. Or you can use `find` command to search for all files that start with `.`. By using `find -name ".*"`.
@@ -103,3 +105,63 @@ Spaces and other special characters like `*`, `$`, and `&` have a specific meani
 `cat`
 `find -name`
 ---
+
+# Level 4 -> 5
+
+**Challenge:** The password for the next level is stored in the only human-readable file in the inhere directory.
+
+**Explanation:** `Human-readable` files is files that contain data that is easily read. Like text files and not binary file where software's are requied to understand its content.
+There are a types of data of the file (e.g., "`ASCII text`," "`JPEG image data`," "`shell script`," "`ELF`," "`data`"). `ELF` or `data` file, for example, are not human-readable.
+
+The most common data encodings that are human-readable are `ASCII` and `Unicode` such as `UTF-8`.
+
+**Methodology 1:**
+1.  Logged in as `bandit4` using the password we got from the last time.
+2.  Used `pwd` to print current directory path.
+3.  Used the `ls -l` command to list the files in the current directory.
+4.  Found the `inhere` directory.
+5.  Used `cd` to change directory to `inhere` directory then `ls -la`.
+6.  *The key problem is there are a lots of files in this directory. We could just print the contents of every file `cat`. This is, however, not very efficient when we deal with a lot of files. And the Hyphen `(-)` as the first character but we already know how to deal with that*
+7. Instead, We use `file ./-*` command to gives us the type of data of the files. We utilize the knowledge we got from before like `./` to specify this current directory and `*` to specify all files. The normal command structure is `file <filename>`
+8. This tells us:
+
+`file00`: Looks like text but uses a non-standard encoding
+
+`file07`: A normal ASCII text file ← this one is the most promising
+
+`Others`: Just say "`data`", which usually means it's not readable text (could be binary or garbage)
+9. Now we `cat` as usual.
+
+
+**Methodology 2 (More advanced):**
+1.  We can used more advanced commands by combinding `find` `file` (we already know those) and `grep` commands
+2.  `grep` command is used to search for patterns or texts within files.
+3.  So, the command look like this  ```find -type f -exec file {} + | grep "text"```
+      **Breakdown of the Command**
+    **`find`**: This is the main command used to search for files and directories within a file system.
+    **`-type f`**: This option restricts the search to only **files** (not directories, links, or other special file types).
+    **`-exec file {} +`**: This part executes the `file` command on all the files found by `find`.
+       **`-exec`**: This is an action that runs a command on each file found.
+       **`file {}`**: The `file` command determines the **type of a file** (e.g., "ASCII text," "JPEG image data," "shell script"). The `{}` is a placeholder that `find` replaces with the name of each file it finds.
+       **`+`**: This is a more efficient way to use `-exec`. It bundles the filenames together and passes them to the `file` command in one go, rather than running the command for each file individually.
+    **`|`**: This is a **pipe**. It takes the output of the command on the left (`find ... -exec file {} +`) and uses it as the input for the command on the right (`grep "text"`).
+    **`grep "text"`**: This command filters the output from the `file` command, displaying only the lines that contain the string **"text"**. Since the `file` command often describes plain text files as "ASCII text" or "UTF-8 text," this effectively filters for files that are **text-based**.
+     **In short,** the `find` command locates files of a specific size, and the `grep` command then filters that list to show only the ones that the system identifies as a text file.
+4.  So the result are `-file00` and `-file07` but the `-file00`: It says `"Non-ISO extended-ASCII text"`, which means it has unusual or outdated character encoding. It might look like gibberish or be unreadable.
+5.  Next we do what we always do `cat` it!
+    
+
+[![asciicast](https://asciinema.org/a/ZUOHfWa4qJxvmY3MTp5wUcXqB.svg)](https://asciinema.org/a/ZUOHfWa4qJxvmY3MTp5wUcXqB)
+
+**Key Takeaway:**
+**Learn more about encoding types**
+
+**Commands Used:**
+`pwd`
+`ls -la`
+`cat`
+`file`
+`grep`
+`find -type`
+---
+
