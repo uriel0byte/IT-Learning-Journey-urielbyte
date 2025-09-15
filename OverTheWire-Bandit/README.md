@@ -169,7 +169,6 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 **Learn more about encoding types**
 
 **Commands Used:**
-`pwd`
 `ls -la`
 `cat`
 `file`
@@ -209,7 +208,6 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 **Key Takeaway:** `!` before a `primary` when using the `find command` to search for the file that `not match` that condition
 
 **Commands Used:**
-`ls -la`
 `cat`
 `file`
 `grep`
@@ -262,7 +260,5 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 **Commands Used:**
 `ls -la`
 `cat`
-`file`
-`grep`
 `find <path> -type <> -size <> -user <name> -group <group>`
 ---
