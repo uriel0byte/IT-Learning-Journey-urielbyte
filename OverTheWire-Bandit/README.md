@@ -103,7 +103,7 @@ Spaces and other special characters like `*`, `$`, and `&` have a specific meani
 `pwd`
 `ls -la`
 `cat`
-`find <> -name "<>"`
+`find <path> -name "<>"`
 ---
 
 # Level 4 -> 5
@@ -138,7 +138,9 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 1.  We can used more advanced commands by combinding `find` `file` (we already know those) and `grep` commands
 2.  `grep` command is used to search for patterns or texts within files.
 3.  So, the command look like this  ```find -type f -exec file {} + | grep "text"```
-      **Breakdown of the Command**
+  
+      💡**Breakdown of the Command**
+    
     **`find`**: This is the main command used to search for files and directories within a file system.
     
     **`-type f`**: This option restricts the search to only **files** (not directories, links, or other special file types).
@@ -172,7 +174,7 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `cat`
 `file`
 `grep`
-`find <> -type <> -exec <> {} +`
+`find <path> -type <> -exec <> {} +`
 ---
 
 # Level 5 -> 6
@@ -204,7 +206,6 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 
 [![asciicast](https://asciinema.org/a/18Z1GZUw2M3PvXD3niG8yFoNN.svg)](https://asciinema.org/a/18Z1GZUw2M3PvXD3niG8yFoNN)
 
-
 **Key Takeaway:** `!` before a `primary` when using the `find command` to search for the file that `not match` that condition
 
 **Commands Used:**
@@ -212,5 +213,56 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `cat`
 `file`
 `grep`
-`find -type <> -size <> ! -executable -exec <> {} +`
+`find <path> -type <> -size <> ! -executable -exec <> {} +`
+---
+
+# Level 6 -> 7
+
+**Challenge:** The password for the next level is stored somewhere on the server and has all of the following properties:
+
+    owned by user bandit7
+    owned by group bandit6
+    33 bytes in size
+
+**Methodology:**
+1.  Logged in as `bandit6` using the password we got from the last time.
+2.  Used the `ls -la` command to list the files in the current directory.
+3.  Found some files but the challenge says that the password is stored somewhere on the server so we have to start searching from root `/`.
+4.  Now we can utilize the knowledge from the last level, but before we do that let's look at the properties of the file again. There are new primaries that we do not know:
+
+   `owned by user bandit7` we use `-user <name>`
+
+   `owned by group bandit6` we use `-group <groups name>`
+   
+5.  So for this level it does not say that the file is `human-readble` file but let's assume that it's atleast store in a `file`
+6.  The command would look like this (do not forget to specify the path, which start from the root `/`):
+
+   `find / -type f -user bandit7 -group bandit6 -size 33c`
+
+7.  *If you try that command, It would show a lot of `Permission Denied` because there are some files that we are not allow to use the command on. Basically, we do not have the enough permissions for those file. You can manaully scroll and find the file that does not show that message, which is pretty hard and not efficient.*
+8.  So there is a better way for that, which is that we add `2>/dev/null` after the command.
+
+   `2>/dev/null` hides error messages from your terminal.
+
+   💡Let’s break it down:
+
+   `2` → This refers to "Standard Error" (the channel where error messages go).
+
+   `>` → This means redirect.
+
+   `/dev/null` → This is a special place in Linux that throws things away. It's like a black hole — anything sent here disappears.
+   
+9.  The final command looks like this: `find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null`
+10.  The we `cat` the file by specifying the Absolute path.
+
+[![asciicast](https://asciinema.org/a/whLGYb4u6g61msqAE6hkpFjkD.svg)](https://asciinema.org/a/whLGYb4u6g61msqAE6hkpFjkD)
+
+**Key Takeaway:** Use `2>/dev/null` to hide unnecessary error messages, so you can focus only on the important output — like when searching through lots of files or running commands that might fail on some inputs.
+
+**Commands Used:**
+`ls -la`
+`cat`
+`file`
+`grep`
+`find <path> -type <> -size <> -user <name> -group <group>`
 ---
