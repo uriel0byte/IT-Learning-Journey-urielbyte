@@ -82,7 +82,7 @@ Spaces and other special characters like `*`, `$`, and `&` have a specific meani
 **Methodology:**
 1.  Logged in as `bandit3` using the password we got from the last time.
 2.  Used `pwd` to print current directory path.
-3.  Used the `ls` command to list the files in the current directory.
+3.  Used the `ls -l` command to list the files in the current directory.
 4.  Found the `inhere` directory.
 5.  Used `cd` to change directory to `inhere` directory.
 6.  *The key problem is that a hidden file has a `.` as the first character of their file name. A normal `ls` or `ls -l` won't show hidden files*
