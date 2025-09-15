@@ -172,6 +172,45 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `cat`
 `file`
 `grep`
-`find -type`
+`find -type <> -exec <> {} +`
 ---
 
+# Level 5 -> 6
+
+**Challenge:** The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+
+    human-readable
+    
+    1033 bytes in size
+    
+    not executable
+
+**Methodology:**
+1.  Logged in as `bandit5` using the password we got from the last time.
+2.  Used the `ls -l` command to list the files in the current directory.
+3.  Used `cd` to change directory to `inhere` directory then `ls -la`.
+4.  Let's try to `ls la` one of the directories to see if it's empty or there are files in it.
+5.  *The key problem is there are a lot of directories here. We could `cd` in each directory and print  `cat` the contents of every files then. This is, however, not efficient when we deal with a lot of directories and files.*
+6. Now we can utilize the knowledge from the last level, but before we do that let's look at the properties of the file again:
+
+   `human-readble` we already know that normal human-readable files are `ASCII text` or `Unicode` (`UTF-8`).
+
+   `1033 bytes in size` we use flag `-size` and use `1033c` for bytes e.g. suffixes `c` bytes, `k` kilobytes and so on.
+
+   `not executable` we use flag `-executable` and for `not` use `!` exclamation mark before the flag.
+   
+7. So the command would look like this `find -type f -size 1033c ! -executable -exec file {} + | grep "text"`.
+8. Then we `cat` it!
+
+[![asciicast](https://asciinema.org/a/18Z1GZUw2M3PvXD3niG8yFoNN.svg)](https://asciinema.org/a/18Z1GZUw2M3PvXD3niG8yFoNN)
+
+
+**Key Takeaway:** `!` before a `primary` when using the `find command` to search for the file that `not match` that condition
+
+**Commands Used:**
+`ls -la`
+`cat`
+`file`
+`grep`
+`find -type <> -size <> ! -executable -exec <> {} +`
+---
