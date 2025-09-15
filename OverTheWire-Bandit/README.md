@@ -74,3 +74,32 @@ Spaces and other special characters like `*`, `$`, and `&` have a specific meani
 `ls`
 `cat`
 ---
+
+# Level 3 -> 4
+
+**Challenge:** The password for the next level is stored in a hidden file in the inhere directory.
+
+**Methodology:**
+1.  Logged in as `bandit3` using the password we got from the last time.
+2.  Used `pwd` to print current directory path.
+3.  Used the `ls` command to list the files in the current directory.
+4.  Found the `inhere` directory.
+5.  Used `cd` to change directory to `inhere` directory.
+6.  *The key problem is that a hidden file has a `.` as the first character of their file name. A normal `ls` or `ls -l` won't show hidden files*
+7. To solve this, you need can use `ls` with `-a` flag to show hidden files.
+8. Or you can use `find` command to search for all files that start with `.`. By using `find -name ".*"`.
+9. `find [directory path] [expression]` in the command above we use `find` without the `[directory path]` leaving it blank will search in current directory.
+10. After we found a `Hidden file` we use `cat` command to reveal its content.
+   
+
+[![asciicast](https://asciinema.org/a/CPstDvPxH6EQP3OdDcioxfFeV.svg)](https://asciinema.org/a/CPstDvPxH6EQP3OdDcioxfFeV)
+
+**Key Takeaway:**
+**Wildcard (*):** Used to represent any sequence of characters, particularly useful when the exact file name is `unknown`. "For times where we do not know the exact file name we can add an aster at the end to search for all files that have names that include what you specified."
+
+**Commands Used:**
+`pwd`
+`ls` `-l` `-a`
+`cat`
+`find` `-name`
+---
