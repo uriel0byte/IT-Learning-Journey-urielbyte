@@ -327,15 +327,18 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 1.  Logged in as `bandit9` using the password we got from the last time.
 2.  Used the `ls` command to list the files in the current directory. Found the `data.txt`file.
 3.  Used `file` to see if it's a normal reable file or not and used `wc` to estimate the content inside.
-4.  
+4.  We know that the file is `data` type of file which is not human-readable and has a lot of chracters in it. So, Manaully finding it might not be very efficient.
+5.  We know that the `password` is stored in `data.txt` in one of the few human-readable strings, preceded by several `=` characters. There is a tool for that `strings`
+    `strings <options> <file>` print the sequences of printable characters in files
+6.  So the command would be `strings data.txt | grep "="`. Do not forget that the password is preceded by serveral `=`.
 
-[![asciicast]
+[![asciicast](https://asciinema.org/a/8dnaOofESCcSPZsp73lxKDXGr.svg)](https://asciinema.org/a/8dnaOofESCcSPZsp73lxKDXGr)
 
-**Key Takeaway:** Take it slowly, Slow progress is better than no progress!
+**Key Takeaway:** Use `man` command to learn more about `strings`.
 
 **Commands Used:**
 `ls`
 `cat`
-`sort <path>`
-`uniq -u <path>`
+`grep`
+`strings <options> <file>`
 ---
