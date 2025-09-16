@@ -310,7 +310,28 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 
 [![asciicast](https://asciinema.org/a/DDXus5JYNqki0rklyMl9vglXh.svg)](https://asciinema.org/a/DDXus5JYNqki0rklyMl9vglXh)
 
-**Key Takeaway:** Take it slowly, Slow progress is better than no pregress!
+**Key Takeaway:** Take it slowly, Slow progress is better than no progress!
+
+**Commands Used:**
+`ls`
+`cat`
+`sort <path>`
+`uniq -u <path>`
+---
+
+# Level 9 -> 10
+
+**Challenge:** The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+
+**Methodology:**
+1.  Logged in as `bandit9` using the password we got from the last time.
+2.  Used the `ls` command to list the files in the current directory. Found the `data.txt`file.
+3.  Used `file` to see if it's a normal reable file or not and used `wc` to estimate the content inside.
+4.  
+
+[![asciicast]
+
+**Key Takeaway:** Take it slowly, Slow progress is better than no progress!
 
 **Commands Used:**
 `ls`
