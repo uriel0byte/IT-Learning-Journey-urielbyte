@@ -272,12 +272,17 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 2.  Used the `ls` command to list the files in the current directory.
 3.  Found the `data.txt`file.
 4.  Used `wc` to estimate the content inside. Just for a better understanding of what we are dealing with.
+
     `wc` shows number of lines, words, and byte count
+    
     `-l` shows number of lines
+    
     `-w` shows number of words
+    
     `-m` shows number of characters
-5.  We know that `the password` is stored next to the word `millionth`, and we know that `grep` return the entire line of the search pattern.
-6.  So we do `cat data.txt | grep "millionth"` or `grep "millionth" data.txt`.
+    
+6.  We know that `the password` is stored next to the word `millionth`, and we know that `grep` return the entire line of the search pattern.
+7.  So we do `cat data.txt | grep "millionth"` or `grep "millionth" data.txt`.
 
 [![asciicast](https://asciinema.org/a/Wpms0rExRwqYurhqs5vpssBXU.svg)](https://asciinema.org/a/Wpms0rExRwqYurhqs5vpssBXU)
 
@@ -298,14 +303,21 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 2.  Used the `ls` command to list the files in the current directory. Found the `data.txt`file.
 3.  In this clip, I used `file` to see if it's a normal reable file or not and used `wc` to estimate the content inside.
 4.  We know the `password` is `the only line of text that occurs only one` so there are tools for that, which are `sort` and `uniq`
+
     `sort` arranges all the lines in the file alphabetically.
+    
     `uniq` compare a line with the **immediately preceding line**. with
            `-u` flag stands for "unique" and tells `uniq` to **only** print lines that appear exactly once in the input.
-5.  Normal confusion that might happen:
+    
+6.  Normal confusion that might happen:
+
     `uniq data.txt` or `uniq -u` doesn't work as you'd expect because the `uniq` command is designed to work on **adjacent, identical lines**. It requires the input to be sorted first.
+    
     `sort data.txt | uniq` this command would give you a list of every single unique line in the file. If a line appeared 50 times, it would be printed once. The single password line would also be printed. This would leave you with a long list to manually search through.
+    
     `sort data.txt | uniq -u` this is the right command for this level. we use `sort` first to arranges all the lines in the file alphabetically. This groups all the identical lines together, making them **adjacent** to each other. the `-u` flag is what specifically filters for the **single, non-duplicated** line.
-6.  Final command : `sort data.txt | uniq -u`
+    
+7.  Final command : `sort data.txt | uniq -u`
    
 
 [![asciicast](https://asciinema.org/a/DDXus5JYNqki0rklyMl9vglXh.svg)](https://asciinema.org/a/DDXus5JYNqki0rklyMl9vglXh)
@@ -329,7 +341,9 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 3.  Used `file` to see if it's a normal reable file or not and used `wc` to estimate the content inside.
 4.  We know that the file is `data` type of file which is not human-readable and has a lot of chracters in it. So, Manaully finding it might not be very efficient.
 5.  We know that the `password` is stored in `data.txt` in one of the few human-readable strings, preceded by several `=` characters. There is a tool for that `strings`
+
     `strings <options> <file>` print the sequences of printable characters in files
+    
 6.  So the command would be `strings data.txt | grep "="`. Do not forget that the password is preceded by serveral `=`.
 
 [![asciicast](https://asciinema.org/a/8dnaOofESCcSPZsp73lxKDXGr.svg)](https://asciinema.org/a/8dnaOofESCcSPZsp73lxKDXGr)
