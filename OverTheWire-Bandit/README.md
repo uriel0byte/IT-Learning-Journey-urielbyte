@@ -262,3 +262,51 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `cat`
 `find <path> -type <> -size <> -user <name> -group <group>`
 ---
+
+# Level 7 -> 8
+
+**Challenge:** The password for the next level is stored in the file data.txt next to the word millionth.
+
+**Methodology:**
+1.  Logged in as `bandit7` using the password we got from the last time.
+2.  Used the `ls` command to list the files in the current directory.
+3.  Found the `data.txt`file.
+4.  Used `wc` to estimate the content inside. Just for a better understanding of what we are dealing with.
+    `wc` shows number of lines, words, and byte count
+    `-l` shows number of lines
+    `-w` shows number of words
+    `-m` shows number of characters
+5.  We know that `the password` is stored next to the word `millionth`, and we know that `grep` return the entire line of the search pattern.
+6.  So we do `cat data.txt | grep "millionth"` or `grep "millionth" data.txt`.
+
+[![asciicast](https://asciinema.org/a/Wpms0rExRwqYurhqs5vpssBXU.svg)](https://asciinema.org/a/Wpms0rExRwqYurhqs5vpssBXU)
+
+**Key Takeaway:** Use `wc` to have a better view of a file. Use `man` to learn a little more of `wc`
+
+**Commands Used:**
+`ls`
+`cat`
+`grep <pattern> <path>`
+---
+
+# Level 8 -> 9
+
+**Challenge:**
+
+**Methodology:**
+1.  Logged in as `bandit8` using the password we got from the last time.
+2.  
+3.  
+4.  
+5.  
+6.  
+
+[asciicast]
+
+**Key Takeaway:**
+
+**Commands Used:**
+`ls`
+`cat`
+`grep <pattern> <path>`
+---
