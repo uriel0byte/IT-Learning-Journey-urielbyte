@@ -291,22 +291,30 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 
 # Level 8 -> 9
 
-**Challenge:**
+**Challenge:** The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
 
 **Methodology:**
 1.  Logged in as `bandit8` using the password we got from the last time.
-2.  
-3.  
-4.  
-5.  
-6.  
+2.  Used the `ls` command to list the files in the current directory. Found the `data.txt`file.
+3.  In this clip, I used `file` to see if it's a normal reable file or not and used `wc` to estimate the content inside.
+4.  We know the `password` is `the only line of text that occurs only one` so there are tools for that, which are `sort` and `uniq`
+    `sort` arranges all the lines in the file alphabetically.
+    `uniq` compare a line with the **immediately preceding line**. with
+           `-u` flag stands for "unique" and tells `uniq` to **only** print lines that appear exactly once in the input.
+5.  Normal confusion that might happen:
+    `uniq data.txt` or `uniq -u` doesn't work as you'd expect because the `uniq` command is designed to work on **adjacent, identical lines**. It requires the input to be sorted first.
+    `sort data.txt | uniq` this command would give you a list of every single unique line in the file. If a line appeared 50 times, it would be printed once. The single password line would also be printed. This would leave you with a long list to manually search through.
+    `sort data.txt | uniq -u` this is the right command for this level. we use `sort` first to arranges all the lines in the file alphabetically. This groups all the identical lines together, making them **adjacent** to each other. the `-u` flag is what specifically filters for the **single, non-duplicated** line.
+6.  Final command : `sort data.txt | uniq -u`
+   
 
-[asciicast]
+[![asciicast](https://asciinema.org/a/DDXus5JYNqki0rklyMl9vglXh.svg)](https://asciinema.org/a/DDXus5JYNqki0rklyMl9vglXh)
 
-**Key Takeaway:**
+**Key Takeaway:** Take it slowly, Slow progress is better than no pregress!
 
 **Commands Used:**
 `ls`
 `cat`
-`grep <pattern> <path>`
+`sort <path>`
+`uniq -u <path>`
 ---
