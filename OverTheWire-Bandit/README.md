@@ -356,3 +356,32 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `grep`
 `strings <options> <file>`
 ---
+
+# Level 10 -> 11
+
+**Challenge:** The password for the next level is stored in the file data.txt, which contains base64 encoded data.
+
+**Methodology:**
+1.  Logged in as `bandit10` using the password we got from the last time.
+2.  Used the `ls` command to list the files in the current directory. Found the `data.txt`file.
+3.  Used `file` to see if it's a normal reable file or not and used `wc` to estimate the content inside.
+4.  We know that the file is `ASCII text` type of file which is a human-readable but encoded in base64.
+5.  There is a tool for decoding base64 which is `base64`
+
+    `base64 <options> <file>` encode/decode data and print it out.
+
+    `-d` for decoding in `base64`
+    
+7.  So the command would be `base64 -d data.txt` or `cat data.txt | base64 -d`. 
+
+[![asciicast](https://asciinema.org/a/wepUute14a4fqb1IrbQNMZICL.svg)](https://asciinema.org/a/wepUute14a4fqb1IrbQNMZICL)
+
+**Key Takeaway:** Use `man` command to learn more about `base64`. Learn more about types of encoded data.
+
+**Commands Used:**
+`ls`
+`cat`
+`file`
+`wc`
+`base64 <options> <file>`
+---
