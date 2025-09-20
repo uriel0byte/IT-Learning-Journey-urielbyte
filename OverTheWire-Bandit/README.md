@@ -394,7 +394,7 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 1.  Logged in as `bandit11` using the password we got from the last time.
 2.  Used the `ls` command to list the files in the current directory. Found the `data.txt`file.
 3.  Used `file` to see if it's a normal reable file or not and used `wc` to estimate the content inside.
-4.  We know that the file is rotated by 13 position, At first I don't know what to do too, So we have to know about [ROT13]https://en.wikipedia.org/wiki/ROT13 just a bit.
+4.  We know that the file is rotated by 13 position, At first I don't know what to do too, So we have to know about [ROT13](https://en.wikipedia.org/wiki/ROT13) just a bit.
 5.  Now we know what Rot13 is, There is a tool for decoding Rot13 which is `tr`
 
     `tr <options> <string1> <string2>` translate or delete characters.
@@ -422,3 +422,40 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 **Challenge:** The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
 **Methodology:**
+1.  Logged in as `bandit11` using the password we got from the last time.
+2.  Used the `ls` command to list the files in the current directory. Found the `data.txt` file.
+3.  Used `file` to see if it's a normal reable file or not and used `wc` to estimate the content inside but we already know that it's hexdump file that has been compressed.
+4.  Now let's make a tmp directory at `tmp/<your directory name>`. For me I do `mkdir /tmp/longinus`
+5.  Then we `cp data.txt` to that directory `cp data.txt /tmp/longinus/` then we `cd /tmp/logninus`
+6.  Before we start decompressing we have to reverse the hexdump file to a binary file first by doing `xxd -r data.txt > data1.bin`
+7.  Next we `file` to see what type of compression it is.
+8.  We know that it's `gzip` so the command for decompressing is `gunzip` but we have to rename the extension to match the type of file that we found from `file` first. So we do `mv data1.bin data1.gz`
+9.  Let's decompress `gunzip data.gzip` then we `ls` and `file` to see what's the next compression type is and `mv` to rename the extension to match it.
+10. Then repeated the process. That's is pretty much all it is. In this level we learn about compression types here are the commands and types in this level:
+
+    `gzip` -> `gunzip <file>` or `gzip -d <file>` file extension: `.gz`
+    
+    `bzip2` -> `bunzip2 <file>` or `bzip2 -d <file>` file extension: `.bz`
+    
+    `tar` -> `tar -xf <file>` file extension: `.tar`
+    
+    -x: This flag means extract — it tells tar you want to extract files from an archive.
+
+    -f: This flag means file — it tells tar that the next argument is the name of the archive file you want to work with.
+11. The finally file type is `ASCII text` let's just `cat` it
+
+[![asciicast](https://asciinema.org/a/742092.svg)](https://asciinema.org/a/742092)
+
+**Key Takeaway:** Review this level commands.
+
+**Commands Used:**
+`ls`
+`cat`
+`mkdir`
+`cp`
+`mv`
+`file`
+`gzip`
+`bzip2`
+`tar`
+---
