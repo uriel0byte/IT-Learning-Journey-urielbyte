@@ -372,7 +372,7 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 
     `-d` for decoding in `base64`
     
-7.  So the command would be `base64 -d data.txt` or `cat data.txt | base64 -d`. 
+6.  So the command would be `base64 -d data.txt` or `cat data.txt | base64 -d`. 
 
 [![asciicast](https://asciinema.org/a/wepUute14a4fqb1IrbQNMZICL.svg)](https://asciinema.org/a/wepUute14a4fqb1IrbQNMZICL)
 
@@ -385,3 +385,40 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `wc`
 `base64 <options> <file>`
 ---
+
+# Level 11 -> 12
+
+**Challenge:** The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+**Methodology:**
+1.  Logged in as `bandit11` using the password we got from the last time.
+2.  Used the `ls` command to list the files in the current directory. Found the `data.txt`file.
+3.  Used `file` to see if it's a normal reable file or not and used `wc` to estimate the content inside.
+4.  We know that the file is rotated by 13 position, At first I don't know what to do too, So we have to know about [ROT13]https://en.wikipedia.org/wiki/ROT13 just a bit.
+5.  Now we know what Rot13 is, There is a tool for decoding Rot13 which is `tr`
+
+    `tr <options> <string1> <string2>` translate or delete characters.
+
+    
+6.  So the command would be `cat data.txt | tr 'A-za-z' 'N-ZA-Mn-za-m`.
+   
+   The first argument (`'A-Za-z'`) is the set of characters you want to translate. This includes all uppercase letters (A-Z) and all lowercase letters (a-z).
+
+   The second argument (`'N-ZA-Mn-za-m'`) is the replacement set. For a ROT13 cipher, you're shifting each letter by 13 places. The alphabet is 26 letters long, so shifting by      13 splits it in half. The first half (`A-M` and `a-m`) becomes the second half (`N-Z` and `n-z`), and the second half becomes the first. So, `A` becomes `N`, `B` becomes `O`,    and so on, until `M` becomes `Z`. Then the sequence wraps around, so `N` becomes `A`, `O` becomes `B`, and so on.
+
+[![asciicast](https://asciinema.org/a/742087.svg)](https://asciinema.org/a/742087)
+
+**Key Takeaway:** Use `man` command to learn more about `tr`. Learn more about types of encoded data.
+
+**Commands Used:**
+`ls`
+`cat`
+`tr <options> <string1> <string2>`
+---
+
+
+# Level 12 -> 13
+
+**Challenge:** The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+**Methodology:**
