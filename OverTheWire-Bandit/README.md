@@ -416,7 +416,6 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `tr <options> <string1> <string2>`
 ---
 
-
 # Level 12 -> 13
 
 **Challenge:** The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
@@ -458,4 +457,35 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `gzip`
 `bzip2`
 `tar`
+---
+
+# Level 13 -> 14
+
+**Challenge:** The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
+
+**Methodology:**
+1.  Logged in as `bandit13` using the password we got from the last time.
+2.  Used the `ls` command to list the files in the current directory. Found the `sshkey.private` file.
+3.  Used `file` to see what type of file it is.
+4.  There are 4 ways I can do think of. 1.copy the content manaully 2. use `scp` command 3. use `telnet` command 4. use `nc` command. I don't know much about `telnet` and `nc` so I will only show first two ways.
+5.  First, we copy the content inside to a new file in our local machine that has the same name as the original file.
+6.  Or Second, we use command `scp` to copy a file from a remote host to our local host so that command look like this `scp -P 2220 bandit13@bandit.labs.overthewire.org:/home/bandit13/sshkey.private ./`
+
+    `scp` stands for secure copy; it works exactly the way the cp command does, but allows you to copy from one host over to another host on the same network. It works via ssh, so all your actions are using the same authentication and security as ssh.
+
+    `scp username@remotehost.com:/remote/directory/myfile.txt /local/directory/`
+
+7.  After i used `scp` command, I have to provide a password of a user again(Bandit13)
+8.  After we got the file, we have to change the permission of the file first because in the video I forgot to change the permission of the file and the server respond back with `Permission 0640 for sshkey.private are too open. It is required that private key files are not accessible by others`. So we change permission by using `chmod` command. The command look like this `sudo chmod 700 sshkey.private`
+9.  Then we use `ssh` to connect to bandit14 by using `-i <location>` flag to identify the sshkey file so we `ssh -i ./sshkey.private bandit14@bandit.labs.overthewire.org -p2220`
+10.  We successfully login into Bandit14. and we can go grab the normal password at `/etc/bandit_pass/bandit14` if you want to.
+
+[![asciicast](https://asciinema.org/a/742265.svg)](https://asciinema.org/a/742265)
+
+**Key Takeaway:** Learn more about Permissions in Linux, `chmod` command, `scp` command, 
+
+**Commands Used:**
+`ls -l`
+`scp`
+`chmod`
 ---
