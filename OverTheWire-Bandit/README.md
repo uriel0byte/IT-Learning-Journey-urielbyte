@@ -512,3 +512,24 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `cat`
 `nc [destination] [port]`
 ---
+
+# Level 15 -> 16
+
+**Challenge:** The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.
+
+**Methodology:**
+1.  Logged in as `bandit15` using the password we got from the last time.
+2.  After reading the challange I think of `openssl` because I've seen it somewhere so, I do some `man openssl`, I also try to `nc` like last time but didn't work.
+3.  After a while i realize how to use basic `openssl` by adding `s_client` command and tried lots of command. So that final command i used is `openssl s_client localhost:30001`.
+4.  After I do that, I have to summit the password in order to get the next level password so I `Ctrl + Insert` to paste the password of Bandit15 that we used to login.
+5.  Then we got the password!
+
+[![asciicast](https://asciinema.org/a/742709.svg)](https://asciinema.org/a/742709)
+
+**Key Takeaway:** Learn more about `openssl` command and SSL/TLS encryption just basics like how it works.
+
+**Commands Used:**
+`ls`
+`openssl`
+`openssl s_client [destination:port]`
+---
