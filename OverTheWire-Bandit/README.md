@@ -482,10 +482,33 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 
 [![asciicast](https://asciinema.org/a/742265.svg)](https://asciinema.org/a/742265)
 
-**Key Takeaway:** Learn more about Permissions in Linux, `chmod` command, `scp` command, 
+**Key Takeaway:** Learn more about Permissions in Linux, `chmod` command, `scp` command.
 
 **Commands Used:**
 `ls -l`
 `scp`
 `chmod`
+---
+
+# Level 14 -> 15
+
+**Challenge:** The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
+**Methodology:**
+1.  Logged in as `bandit14` using the sshkey we got from the last time.
+2.  Used the `ls` command to list the files in the current directory. Found nothing then i remember that the last level said that the password is stored at `/etc/bandit_pass/bandit14`.
+3.  Used `cd` to or just `cat` the `/etc/bandit_pass/bandit14`.
+4.  So I think of `nc` because I've seen it somewhere on the internet so I do some `man nc` and tried lots of command.
+5.  After a while i realize how to use `nc` so that command i used is `nc localhost 30000`.
+6.  After I do that, I realize that I have to summit the password in order to get the next level password so I `Ctrl + Insert` to paste the password I got from `/etc/bandit_pass/bandit14`
+7.  Then we got the password!
+
+[![asciicast](https://asciinema.org/a/742708.svg)](https://asciinema.org/a/742708)
+
+**Key Takeaway:** Learn more about `nc`.
+
+**Commands Used:**
+`ls`
+`cat`
+`nc [destination] [port]`
 ---
