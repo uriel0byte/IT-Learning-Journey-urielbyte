@@ -30,7 +30,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 ---
 
 ## Linux (fun but a lot)
-- [DOING] Linux Journey tutorials including a little bit of networking: https://linuxjourney.com/
+- [DONE] Linux Journey tutorials including a little bit of networking: https://linuxjourney.com/
 - [] Linux Unhatched on Cisco NetAcad: https://www.netacad.com/courses/linux-unhatched
 - [DOING] HTB Linux Module: https://academy.hackthebox.com/module/details/18
 - [DONE] LinuxFoundationX LFS101x on edX: https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS101x+1T2025
@@ -92,4 +92,4 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 ---
 
-_Last Updated: [2025-09-12]_
+_Last Updated: [2025-09-23]_
