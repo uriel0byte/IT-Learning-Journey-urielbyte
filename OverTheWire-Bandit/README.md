@@ -540,18 +540,22 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 
 **Methodology:**
 1.  Logged in as `bandit16` using the password we got from the last time.
-2.  After reading the challange I think of `openssl` because I've seen it somewhere so, I do some `man openssl`, I also try to `nc` like last time but didn't work.
-3.  After a while i realize how to use basic `openssl` by adding `s_client` command and tried lots of command. So that final command i used is `openssl s_client localhost:30001`.
-4.  After I do that, I have to summit the password in order to get the next level password so I `Ctrl + Insert` to paste the password of Bandit15 that we used to login.
-5.  Then we got the password!
+2.  After the last Level, I realized that I can do `man openssl s_client` and I know now that I should specify `-connect` flag and see `CONNECTED COMMAND (BASIC)` but I didn't care at it somehow. That is what make me trying this level for 3hrs.
+3.  First I do `man nmap` to see which flags I should use and come across `-p[range]`, `-sV` and `-A` So my command is `nmap -sV -p31000-32000 localhost` You could also do `nmap -A -p31000-32000 localhost` to give more information but it also take more time.
+4.  After the results of nmap came out, I notice the `31790` port because it is the most promising one others are `echo` which might mean that it will send back whatever i send. So I do `openssl s_client -connect localhost:30179` and tried to provide the password but didn't work, it keeps saying `KEYUPDATE`. So i did some research on my own at first in man page but no point. So I come across a [Reddit](https://www.reddit.com/r/HowToHack/comments/1g2sivg/bandit_level_16_level_17_keyupdate_problem/) (You should go to this reddit and learn more) and know that I have to specify `-quiet` flag to prevent the The keys k, K, Q, and R from being interpreted. So if the password starts with one of this keystorekes, it will trigger an action. When used with the `-quiet` it won't be the case. So I do `openssl s_client -connect localhost:30179 -quiet` and provide the password and get RSA key back in return.
+5.  Copy the key and put it in my local machine by creating a new file `vim sshkey17.private` and paste the key in it.
+6.  Change the permission of the file (like we did last time remember?) by doing `sudo chmod 700 sshkey17.private`.
+7.  Try to connect to bandit17 `ssh -i sshkey17.private bandit17@bandit.labs.overthewire.org -p2220` and It works.
 
-[![asciicast](https://asciinema.org/a/742709.svg)](https://asciinema.org/a/742709)
+[![asciicast](https://asciinema.org/a/743064.svg)](https://asciinema.org/a/743064)
 
-**Key Takeaway:** Learn more about `openssl` command and SSL/TLS encryption just basics like how it works.
+**Key Takeaway:** Go read this [Reddit](https://www.reddit.com/r/HowToHack/comments/1g2sivg/bandit_level_16_level_17_keyupdate_problem/) to learn more about `CONNECTED COMMAND` or https://docs.openssl.org/3.0/man1/openssl-s_client/#connected-commands.
 
 **Commands Used:**
 `ls`
+`nmap`
+`nmap -sV -p[range-range] [destination]`
 `openssl`
-`openssl s_client [destination:port]`
+`openssl s_client -connect [destination:port] -quiet`
 ---
 
