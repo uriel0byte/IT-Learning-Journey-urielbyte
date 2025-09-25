@@ -559,3 +559,27 @@ The most common data encodings that are human-readable are `ASCII` and `Unicode`
 `openssl s_client -connect [destination:port] -quiet`
 ---
 
+# Level 17 -> 18
+
+**Challenge:** There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
+
+NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19
+
+**Methodology:**
+1.  Logged in as `bandit17` using the private key we got from the last time.
+2.  `ls` to list all the files. Used `wc` and `file` to estimate the 2 files.
+3.  Used `diff` to find the different line which means the next level password.
+4.  Copied the password and tried to log in to `bandit18` and see `Byebye!` which means that the password is correct.
+
+[![asciicast](https://asciinema.org/a/743414.svg)](https://asciinema.org/a/743414)
+
+**Key Takeaway:** 
+
+**Commands Used:**
+`ls`
+`wc`
+`file`
+`diff`
+---
+
+# Level 18 -> 19
