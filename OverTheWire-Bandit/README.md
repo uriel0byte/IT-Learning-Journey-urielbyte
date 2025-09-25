@@ -583,3 +583,27 @@ NOTE: if you have solved this level and see ‘Byebye!’ when trying to log int
 ---
 
 # Level 18 -> 19
+
+**Challenge:** The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+
+**Methodology:**
+1. In this level you can't just normally log in as `bandit18` because `.bashrc` has been modified to log you out.
+2. So I think if we can't log in and execute command, can we just execute command without loggin in? So I did some research and found out that you can!.
+3. Used `ls` and `cat` to read the file without loggin in by using `ssh bandit18@bandit.labs.overthwire.org -p2220 ls` found `readme` file then `ssh bandit18@bandit.labs.overthwire.org -p2220 cat readme` got the password!
+
+[![asciicast](https://asciinema.org/a/743419.svg)](https://asciinema.org/a/743419)
+
+**Key Takeaway:** You can execute command without logging in (SSH)
+
+**Commands Used:**
+`ls`
+`cat`
+`ssh`
+---
+
+# Level 19 -> 20
+
+**Challenge:**
+
+**Methodology:**
+1.
