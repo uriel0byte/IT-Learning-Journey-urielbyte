@@ -10,10 +10,10 @@ Reversing
 1. First download the zip file and unzip it using the provided password.
 2. I use `file` and `wc` to estimate the file and realize the most of the content is `binary` and know that it is `executable`
 3. So I try to execute it by `sudo ./pass` and it require the password which I don't know.
-    ```bash
-    Welcome to the SPOOKIEST party of the year.
-    Before we let you in, you'll need to give us the password:
-    ```
+  ```bash
+  Welcome to the SPOOKIEST party of the year.
+  Before we let you in, you'll need to give us the password:
+  ```
     
 5. Then I used `strings` to see if there is any readable strings in this file or not.
 6. And the result come back something like this:
