@@ -53,6 +53,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 ## Python
 - [] Codecademy's Learn Python Track: https://codecademy.com/learn/learn-python
 - [] LabEx Learn Python by Labs: https://labex.io/free-labs/python
+- [] CheckIO: https://checkio.org/
 
 ---
 
