@@ -41,10 +41,10 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - [DOING] Overthewire Bandit: https://overthewire.org/wargames/bandit/
 
 ## Networking (cool but hate it)
-- [DOING] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
+- [DONE] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
 - [] Networking For Hackers! (Common Network Protocols): https://www.youtube.com/watch?v=p3vaaD9pn9I
 - [] Networking For Beginners : https://www.youtube.com/watch?v=z_CU-IeOEzU
-- [] Watch videos from Professor Messer's [N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
+- [DOING] Watch videos from Professor Messer's [N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
 
 ## Windows
 - [] HTB Windows Fundamentals: https://academy.hackthebox.com/module/details/49
