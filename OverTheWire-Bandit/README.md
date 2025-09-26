@@ -603,7 +603,42 @@ NOTE: if you have solved this level and see ‘Byebye!’ when trying to log int
 
 # Level 19 -> 20
 
-**Challenge:**
+**Challenge:** To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
 
 **Methodology:**
-1.
+1.  Logged in as `bandit19` using the password we got from the last time.
+2.  `ls -l` to list all the files and see the permissions of the file.
+
+    ```bash
+    -rwsr-x--- 1 bandit20 bandit19 14884 Aug 15 13:16 bandit20-do
+    ```
+    
+-   The owner is badit20 and the group is bandit19 with `s` SUID user bandit19 can execute the binary, but the binary is executed as user bandit20.
+  
+3.  So next execute tehe setuid binary and see how to use it.
+  
+    ```bash
+    bandit19@bandit:~$ ./bandit20-do 
+    Run a command as another user.
+       Example: ./bandit20-do id
+    ```
+    
+4.  Now we have the idea how to read `/etc/bandit_pass/bandit20` which can only be read by bandit20. 
+
+    ```bash
+    bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20 
+    0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+    ```
+
+[![asciicast](https://asciinema.org/a/743414.svg)](https://asciinema.org/a/743414)
+
+**Key Takeaway:** In addition to standard user and group permissions, Linux allows us to configure special permissions on files through the Set User ID (`SUID`) and Set Group ID (`SGID`) bits. These bits function like temporary access passes, enabling users to run certain programs with the privileges of another user or group. For example, administrators can use `SUID` or `SGID` to grant users elevated rights for specific applications, allowing tasks to be performed with the necessary permissions, even if the user themselves doesn’t normally have them. The presence of these permissions is indicated by an `s` in place of the usual `x` in the file's permission set. When a program with the SUID or SGID bit set is executed,  it runs with the permissions of the file's owner or group, rather than the user who launched it. This can be useful for certain system tasks but also introduces potential security risks if not used carefully.
+
+**Commands Used:**
+`ls`
+`cat`
+---
+
+# Level 20 -> 21
+
+**Challenge:**
