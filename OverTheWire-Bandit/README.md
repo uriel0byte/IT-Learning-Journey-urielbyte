@@ -630,7 +630,7 @@ NOTE: if you have solved this level and see ‘Byebye!’ when trying to log int
     0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
     ```
 
-[![asciicast](https://asciinema.org/a/743414.svg)](https://asciinema.org/a/743414)
+[![asciicast](https://asciinema.org/a/743877.svg)](https://asciinema.org/a/743877)
 
 **Key Takeaway:** In addition to standard user and group permissions, Linux allows us to configure special permissions on files through the Set User ID (`SUID`) and Set Group ID (`SGID`) bits. These bits function like temporary access passes, enabling users to run certain programs with the privileges of another user or group. For example, administrators can use `SUID` or `SGID` to grant users elevated rights for specific applications, allowing tasks to be performed with the necessary permissions, even if the user themselves doesn’t normally have them. The presence of these permissions is indicated by an `s` in place of the usual `x` in the file's permission set. When a program with the SUID or SGID bit set is executed,  it runs with the permissions of the file's owner or group, rather than the user who launched it. This can be useful for certain system tasks but also introduces potential security risks if not used carefully.
 
