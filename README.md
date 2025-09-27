@@ -12,13 +12,26 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 
 ## 👥 About me
 
-**Name:** [Supawat Huncharoen, uriel]
+**Name:** [Supawat, uriel]
 
-**Goal:** Aspiring System Administrator & Cybersecurity Professional
+**Goal:**
+- [] Linux
+- [] Basic Networking
+- [] Window and Active Directory
+- [] Basic Python and Scripting
+- [] DFIR (Digital Forensics & Incident Response)
+- [] OSINT
+
+- [] SIEM, SOAR Operation
+- [] Incident Handling & Documentation & Reporting
+- [] Threat Hunting
+- [] Log Analysis
+- [] Network Traffic Analysis
+
 
 ---
 
-## 🎯Phase 1: Fundamentals (Current Focus)
+## 🎯Phase Fundamentals (Current Focus)
 
 This phase is dedicated to building a strong foundation in core IT concepts and gaining hands-on experience through daily exercises.
 
