@@ -1,4 +1,5 @@
 # Introduction to Networking Concepts: TCP/IP, OSI Model
+The TCP/IP model uses the TCP/IP protocol suite, refer to as TCP/IP. These protocols work together to specify how data should be gathered, addressed, transmitted, and routed through a network. Using the TCP/IP model, we can see how these protocols are used to show the breakdown of how a packet travels through the network.
 
 ## The Importance of Networking
 -  Server Configuration: Configuring network interfaces, assigning IP addresses, and setting up routing.
