@@ -14,19 +14,19 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 
 **Name:** [Supawat, uriel]
 
-**Goal:**
-- [] Linux
-- [] Basic Networking
-- [] Window and Active Directory
-- [] Basic Python and Scripting
-- [] DFIR (Digital Forensics & Incident Response)
-- [] OSINT
+**Goals:**
+- [ ] Linux
+- [ ] Basic Networking
+- [ ] Window and Active Directory
+- [ ] Basic Python and Scripting
+- [ ] DFIR (Digital Forensics & Incident Response)
+- [ ] OSINT
 
-- [] SIEM, SOAR Operation
-- [] Incident Handling & Documentation & Reporting
-- [] Threat Hunting
-- [] Log Analysis
-- [] Network Traffic Analysis
+- [ ] SIEM, SOAR Operation
+- [ ] Incident Handling & Documentation & Reporting
+- [ ] Threat Hunting
+- [ ] Log Analysis
+- [ ] Network Traffic Analysis
 
 
 ---
