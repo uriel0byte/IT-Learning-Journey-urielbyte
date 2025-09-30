@@ -672,47 +672,48 @@ NOTE: Try connecting to your own network daemon to see if it works as you think
 2.  Cd to the given path `cd /etc/cron.d/` used `ls` to see all the files.
 3.  So in this level let's focus on `cronjob_bandit22` let's just `cat cronjob_bandit22` to see what does this cronjob does and see what script/command/program is being executed.
   
-    ```bash
-    bandit21@bandit:/etc/cron.d$ cat cronjob_bandit22
-    @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
-    * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
-    ```
+       ```bash
+       bandit21@bandit:/etc/cron.d$ cat cronjob_bandit22
+       @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+       * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+       ```
+       
     the script is executed at boot and then repeatedly once per minute, running with bandit22’s privileges and producing no visible output.
 
     *** Let's learn a bit about cron, cronjob, crontab
     
-    🔹 cron
+🔹 cron
 -    A time-based job scheduler in Unix/Linux systems.
 -    It runs in the background and executes tasks (scripts/commands) automatically at specified times or intervals.
 -    Think of it as an “alarm clock” for commands.
 
-    🔹 cronjob
+🔹 cronjob
 -    A task/job that you schedule to run automatically using cron.
 -    Example: Backing up a database every night at midnight.
 
-   🔹 crontab (CRON TABle)
+🔹 crontab (CRON TABle)
 -    The configuration file where you define cronjobs.
 -    Each user (including root) can have their own crontab.
--    You edit it using: `crontab -e`. You can list existing jobs with: `crontab -l`
+-    You edit it using: `crontab -e`. You can list existing jobs with: `crontab -l`.
 
-   🔹 Crontab syntax
+🔹 Crontab syntax
    
    ```bash
-   * * * * *  command-to-run
-   │ │ │ │ │
-   │ │ │ │ └── Day of week (0-6, Sunday=0)
-   │ │ │ └──── Month (1-12)
-   │ │ └────── Day of month (1-31)
-   │ └──────── Hour (0-23)
-   └────────── Minute (0-59)
+      * * * * *  command-to-run
+      │ │ │ │ │
+      │ │ │ │ └── Day of week (0-6, Sunday=0)
+      │ │ │ └──── Month (1-12)
+      │ │ └────── Day of month (1-31)
+      │ └──────── Hour (0-23)
+      └────────── Minute (0-59)
    ```
 
-   🔹 Example
+🔹 Example
 
--    Run a script every day at 3:30 AM:
-     `30 3 * * * /home/user/backup.sh`
+-    Run a script every day at 3:30 AM: `30 3 * * * /home/user/backup.sh`
 
-     🔹In short:
+🔹In short:
+    
 -    cron = the scheduler (the service)
 -    cronjob = the scheduled task
 -    crontab = the file/table where cronjobs are defined
