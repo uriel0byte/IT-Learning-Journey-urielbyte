@@ -80,6 +80,8 @@ Understanding the OSI and TCP/IP models is crucial for troubleshooting network i
 5.  Application Layer: Check your browser settings and ensure that you have the correct proxy settings configured.
 By systematically checking each layer, you can quickly identify the source of the problem and take steps to resolve it.
 
+## IP Packet
+ADD
 
     
     
