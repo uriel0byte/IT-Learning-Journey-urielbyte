@@ -20,11 +20,10 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 - [ ] Window and Active Directory
 - [ ] Basic Python and Scripting
 - [ ] DFIR (Digital Forensics & Incident Response)
-- [ ] OSINT
+- [ ] Threat Intelligence, Threat Hunting and OSINT
 
 - [ ] SIEM, SOAR Operation
 - [ ] Incident Handling & Documentation & Reporting
-- [ ] Threat Hunting
 - [ ] Log Analysis
 - [ ] Network Traffic Analysis
 
