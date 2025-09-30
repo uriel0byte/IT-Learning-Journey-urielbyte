@@ -680,7 +680,7 @@ NOTE: Try connecting to your own network daemon to see if it works as you think
        
     the script is executed at boot and then repeatedly once per minute, running with bandit22’s privileges and producing no visible output.
 
-    *** Let's learn a bit about cron, cronjob, crontab
+    ### Let's learn a bit about cron, cronjob, crontab
     
 🔹 cron
 -    A time-based job scheduler in Unix/Linux systems.
