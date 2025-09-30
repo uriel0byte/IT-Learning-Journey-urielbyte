@@ -641,4 +641,10 @@ NOTE: if you have solved this level and see ‘Byebye!’ when trying to log int
 
 # Level 20 -> 21
 
-**Challenge:**
+**Challenge:** There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+NOTE: Try connecting to your own network daemon to see if it works as you think
+
+**Methodology:**
+1.  Logged in as `bandit20` using the password we got from the last time.
+2.  `ls -l` to list all the files and see the permissions of the file.
