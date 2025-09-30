@@ -665,3 +665,76 @@ NOTE: Try connecting to your own network daemon to see if it works as you think
 
 # Level 21 -> 22
 
+**Challenge:** A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+**Methodology:**
+1.  Logged in as `bandit21` using the password we got from the last time.
+2.  Cd to the given path `cd /etc/cron.d/` used `ls` to see all the files.
+3.  So in this level let's focus on `cronjob_bandit22` let's just `cat cronjob_bandit22` to see what does this cronjob does and see what script/command/program is being executed.
+  
+    ```bash
+    bandit21@bandit:/etc/cron.d$ cat cronjob_bandit22
+    @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+    * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+    ```
+    the script is executed at boot and then repeatedly once per minute, running with bandit22’s privileges and producing no visible output.
+
+    *** Let's learn a bit about cron, cronjob, crontab
+    
+    🔹 cron
+-    A time-based job scheduler in Unix/Linux systems.
+-    It runs in the background and executes tasks (scripts/commands) automatically at specified times or intervals.
+-    Think of it as an “alarm clock” for commands.
+
+    🔹 cronjob
+-    A task/job that you schedule to run automatically using cron.
+-    Example: Backing up a database every night at midnight.
+
+   🔹 crontab (CRON TABle)
+-    The configuration file where you define cronjobs.
+-    Each user (including root) can have their own crontab.
+-    You edit it using: `crontab -e`. You can list existing jobs with: `crontab -l`
+
+   🔹 Crontab syntax
+   
+   ```bash
+   * * * * *  command-to-run
+   │ │ │ │ │
+   │ │ │ │ └── Day of week (0-6, Sunday=0)
+   │ │ │ └──── Month (1-12)
+   │ │ └────── Day of month (1-31)
+   │ └──────── Hour (0-23)
+   └────────── Minute (0-59)
+   ```
+
+   🔹 Example
+
+-    Run a script every day at 3:30 AM:
+     `30 3 * * * /home/user/backup.sh`
+
+     🔹In short:
+-    cron = the scheduler (the service)
+-    cronjob = the scheduled task
+-    crontab = the file/table where cronjobs are defined
+
+4.  So next let's so see the content of `/usr/bin/cronjob_bandit22.sh` do `cat /usr/bin/cronjob_bandit22.sh`
+
+   ```bash
+   bandit21@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit22.sh 
+   #!/bin/bash
+   chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+   cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+   ```
+
+5.  So this file creates a file in the `tmp` folder and gives read permission to everyone. Then it copies the content of the bandit22 password file into the file.
+6.  Let's just cat it `cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv`
+
+
+[![asciicast](https://asciinema.org/a/745617.svg)](https://asciinema.org/a/745617)
+
+**Key Takeaway:** man `cron`, `crontab`, `crontab(5)`
+
+**Commands Used:**
+`ls`
+`cat`
+---
