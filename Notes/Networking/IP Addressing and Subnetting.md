@@ -154,6 +154,12 @@ Decimal:   255    .    255    .    255    .     0
 # MAC Address
 Each host in a network has its own 48-bit (6 octets) Media Access Control (MAC) address, represented in hexadecimal format. MAC is the physical address for our network interfaces.
 
+A MAC address is a unique identifier used as a hardware address. When you want to get access to the Internet, your machine needs to have a device called a network interface card.
+
+This network adapter has its own hardware address that's used to identify your machine. A MAC address for an Ethernet device.
+
+MAC addresses are given to network adapters when they are manufactured. Each manufacturer has an Organizationally Unique Identifier (OUI) to identify them as the manufacturer. This OUI is denoted by the first 3 bytes of the MAC address.
+
 This is because the MAC address addresses the physical connection (network card, Bluetooth, or WLAN adapter) of a host. Each network card has its individual MAC address, which is configured once on the manufacturer's hardware side but can always be changed, at least temporarily.
 
 Let's have a look at an example of such a MAC address:
@@ -164,6 +170,24 @@ Let's have a look at an example of such a MAC address:
 When an IP packet is delivered, it must be addressed on layer 2 to the destination host's physical address or to the router / NAT, which is responsible for routing. Each packet has a sender address and a destination address.
 
 If a host with the IP target address is located in the same subnet, the delivery is made directly to the target computer's physical address. However, if this host belongs to a different subnet, the Ethernet frame is addressed to the MAC address of the responsible router (default gateway). If the Ethernet frame's destination address matches its own layer 2 address, the router will forward the frame to the higher layers. Address Resolution Protocol (ARP) is used in IPv4 to determine the MAC addresses associated with the IP addresses.
+
+## Loopback
+The loopback is a special network interface that refers to your own computer.
+It allows your computer to send and receive network traffic to itself.
+The most common loopback IP address is: 127.0.0.1
+Think of it as your computer talking to itself — like testing a microphone by speaking and hearing your own voice.
+
+## Localhost
+localhost is the hostname (name) that maps to the loopback IP address.
+It is usually: localhost → 127.0.0.1
+It's defined in your system’s hosts file (like /etc/hosts on Linux/Mac).
+When you type ping localhost, your computer is really pinging itself at 127.0.0.1.
+
+## Loopback vs. Localhost
+127.0.0.1 is the loopback IP address, and localhost is the name that points to it.
+They both mean "this computer", and are often used for testing servers or services locally without using an actual network.
+
+## Default Gateway
 
 ## Related Protocols (NAT, ARP, DHCP)
 
