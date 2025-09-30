@@ -173,18 +173,25 @@ If a host with the IP target address is located in the same subnet, the delivery
 
 ## Loopback
 The loopback is a special network interface that refers to your own computer.
+
 It allows your computer to send and receive network traffic to itself.
+
 The most common loopback IP address is: 127.0.0.1
+
 Think of it as your computer talking to itself — like testing a microphone by speaking and hearing your own voice.
 
 ## Localhost
 localhost is the hostname (name) that maps to the loopback IP address.
+
 It is usually: localhost → 127.0.0.1
+
 It's defined in your system’s hosts file (like /etc/hosts on Linux/Mac).
+
 When you type ping localhost, your computer is really pinging itself at 127.0.0.1.
 
 ## Loopback vs. Localhost
 127.0.0.1 is the loopback IP address, and localhost is the name that points to it.
+
 They both mean "this computer", and are often used for testing servers or services locally without using an actual network.
 
 ## Default Gateway
