@@ -648,3 +648,20 @@ NOTE: Try connecting to your own network daemon to see if it works as you think
 **Methodology:**
 1.  Logged in as `bandit20` using the password we got from the last time.
 2.  `ls -l` to list all the files and see the permissions of the file.
+3.  There is a setuid binary like the last level so I did `./suconnect` to see the instruction.
+4.  So I think of netcat `nc` to create some kind of connection or server? and then echo the password as the first line when connection happen. So I ask AI if I can use echo and then pipe out to netcat or do I have to specify some flag to do that.
+5.  So I do `echo "0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO" | nc -l -p 8080` `-l` is listening and `-p` to specify the port I think this is some kind of creating a one time server on local? Have to do some research on this.
+6.  Then after pressing enter, the terminal looks like it's working so i think of job in Linux so I do `Ctrl+Z` to stop this process and then `bg 1` it to background job so I can execute other commands. I think adding `&` after the command should work the same here, but I don't know if I open another terminal and connected to bandit server and use `./suconnect 8080` going to work the same here. We got the password anyway!
+
+[![asciicast](https://asciinema.org/a/745585.svg)](https://asciinema.org/a/745585)
+
+**Key Takeaway:** Review the Job command in Linux (Now I know it has some use)
+
+**Commands Used:**
+`ls`
+`echo`
+`nc -l -p [port]`
+---
+
+# Level 21 -> 22
+
