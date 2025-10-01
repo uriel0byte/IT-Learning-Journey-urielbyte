@@ -739,3 +739,66 @@ NOTE: Try connecting to your own network daemon to see if it works as you think
 `ls`
 `cat`
 ---
+
+# Level 22 -> 23
+
+**Challenge:** A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
+
+**Methodology:**
+1.  Logged in as `bandit22` using the password we got from the last time.
+2.  Cd to the given path `cd /etc/cron.d/` used `ls` to see all the files.
+3.  `cat cronjob_bandit23` to see what does this cronjob does and see what script/command/program is being executed. The configuration shows that the script `/usr/bin/cronjob_bandit23.sh` is executed regularly as user bandit23.
+4.  Then `cat /usr/bin/cronjob_bandit23.sh`
+  
+   ```bash
+   bandit22@bandit:/usr/bin$ cat /usr/bin/cronjob_bandit23.sh 
+   #!/bin/bash
+
+   myname=$(whoami)
+   mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+   echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+   cat /etc/bandit_pass/$myname > /tmp/$mytarget
+   ```
+
+-   The script calculates mytarget (the filename) using the MD5 hash of "I am user bandit23".
+-   The script copies the password from /etc/bandit_pass/bandit23 to /tmp/$mytarget.
+
+5.  At first I check if this script can be executed by bandit22 `ls /usr/bin/cronjob_bandit23.sh` and know that I can. Then I normally tried to run this script but the result was obviously going to be the password of bandit22. Then I think it has something to do with those variables but I was not sure. So I did some research.
+
+    This level introduces how to analyze cron jobs and basic shell scripting (specifically variable assignment and command output piping).
+
+    The crucial part of the script is how it dynamically creates a filename using a hash:
+
+-   The script runs whoami to get the current user (bandit22) and saves it to the $myname variable.
+-   It constructs a string ("I am user bandit22").
+-   It pipes that string to the md5sum command, which generates a unique, fixed-length hash of the string.
+-   It uses cut to clean up the hash.
+-   The final password is saved to /tmp/ using this hash as the filename.
+
+    By manually calculating this hash, we can predict the filename and retrieve the password.
+
+6.  We need to replicate the script's hash calculation using bandit23 as the $myname variable. Then we got the file name in return.
+
+   ```bash
+   bandit22@bandit:~$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+   8ca319486bfbbc3663ea0fbe81326349
+   ```
+
+7.  Then we do `cat /tmp/8ca319486bfbbc3663ea0fbe81326349`
+
+[![asciicast](https://asciinema.org/a/745864.svg)](https://asciinema.org/a/745864)
+
+**Key Takeaway:** Learn more about variables in Linux.
+
+**Commands Used:**
+`ls`
+`cat`
+---
+
+# Level 23 -> 24
+
+**Challenge:**
