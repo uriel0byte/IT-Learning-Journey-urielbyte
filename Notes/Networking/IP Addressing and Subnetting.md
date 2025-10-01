@@ -195,11 +195,28 @@ When you type ping localhost, your computer is really pinging itself at 127.0.0.
 They both mean "this computer", and are often used for testing servers or services locally without using an actual network.
 
 ## Default Gateway
+Access point between local network and the internet.
+In local network, it is a router. It is the "exit" from local network, usually routers address(e.g. 192.168.0.1). All traffic destined for the Internet goes through here. Then routes to the appropiate external network.
 
-## Related Protocols (NAT, ARP, DHCP)
+## Related Protocols (NAT, ARP, DHCP, DNS)
 
 ## NAT
+NAT makes a device like our router act as an intermediary between the internet and a private network. So only a single, unique IP address is required to represent an entire group of computers. Translate Private IP -> Public IP and vice versa.
 
-## ARP/RARP
+## ARP
+Used in the same network for translating IP Address to MAC Address. Devices use ARP to acquire the MAC Address for a device. By sending out a broadcast message out on the network asking every devices, and the devices with the IP that match with the broadcast message sends back the MAC Address.
 
 ## DHCP
+Automatically assigns IP Address, subnet masks, DNS server, Gateway to clients, ensuring uniqe adresses for each devices. The router normally acts as a DHCP Server.
+
+## DNS
+The Domain Name System (DNS) is essentially the internet's phonebook. Its primary function is to translate human-friendly domain names (like www.example.com) into computer-friendly Internet Protocol (IP) addresses (like 192.0.2.1), which are required for devices to locate and communicate with each other on the network. Without DNS, you'd have to memorize complex numerical IP addresses to visit websites.
+
+## DNS Resolution
+DNS Resolution is the multi-step process that a computer follows to find a domain's IP address. This typically involves several types of DNS servers working together:
+
+1.    Query Initiation: When you enter a domain name into your browser, your computer first checks its local cache. If the IP address isn't found, it sends a query to a DNS Recursor (or Resolver), typically operated by your Internet Service Provider (ISP).
+2.    Root Name Server Query: If the Recursor doesn't have the IP cached, it contacts one of the Root Name Servers (the top of the DNS hierarchy). The Root server responds by directing the Recursor to the correct Top-Level Domain (TLD) Name Server (e.g., for .com, .org).
+3.    TLD Name Server Query: The Recursor contacts the TLD server, which in turn directs it to the Authoritative Name Server for that specific domain.
+4.    Authoritative Name Server Query: The Authoritative Name Server is the one that holds the definitive DNS records (including the IP address) for the domain. It sends the IP address back to the Recursor.
+5.    Response and Connection: The Recursor sends the IP address back to your browser, which then uses it to connect directly to the website's server and load the page. The Recursor also caches the IP address for a set period to speed up future requests for that same domain.
