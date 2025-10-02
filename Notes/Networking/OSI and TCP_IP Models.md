@@ -218,12 +218,12 @@ By systematically checking each layer, you can quickly identify the source of th
 		- Once the packet gets forwarded to the same network, we use ARP to find the final destination MAC address.
 		- During this process, our packet doesn't change the source or destination IP address.
 
-## IP Packet
+## Packet
 The data and information that gets transmitted through networks are known as packets.
-- Remember that packets are ^^used to transmit data across networks^^.
-- A ^^packet^^ consists of a header and a payload.
-	- ^^The header^^ contains information about where the packet is going and where it came from.
-	- ^^The payload^^ is the actual data that is being transferred.
+- Remember that packets are *used to transmit data across networks*.
+- A **packet** consists of a header and a payload.
+	- **The header** contains information about where the packet is going and where it came from.
+	- **The payload** is the actual data that is being transferred.
 - As our packet traverses the network, each layer adds a bit of information to the header of the packet.
 - Also, keep in mind that different layers use a different term for our "packet." In the transport layer, we essentially encapsulate our data in a segment, and in the link layer, we refer to this as a frame, but just know that "packet" can be used in regards to the same thing.
 
