@@ -810,4 +810,30 @@ NOTE 2: Keep in mind that your shell script is removed once executed, so you may
 **Methodology:**
 1.  Logged in as `bandit23` using the password we got from the last time.
 2.  Cd to the given path `cd /etc/cron.d/` used `ls` to see all the files.
-3.  
+3.  `cat /etc/cron.d/cronjob_bandit24` to see what does this cronjob does and see what script/command/program is being executed. The configuration shows that the script `/usr/bin/cronjob_bandit24.sh` is executed regularly as user bandit24.
+4.  Then `cat /usr/bin/cronjob_bandit24.sh`
+  
+   ```bash
+bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh 
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname/foo
+echo "Executing and deleting all scripts in /var/spool/$myname/foo:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        owner="$(stat --format "%U" ./$i)"
+        if [ "${owner}" = "bandit23" ]; then
+            timeout -s 9 60 ./$i
+        fi
+        rm -f ./$i
+    fi
+done
+   ```
+
+5.  In this level, We have to write our own script but I'll just copy the past cronjob.sh script and adjust it a bit here.
+6.  
