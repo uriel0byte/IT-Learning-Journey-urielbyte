@@ -835,5 +835,63 @@ do
 done
    ```
 
-5.  In this level, We have to write our own script but I'll just copy the past cronjob.sh script and adjust it a bit here.
-6.  
+   Script Explanation
+
+   Targeting files specifically owned by a user named bandit23 for execution with a time limit.
+
+   Cleaning up (deleting) all files it processes, regardless of whether they were executed or not.
+
+   The script performs the following steps:
+
+    Sets the user name:
+
+        myname=$(whoami) stores the current user's username in the variable myname.
+
+    Changes directory:
+
+        cd /var/spool/$myname/foo navigates to the directory /var/spool/current_user/foo. This is where the files/scripts to be processed are located.
+
+    Iterates through files:
+
+        for i in * .*; do ... done starts a loop to iterate through all files and directories in the current directory, including hidden ones (those starting with a dot, like .script.sh).
+
+        The if [ "$i" != "." -a "$i" != ".." ]; then ... fi condition excludes the special directories . (current directory) and .. (parent directory) from processing.
+
+    Checks file ownership and executes:
+
+        echo "Handling $i" prints the name of the file being processed.
+
+        owner="$(stat --format "%U" ./$i)" retrieves the owner's username of the current file ($i).
+
+        if [ "${owner}" = "bandit23" ]; then ... fi checks if the file owner is exactly bandit23.
+
+        If the owner is bandit23, the file is executed using timeout -s 9 60 ./$i.
+
+            timeout -s 9 60 ensures the execution stops after a maximum of 60 seconds, killing the process with signal 9 (SIGKILL) if it runs for too long. This prevents malicious or hung scripts from running indefinitely. The script assumes these files are executable scripts.
+
+    Deletes the file:
+
+        rm -f ./$i unconditionally deletes the file after the check/execution. The -f flag forces the removal and suppresses most error messages.
+
+5.  In this level, We have to write our own script but I'll just copy the past cronjob.sh script and adjust it a bit here. `mktemp -d` then `cd to that temp directory` then `vim bandit24.sh`
+
+   ```bash
+   #!/bin/bash                                                                                                                                                             
+   mkdir -p /tmp/tmp.dsJ9zPh8f3/$(cat /etc/bandit_pass/bandit24)                       
+   ```
+
+6.  `chmod +x bandit24.sh`
+7.  Then do `cp bandit24.sh /var/spool/bandit24/foo/`
+8.  After that we have to set perms so that the system can execute our script. `chmod 777 /tmp/tmp.dsJ9zPh8f3`
+9.  Wait for a few minutes for the cronjob to do its job. And the password will appear.
+
+**Key Takeaway:** Learn more about Scripting in Linux.
+
+**Commands Used:**
+`chmod`
+`cat`
+---
+
+# Level 24 -> 25
+
+**Challenge:**
