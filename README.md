@@ -86,7 +86,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 * **Labs & Hands-on:**
     * Hack The Box Academy: [HTB Profile](https://app.hackthebox.com/profile/#2566537)
     * TryHackMe: [THM Profile](https://tryhackme.com/p/poseidon.smash)
-    * OverTheWire Bandit: [Over The Wire Bandit]
+    * OverTheWire Bandit: [Over The Wire Bandit](OverTheWire-Bandit/README.md)
     * PicoCTF: [PicoCTF Profile](https://play.picoctf.org/users/urielbyte)
     * NotebookLM : Creating Quizes and Flashcards.
 
