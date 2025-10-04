@@ -42,21 +42,30 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 ---
 
 ## Linux (fun but a lot)
-- [DONE] Linux Journey tutorials including a little bit of networking: https://linuxjourney.com/
+- [DOING] Roadmap.sh Linux Checkboxes: https://roadmap.sh/linux
 - [] Linux Unhatched on Cisco NetAcad: https://www.netacad.com/courses/linux-unhatched
-- [DOING] HTB Linux Module: https://academy.hackthebox.com/module/details/18
+- [DONE] Linux Journey tutorials including a little bit of networking: https://linuxjourney.com/
+- [DONE] HTB Linux Module: https://academy.hackthebox.com/module/details/18
 - [DONE] LinuxFoundationX LFS101x on edX: https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS101x+1T2025
 - [DONE] Linux Survival: https://linuxsurvival.com/linux-tutorial-introduction/
-- [DOING] Roadmap.sh Linux Checkboxes: https://roadmap.sh/linux
+
 
 - [DOING] LabEx Linux Hands-on Labs: https://labex.io/free-labs/linux
 - [DOING] Overthewire Bandit: https://overthewire.org/wargames/bandit/
 
 ## Networking (cool but hate it)
-- [DONE] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
+- [DOING] Watch videos from Professor Messer's [N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
 - [] Networking For Hackers! (Common Network Protocols): https://www.youtube.com/watch?v=p3vaaD9pn9I
 - [] Networking For Beginners : https://www.youtube.com/watch?v=z_CU-IeOEzU
-- [DOING] Watch videos from Professor Messer's [N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
+- [DONE] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
+
+- [DOING] NotebookLM - Create a summary and quizes.
+- [] Networking: Packet/Traffic Analysis - Practical with Wireshark, Suricata, CTFs on packet/network analysis.
+
+## Security+
+- [] Watch the videos from Professor Messer's [SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
+
+- [] NotebookLM - Create a summary and quizes.
 
 ## Windows
 - [] HTB Windows Fundamentals: https://academy.hackthebox.com/module/details/49
