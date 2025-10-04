@@ -36,6 +36,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 - **Linux basics and shell scripting**
 - **Networking fundamentals**
+- **Security fundamentals**
 - **Windows** Windows Server administration, Active Directory, and PowerShell scripting.
 - **Python** Basic Automation and scripting. 
 
@@ -49,7 +50,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - [DONE] LinuxFoundationX LFS101x on edX: https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS101x+1T2025
 - [DONE] Linux Survival: https://linuxsurvival.com/linux-tutorial-introduction/
 
-
+### Practical Hands-on Lab
 - [DOING] LabEx Linux Hands-on Labs: https://labex.io/free-labs/linux
 - [DOING] Overthewire Bandit: https://overthewire.org/wargames/bandit/
 
@@ -59,12 +60,14 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - [] Networking For Beginners : https://www.youtube.com/watch?v=z_CU-IeOEzU
 - [DONE] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
 
+### Practical Hands-on Lab
 - [DOING] NotebookLM - Create a summary and quizes.
 - [] Networking: Packet/Traffic Analysis - Practical with Wireshark, Suricata, CTFs on packet/network analysis.
 
 ## Security+
 - [] Watch the videos from Professor Messer's [SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
 
+### Practical Hands-on Lab
 - [] NotebookLM - Create a summary and quizes.
 
 ## Windows
@@ -83,8 +86,9 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 * **Labs & Hands-on:**
     * Hack The Box Academy: [HTB Profile](https://app.hackthebox.com/profile/#2566537)
     * TryHackMe: [THM Profile](https://tryhackme.com/p/poseidon.smash)
-    * OverTheWire Bandit: [Link to the section in this repo where you document your progress]
+    * OverTheWire Bandit: [Over The Wire Bandit]
     * PicoCTF: [PicoCTF Profile](https://play.picoctf.org/users/urielbyte)
+    * NotebookLM : Creating Quizes and Flashcards.
 
 * **Roadmaps & Knowledge Bases:**
     * Roadmap.sh: [Roadmap.sh Profile](https://roadmap.sh/u/urielbyte)
