@@ -38,7 +38,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - **Networking fundamentals**
 - **Security fundamentals**
 - **Windows** Windows Server administration, Active Directory, and PowerShell scripting.
-- **Python** Basic Automation and scripting. 
+- **Python** Basic Automation and scripting.
 
 ---
 
@@ -88,7 +88,10 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
     * TryHackMe: [THM Profile](https://tryhackme.com/p/poseidon.smash)
     * OverTheWire Bandit: [Over The Wire Bandit](OverTheWire-Bandit/README.md)
     * PicoCTF: [PicoCTF Profile](https://play.picoctf.org/users/urielbyte)
+    * CyberDefenders: [CyberDef Profile](https://cyberdefenders.org/p/poseidon.smash)
     * NotebookLM : Creating Quizes and Flashcards.
+    * Interesting additional resources :
+        - Hacker101: https://www.hacker101.com/start-here
 
 * **Roadmaps & Knowledge Bases:**
     * Roadmap.sh: [Roadmap.sh Profile](https://roadmap.sh/u/urielbyte)
