@@ -33,8 +33,10 @@
 
 7.  Task 7
     What is the command we can use within the SMB shell to download the files we find?
+    
     Answer: get by simply type help and all the list of possible command shows up.
 
-8.  Task 8
-    Submit root flag     
-    Answer: 5f61c10dffbc77a704d76016a22f1664 by doing ls to list all the files. We see two directories shows up so I just cd to each directories and ls to see all the files inside     each directories and we found flag.txt in James.P directory then I do get flag.txt. Then I disconnect from the smb server and cat that flag.txt BRAVO!
+9.  Task 8
+    Submit root flag
+    
+    Answer: 5f61c10dffbc77a704d76016a22f1664 by doing ls to list all the files. We see two directories shows up so I just cd to each directories and ls to see all the files           inside     each directories and we found flag.txt in James.P directory then I do get flag.txt. Then I disconnect from the smb server and cat that flag.txt BRAVO!
