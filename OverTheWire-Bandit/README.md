@@ -900,4 +900,72 @@ You do not need to create new connections each time
 **Methodology:**
 1.  Logged in as `bandit24` using the password we got from the last time.
 2.  Looks like we have to make a script that will automatically tried all the 10000 pincode combination plus netcating to that port?.
-3.  
+3.  First, Let's `mktemp -d` for writing a script then connected to the port using netcat to see the script and its response so we know how we will write the script.
+  
+    ```bash
+    bandit24@bandit:/tmp/tmp.ZIkWkXX1BT$ nc localhost 30002
+    I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+    w
+    Wrong! Please enter the correct current password and pincode. Try again.
+    ```
+    
+4.  We know that's it one-liner response so let's write a simple script for brute-forcing `vim bruteforce.sh`
+
+   ```bash
+   #!/bin/bash
+
+   for i in {0000..9999}; do
+           echo (your bandit24 password) $i >> possib.txt
+   done
+
+   cat possib.txt | nc localhost 30002 > result.txt
+   ```
+
+### Script Explanation
+   The script attempts to guess a password by systematically trying every four-digit number from `0000` to `9999` and submitting it to a server.
+---
+1\. Generating the Payload (Creating `possib.txt`)
+
+```bash
+for i in {0000..9999}; do
+    echo (your bandit24 password) $i >> possib.txt
+done
+```
+
+  * **`for i in {0000..9999}; do ... done`**: This loop iterates through all numbers from $0$ to $9999$. The brace expansion ensures the numbers are padded with **leading zeros** (e.g., $0001, 0010$).
+  * **`echo (your bandit24 password) $i`**: For each number \`$i$, it prints a required phrase (a placeholder in the example) followed by the four-digit number.
+  * **`>> possib.txt`**: This **appends** the generated line to a file named `possib.txt`.
+
+The result is a file containing $10,000$ lines, where each line is a potential password attempt.
+
+---
+
+ 2\. Attacking the Service (Submitting the Guesses)
+
+```bash
+cat possib.txt | nc localhost 30002 > result.txt
+```
+
+  * **`cat possib.txt`**: The `cat` command reads the contents of the generated file (`possib.txt`).
+  * **`|` (Pipe)**: The output of `cat` is piped as input to the next command.
+  * **`nc localhost 30002`**: The `nc` (netcat) utility is used to establish a **TCP connection** to the server running on the **local machine (`localhost`)** at **port `30002`**.
+  * The $10,000$ lines from `possib.txt` are sent one by one over this network connection to the service. This is the **brute-force attempt**.
+  * **`> result.txt`**: The response from the network service (which is usually the server's output, including success or failure messages) is redirected and saved to a file named `result.txt`. The user would then inspect `result.txt` to find the correct password line.
+    
+5.  Then we just execute tehe script `bash bruteforce.sh`.
+6.  Then `cat result.txt | grep -v "Wrong!"` because we know the pattern will respond `Wrong!` if it wrong so we do `grep -v "Wrong!"` to exclude all the lines that contain `Wrong!`
+
+[![asciicast](https://asciinema.org/a/746704.svg)](https://asciinema.org/a/746704)
+
+**Key Takeaway:** Learn more about Scripting in Linux.
+
+**Commands Used:**
+`nc`
+`vim`
+`cat`
+`grep -v`
+---
+
+# Level 25 -> 26
+
+**Challenge:**
