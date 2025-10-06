@@ -966,6 +966,29 @@ cat possib.txt | nc localhost 30002 > result.txt
 `grep -v`
 ---
 
-# Level 25 -> 26
+# Level 25 -> 26, 26 -> 27
+
+**Challenge:** Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+
+NOTE: if you’re a Windows user and typically use Powershell to ssh into bandit: Powershell is known to cause issues with the intended solution to this level. You should use command prompt instead.
+
+**Methodology:**
+1.  Logged in as `bandit25` using the password we got from the last time.
+2.  In this level I struggled a lot so I looked up a walkthrough which is https://mayadevbe.me/posts/overthewire/bandit/level26/ which explain everything you need to know.
+3.  So after obtained the password of bandit26 by making a terminal smallest while connecting(ssh) to bandit26 using the sshkey provided in the bandit25 session, I finally connected to bandit26 in More command and then press `v` to go into Vim. Then set the shell by `:set shell=/bin/bash` then use `:shell` to get into command line mode in vim and just `cat /etc/bandit_pass/bandit26`, we got the password!. I also do `ls` while first successfully be able to use command line in Vim, I found 2 files. First, is the ASCII text that was being showed, and the other is the script which make execute command as bandit27 so I do `./bandit27-do cat /etc/bandit_pass/bandit27` We got bandit27 password.
+
+[![asciicast](https://asciinema.org/a/746973.svg)](https://asciinema.org/a/746973)
+
+**Key Takeaway:** Learn more about More and Vim especially Command Mode. (More command does have some presence in my life...)
+
+**Commands Used:**
+`more`
+`vim`
+`cat`
+`ssh -i`
+---
+
+# Level 27 -> 28
 
 **Challenge:**
+
