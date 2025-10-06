@@ -1,4 +1,4 @@
-Each of NotebookLM contains 10 videos of Professor Messer (Da G), which I learn in a day.
+Each of NotebookLM contains 10 videos of Network+ by Professor Messer (Da G), which I learn in a day.
 
 1.  https://notebooklm.google.com/notebook/3a2fb8da-f618-45bf-9743-882ce08ed3d8
 
