@@ -990,5 +990,11 @@ NOTE: if you’re a Windows user and typically use Powershell to ssh into bandit
 
 # Level 27 -> 28
 
-**Challenge:**
+**Challenge:** There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.
+
+Clone the repository and find the password for the next level.
+
+**Methodology:**
+1.  Logged in as `bandit27` using the password we got from the last time.
+2.  
 
