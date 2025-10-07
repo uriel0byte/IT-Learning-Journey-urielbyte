@@ -996,5 +996,34 @@ Clone the repository and find the password for the next level.
 
 **Methodology:**
 1.  Logged in as `bandit27` using the password we got from the last time.
-2.  
+2.  Make a temporary directory for cloning the repo `mktemp -d` and `cd` into it.
+3.  First, I tried normal git clone because I've seen people used this command so I'll just try it. `git clone ssh://bandit27-git@localhost/home/bandit27-git/repo` but it doesn't work. I think it's because I didn't specify the port, as seen in the instruction and the response from the server.
+4.  So I scrolled through `man git` and found `GIT_SSH_COMMAND` so I quickly looked up this command in google. Gemini answer how can I do it so I did `GIT_SSH_COMMAND='ssh -p2220' git clone ssh://bandit27-git@localhost/home/bandit27-git/repo` and I successfully cloned the repo.
+5.  Use `ls` to list all the files in the repo. Found `README` just like in github so I just `cat` it and I got the password.
 
+[![asciicast](https://asciinema.org/a/747287.svg)](https://asciinema.org/a/747287)
+
+**Key Takeaway:** Learn more about Git 
+
+   ```bash
+   >$ whatis git
+   Git (3pm)        - Perl interface to the Git version control system
+   git (1)          - the stupid content tracker
+   ```
+
+**Commands Used:**
+`git`
+`git clone`
+`GIT_SSH_COMMAND`
+`cd`
+`ls`
+`cat`
+`mktemp -d`
+---
+
+# Level 28 -> 29
+
+**Challenge:**
+
+**Methodology:**
+1.  Logged in as `bandit28` using the password we got from the last time.
