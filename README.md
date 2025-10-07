@@ -95,7 +95,6 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 * **Roadmaps & Knowledge Bases:**
     * Roadmap.sh: [Roadmap.sh Profile](https://roadmap.sh/u/urielbyte)
-    [![roadmap.sh](https://roadmap.sh/card/tall/68a1ad2ddb704a26333adc9f?variant=dark)](https://roadmap.sh)
     * LabEx and Linux Journey: [LabEx Profile](https://labex.io/users/uriel0byte-11746032)
     * 90DaysOfCyberSecurity: [90DaysOfCyberSecurity](https://github.com/farhanashrafdev/90DaysOfCyberSecurity/tree/main)
     * The Book of Secret Knowledge: [the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge?tab=readme-ov-file#manualshowtostutorials-toc)
@@ -125,4 +124,6 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 ---
 
-_Last Updated: [2025-09-23]_
+[![roadmap.sh](https://roadmap.sh/card/tall/68a1ad2ddb704a26333adc9f?variant=dark)](https://roadmap.sh)
+
+_Last Updated: [2025-10-07]_
