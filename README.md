@@ -14,7 +14,7 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 
 **Name:** [Supawat, uriel]
 
-**Goals:**
+**Goals: Basically Blue Team Stuff**
 - [ ] Linux
 - [ ] Basic Networking
 - [ ] Window and Active Directory
