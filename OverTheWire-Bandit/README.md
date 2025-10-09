@@ -999,7 +999,7 @@ Clone the repository and find the password for the next level.
 2.  Make a temporary directory for cloning the repo `mktemp -d` and `cd` into it.
 3.  First, I tried normal git clone because I've seen people used this command so I'll just try it. `git clone ssh://bandit27-git@localhost/home/bandit27-git/repo` but it doesn't work. I think it's because I didn't specify the port, as seen in the instruction and the response from the server.
 4.  So I scrolled through `man git` and found `GIT_SSH_COMMAND` so I quickly looked up this command in google. Gemini answer how can I do it so I did `GIT_SSH_COMMAND='ssh -p2220' git clone ssh://bandit27-git@localhost/home/bandit27-git/repo` and I successfully cloned the repo.
-5.  Use `ls` to list all the files in the repo. Found `README` just like in github so I just `cat` it and I got the password.
+5.  Use `ls` to list all the files in the repo. Found `README.md` just like in github so I just `cat` it and I got the password.
 
 [![asciicast](https://asciinema.org/a/747287.svg)](https://asciinema.org/a/747287)
 
@@ -1023,7 +1023,53 @@ Clone the repository and find the password for the next level.
 
 # Level 28 -> 29
 
-**Challenge:**
+**Challenge:** There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo via the port 2220. The password for the user bandit28-git is the same as for the user bandit28.
+
+Clone the repository and find the password for the next level.
 
 **Methodology:**
 1.  Logged in as `bandit28` using the password we got from the last time.
+2.  Make a temporary directory for cloning the repo `mktemp -d` and `cd` into it.
+3.  Just do what we did at the level 27->28. It's the same process here.
+4.  Found `README.md` like the same so I `cat` it, but the content is pretty weird.
+  
+    ```bash
+    bandit28@bandit:/tmp/tmp.rgf8fgsvFe/repo$ cat README.md 
+    # Bandit Notes
+    Some notes for level29 of bandit.
+
+    ## credentials
+
+    - username: bandit29
+    - password: xxxxxxxxxx
+    ```
+   
+6.  So I did `git log` (I have seen this command before) and saw that there are a few of commits. So I start from the first one.
+7.  At first, I did not know which command to use so I did `man git` and `git --help` and luckily found the right command which is `git show`
+8.  So I did `git show 710c14a2e43cfd97041924403e00efb00b3a956e` and I found the password that got deleted.
+
+[![asciicast](https://asciinema.org/a/747719.svg)](https://asciinema.org/a/747719)
+
+**Key Takeaway:** Learn more about Git. 
+
+**Commands Used:**
+`git`
+`git clone`
+`git log`
+`git show`
+`GIT_SSH_COMMAND`
+`cd`
+`ls`
+`cat`
+`mktemp -d`
+---
+
+# Level 29 -> 30
+
+**Challenge:** 
+
+Clone the repository and find the password for the next level.
+
+**Methodology:**
+1.  Logged in as `bandit28` using the password we got from the last time.
+2.  
