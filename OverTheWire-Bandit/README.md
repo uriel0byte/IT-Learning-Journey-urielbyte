@@ -1030,7 +1030,7 @@ Clone the repository and find the password for the next level.
 **Methodology:**
 1.  Logged in as `bandit28` using the password we got from the last time.
 2.  Make a temporary directory for cloning the repo `mktemp -d` and `cd` into it.
-3.  Just do what we did at the level 27->28. It's the same process here.
+3.  Just do what we did at the level 27->28. It's the same process here. Clone the repo with `GIT_SSH_COMMAND` to specify the port
 4.  Found `README.md` like the same so I `cat` it, but the content is pretty weird.
   
     ```bash
@@ -1066,10 +1066,39 @@ Clone the repository and find the password for the next level.
 
 # Level 29 -> 30
 
-**Challenge:** 
+**Challenge:** There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit29.
 
 Clone the repository and find the password for the next level.
 
 **Methodology:**
-1.  Logged in as `bandit28` using the password we got from the last time.
+1.  Logged in as `bandit29` using the password we got from the last time.
+2.  Make a temporary directory for cloning the repo `mktemp -d` and `cd` into it.
+3.  Just do what we did at the level 27->28. It's the same process here. Clone the repo with `GIT_SSH_COMMAND` to specify the port
+4.  Cat `README.md` like the same, but the content says like it's in production and i also check log and by the name it's really nothing. I know that GitHub has branches so I assume that Git would have too. Git branching is another feature of the version control system. It allows you to split the development into different branches.
+5.  So I do `git branch -la` to list all branches and found there are some branches so I start from the top and fortunately it's the one. I think you can take the clue that in master brach README.md says that the password is in production which implies it's in development.
+6.  So I do `git checkout dev` to switch to that branch.
+7.  When I was in, I just normally do `ls` found README.md and just `cat README.md` and there's the password!
+
+[![asciicast](https://asciinema.org/a/748174.svg)](https://asciinema.org/a/748174)
+
+*Key Takeaway:** Learn more about Git. 
+
+**Commands Used:**
+`GIT_SSH_COMMAND`
+`git`
+`git clone`
+`git branch -a`
+`git checkout`
+`cd`
+`ls`
+`cat`
+`mktemp -d`
+---
+
+# Level 30 -> 31
+
+**Challenge:** 
+
+**Methodology:**
+1.  Logged in as `bandit30` using the password we got from the last time.
 2.  
