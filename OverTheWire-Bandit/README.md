@@ -1050,7 +1050,7 @@ Clone the repository and find the password for the next level.
 
 [![asciicast](https://asciinema.org/a/747719.svg)](https://asciinema.org/a/747719)
 
-**Key Takeaway:** Learn more about Git. 
+**Key Takeaway:** Learn more about Git Log. 
 
 **Commands Used:**
 `git`
@@ -1081,7 +1081,7 @@ Clone the repository and find the password for the next level.
 
 [![asciicast](https://asciinema.org/a/748174.svg)](https://asciinema.org/a/748174)
 
-*Key Takeaway:** Learn more about Git. 
+*Key Takeaway:** Learn more about Git Branching. 
 
 **Commands Used:**
 `GIT_SSH_COMMAND`
@@ -1097,8 +1097,70 @@ Clone the repository and find the password for the next level.
 
 # Level 30 -> 31
 
-**Challenge:** 
+**Challenge:** There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.
+
+Clone the repository and find the password for the next level.
 
 **Methodology:**
 1.  Logged in as `bandit30` using the password we got from the last time.
-2.  
+2.  Make a temporary directory for cloning the repo `mktemp -d` and `cd` into it.
+3.  Just do what we did at the level 27->28. It's the same process here. Clone the repo with `GIT_SSH_COMMAND` to specify the port
+4.  Cat `README.md` like the same, but the content says It's empty, so I checked branches and there is nothing also logs too. So it took me a while, to find the right command.
+5.  `git tag` Git tagging is a way to mark specific points in the history of the repository. One example would be to mark release points of the software.
+6.  So I did `git tag` to show all the tags. Found `secret` tag.
+7.  After that, just do `git show secret` and got the password!
+
+[![asciicast](https://asciinema.org/a/748408.svg)](https://asciinema.org/a/748408)
+
+*Key Takeaway:** Learn more about Git Tagging. 
+
+**Commands Used:**
+`GIT_SSH_COMMAND`
+`git`
+`git clone`
+`git tag`
+`git show`
+`cd`
+`ls`
+`cat`
+`mktemp -d`
+---
+
+# Level 31 -> 32
+
+**Challenge:** There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31.
+
+Clone the repository and find the password for the next level.
+
+**Methodology:**
+1.  Logged in as `bandit31` using the password we got from the last time.
+2.  Make a temporary directory for cloning the repo `mktemp -d` and `cd` into it.
+3.  Just do what we did at the level 27->28. It's the same process here. Clone the repo with `GIT_SSH_COMMAND` to specify the port
+4.  Cat `README.md` like the same, and the content says that we have to add files with specific content and push it.
+5.  So first I did `echo "May I come in?" > key.txt`.
+6.  Check the `.gitignore` and found that `.txt` files will be ignore unless we delete this .gitignore or use `-f` to force add when using `git add`
+7.  So I `rm ./.gitignore` then `git add key.txt` to update that this file will be part of the next commit.
+8.  Next do `git commit` to saves the currently made changes with a message describing these changes. Nano will pop up and just add your comment, save it and exit nano.
+9.  This steps really piss me but you don't have to feel what felt. Just do `GIT_SSH_COMMAND='ssh -p2220 git push` and we got the password!
+
+[![asciicast](https://asciinema.org/a/748412.svg)](https://asciinema.org/a/748412)
+
+*Key Takeaway:** Learn more about Git Tagging. 
+
+**Commands Used:**
+`GIT_SSH_COMMAND`
+`git clone`
+`git add`
+`git commit`
+`git push`
+---
+
+# Level 32 -> 33
+
+**Challenge:**
+
+**Methodology:**
+1.  Logged in as `bandit31` using the password we got from the last time.
+2.  Make a temporary directory for cloning the repo `mktemp -d` and `cd` into it.
+3.  Just do what we did at the level 27->28. It's the same process here. Clone the repo with `GIT_SSH_COMMAND` to specify the port
+4.  
