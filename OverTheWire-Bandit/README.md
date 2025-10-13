@@ -1157,10 +1157,25 @@ Clone the repository and find the password for the next level.
 
 # Level 32 -> 33
 
-**Challenge:**
+**Challenge:** After all this git stuff, it’s time for another escape. Good luck!
 
 **Methodology:**
-1.  Logged in as `bandit31` using the password we got from the last time.
-2.  Make a temporary directory for cloning the repo `mktemp -d` and `cd` into it.
-3.  Just do what we did at the level 27->28. It's the same process here. Clone the repo with `GIT_SSH_COMMAND` to specify the port
-4.  
+1.  Logged in as `bandit32` using the password we got from the last time.
+2.  I have to admit that this level confused me a lot. I had to look up a walkthrough online...
+3.  So I'll drop the walkthrough here (https://mayadevbe.me/posts/overthewire/bandit/level33/) read the walkthrough and all the comment section. Really help!
+4.  I think I am not qualified to write a walkthrough on this level yet... So I leave it here. Just a mark on this level that I have done it but not fully understand.
+
+[![asciicast](https://asciinema.org/a/748611.svg)](https://asciinema.org/a/748611)
+
+*Key Takeaway:** Learn more about Variables and Shell Variables. 
+
+**Commands Used:**
+`$0`
+`cat`
+`ssh`
+`man`
+---
+
+# Level 33 -> 34
+
+At this moment, level 34 does not exist yet.
