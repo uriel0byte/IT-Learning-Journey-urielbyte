@@ -119,8 +119,8 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 ## 📌Current Focus / What's Next
 
 -   Completing the "Linux Fundamentals" it's about time to move on to Networking (damn)
--   Start on Networking (sheit)
--   Completing Overthewire Bandit | Asciinema vs. Screenshots
+-   Start Network+ Series by Professor Messer (sheit)
+-   Start new Overthewire wargame
 
 ---
 
