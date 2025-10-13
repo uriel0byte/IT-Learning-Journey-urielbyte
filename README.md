@@ -34,11 +34,11 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 
 This phase is dedicated to building a strong foundation in core IT concepts and gaining hands-on experience through daily exercises.
 
-- **Linux basics and shell scripting**
+- **Linux basics**
 - **Networking fundamentals**
 - **Security fundamentals**
 - **Windows** Windows Server administration, Active Directory, and PowerShell scripting.
-- **Python** Basic Automation and scripting.
+- **Python and Shell scripting** Basic Automation and scripting.
 
 ---
 
@@ -52,7 +52,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ### Practical Hands-on Lab
 - [DOING] LabEx Linux Hands-on Labs: https://labex.io/free-labs/linux
-- [DOING] Overthewire Bandit: https://overthewire.org/wargames/bandit/
+- [DONE] Overthewire Bandit: https://overthewire.org/wargames/bandit/
 
 ## Networking (cool but hate it)
 - [DOING] Watch videos from Professor Messer's [N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
