@@ -9,6 +9,7 @@ A company stored a secret message on a server which got breached due to the admi
 3.  Tried using any hash cracking tools?
 
 # What is Hash?
+A hash (or hash value/digest) is the output of a mathematical hash function—an algorithm that takes an input of any size (like a password, file, or message) and converts it into a fixed-length string of characters.
 
 More info : https://primer.picoctf.org/#_hashing
 
