@@ -30,9 +30,9 @@ It's a type of substitution cipher where each letter in the plaintext (original 
 1. Open an online tool like Dcode or CyberChef or Use the terminal to decrypt the text.
 2. If you are not sure what is the type of encrypted text, you can use online tool to help you identify the type such as Dcode(https://www.dcode.fr/cipher-identifier) or Boxen(https://www.boxentriq.com/code-breaking/cipher-identifier).
 3. The provided text looks like Base64 (== at the end) so let's try that first.
-4. Select the Base64 Cipher Tool. or Using the CLI command echo "YidkM0JxZGtwQlRYdHFhR3g2YUhsZmF6TnFlVGwzWVROclgyMHdNakV5TnpVNGZRPT0nCg==" | base64 -d
-5. Got " b'd3BqdkpBTXtqaGx6aHlfazNqeTl3YTNrX20wMjEyNzU4fQ==' " still looks like Base64 so let's try that again, but it fail probably because of that b at the start and ' '. let's try to remove that and decrypt again.
-6. Got " wpjvJAM{jhlzhy_k3jy9wa3k_m0212758} " This one looks like a Caesar Cipher 
+4. Select the Base64 Cipher Tool. or Using the CLI command `echo "YidkM0JxZGtwQlRYdHFhR3g2YUhsZmF6TnFlVGwzWVROclgyMHdNakV5TnpVNGZRPT0nCg==" | base64 -d`
+5. Got `b'd3BqdkpBTXtqaGx6aHlfazNqeTl3YTNrX20wMjEyNzU4fQ=='` still looks like Base64 so let's try that again, but it fail probably because of that `b` at the start and `' '`. let's try to remove that and decrypt again.
+6. Got `wpjvJAM{jhlzhy_k3jy9wa3k_m0212758}` This one looks like a Caesar Cipher .
 7. Use Dcode(https://www.dcode.fr/caesar-cipher) to decrypt the message and we got the final flag.
 
 Answer: picoCTF{caesar_d3cr9pt3d_f0212758}
