@@ -138,7 +138,7 @@ Answer: THM{hail_the_caesar}
 No downloadable file, no ciphered or encoded text. Huh .......
 
 ## Steps
-1. The name says "comment". I think of comment in html langauge that make certain words or phrases unreadable by the browser or basically just a comment for developer to write something.
+1. The name says "comment". I think of comment in HTML langauge that make certain words or phrases unreadable by the browser or basically just a comment for developer to write something.
 2. Right click on the Task 10 block. Click Inspect or just F12.
 3. And there is a section that has a flag.
 
