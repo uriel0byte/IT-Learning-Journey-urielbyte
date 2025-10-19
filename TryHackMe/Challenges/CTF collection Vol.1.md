@@ -380,6 +380,7 @@ I just hacked my neighbor's WiFi and try to capture some packet. He must be up t
 4. Combine filters. For instance, tcp.port == 80 to see traffic on port 80.
 5. Use the 'Follow TCP Stream' option (right-click on a packet) to view the entire conversation for a specific connection. This can help isolate potential flags or messages more easily.
 6. I suggested looking at HTTP specifically because it's a common protocol used for web traffic, and flags are often embedded within HTTP requests or responses in network challenges. To determine which protocol to focus on, consider the context of your task or any hints provided. Analyzing the packet capture metadata can also reveal which protocols are present. For instance, if you notice a lot of traffic on port 80 or 443, it indicates HTTP or HTTPS traffic, respectively. By filtering for these protocols, you can more efficiently search for flags.
+7. Found a frame that has text file in it. Look closely...
 
 Answer: THM{d0_n07_574lk_m3}
 
