@@ -3,9 +3,9 @@
 0.  First connect to HTB using OpenVPN by download the VPN Config provided. After that, spawn the target machine.
   
 1.  Task 1
-    What does the 3-letter acronym SMB stand for?
+    Which TCP port is open on the machine? 
     
-    Answer: by using Nmap to run a port scan, scanning all ports with '-p-'. This can be really slow, so consider adding '-T5' to speed it up.
+    Answer: | by using Nmap to run a port scan, scanning all ports with '-p-'. This can be really slow, so consider adding '-T5' to speed it up.
 
 2.  Task 2
     Which service is running on the port that is open on the machine? 
@@ -13,7 +13,7 @@
     Answer:
 
 3.  Task 3
-    What type of database is Redis? Choose from the following options: (i) In-memory Database, (ii) Traditional Database
+    What type of database is Redis? Choose from the following options: (i) In-memory Database, (ii) Traditional Database 
 
     Answer:
 
