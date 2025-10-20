@@ -1,3 +1,5 @@
+# SMB
+
 # Steps
 0.  First connect to HTB using OpenVPN by download the VPN Config provided. After that, spawn the target machine.
   
