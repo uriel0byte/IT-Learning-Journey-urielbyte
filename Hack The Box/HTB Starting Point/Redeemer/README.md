@@ -1,5 +1,5 @@
 # Redis
-
+[Redis](https://github.com/uriel0byte/IT-Learning-Journey-urielbyte/blob/a3262fcf819cb81b6ac2389d7702883ebf3486a8/Notes/Redis/redis_ctf_writeup.md)
 
 # Steps
 
