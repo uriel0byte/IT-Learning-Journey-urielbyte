@@ -9,7 +9,7 @@ I accidentally wrote the flag down. Good thing I deleted it! You download the ch
 3.  You can 'checkout' commits to see the files inside them
 
 # What is Git Version Control
-
+[Git Notes](Notes/Git/git_version_control_writeup.md)
 
 # Steps
 1. Download the provided zip file.
