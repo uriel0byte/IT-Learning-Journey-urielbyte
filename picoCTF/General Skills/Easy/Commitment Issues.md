@@ -13,7 +13,9 @@ I accidentally wrote the flag down. Good thing I deleted it! You download the ch
 
 # Steps
 1. Download the provided zip file.
-2. 
-3. 
+2. Unzip the file and we got the "drop-in" directory.
+3. It's a git repo and there is a text.file there.
+4. So I first check the git log first. There are 2 commitment, so I check the first one with "git show <commit number>"
+5. Found the flag.
 
 Answer: picoCTF{s@n1t1z3_c785c319}
