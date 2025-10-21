@@ -19,41 +19,42 @@
 
 4.  Task 4
     Which command-line utility is used to interact with the Redis server? Enter the program name you would enter into the terminal without any arguments. 
-    Which flag is used with the Redis command-line utility to specify the hostname? 
+    Which flag is used with the Redis command-line utility to specify the hostname?
+    
     Answer:
 
-5.  Task 5
+6.  Task 5
     Which flag is used with the Redis command-line utility to specify the hostname? 
     
     Answer:
 
-6.  Task 6
+7.  Task 6
     Once connected to a Redis server, which command is used to obtain the information and statistics about the Redis server? 
     
     Answer:
     
-7.  Task 7
+8.  Task 7
     What is the version of the Redis server being used on the target machine?
     
     Answer:
 
-8.  Task 8
+9.  Task 8
     Which command is used to select the desired database in Redis? 
     
     Answer:
 
-9.  Task 9
+10.  Task 9
     How many keys are present inside the database with index 0? 
     
-    Answer
+     Answer:
 
-10.  Task 10
+11.  Task 10
      Which command is used to obtain all the keys in a database? 
     
      Answer:
 
 
-11.  Task 11
+12.  Task 11
      Submit root flag 
     
      Answer:
