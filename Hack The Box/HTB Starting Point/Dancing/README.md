@@ -1,4 +1,5 @@
 # SMB
+[SMB](https://github.com/uriel0byte/IT-Learning-Journey-urielbyte/blob/a5870a769d366e26fa15724fb5cdb73d495404f2/Notes/SMB/smb_ctf_writeup.md)
 
 # Steps
 0.  First connect to HTB using OpenVPN by download the VPN Config provided. After that, spawn the target machine.
