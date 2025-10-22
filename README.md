@@ -1,4 +1,4 @@
-# My IT Learning Journey
+# My Cyber Learning Journey
 
 ---
 
@@ -20,11 +20,12 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 - [ ] Window and Active Directory
 - [ ] Basic Python and Scripting
 - [ ] DFIR (Digital Forensics & Incident Response)
-- [ ] Threat Intelligence, Threat Hunting and OSINT
+- [ ] Threat Intelligence and Threat Hunting
+- [ ] OSINT
+- [ ] Log Analysis
 
 - [ ] SIEM, SOAR Operation
 - [ ] Incident Handling & Documentation & Reporting
-- [ ] Log Analysis
 - [ ] Network Traffic Analysis
 
 
