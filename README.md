@@ -87,9 +87,14 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 * **Labs & Hands-on:**
     * Hack The Box Academy: [HTB Profile](https://app.hackthebox.com/profile/#2566537)
     * TryHackMe: [THM Profile](https://tryhackme.com/p/poseidon.smash)
-    * OverTheWire Bandit: [Over The Wire Bandit](OverTheWire-Bandit/README.md)
+    * OverTheWire
+        - OverTheWire Bandit: [Over The Wire Bandit](OverTheWire-Bandit/README.md)
     * PicoCTF: [PicoCTF Profile](https://play.picoctf.org/users/urielbyte)
     * CyberDefenders: [CyberDef Profile](https://cyberdefenders.org/p/poseidon.smash)
+    * Rootme: [Rootme]
+    * Cybrary: [Cybrary]
+    * DFIR: [Diva DFIR Trainning]
+    * Blue Team Labs: [Blue Team]
     * NotebookLM : Creating Quizes and Flashcards.
     * Interesting additional resources :
         - Hacker101: https://www.hacker101.com/start-here
@@ -127,4 +132,4 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 [![roadmap.sh](https://roadmap.sh/card/tall/68a1ad2ddb704a26333adc9f?variant=dark)](https://roadmap.sh)
 
-_Last Updated: [2025-10-13]_
+_Last Updated: [2025-10-23]_
