@@ -18,7 +18,7 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 - [ ] Linux
 - [ ] Basic Networking
 - [ ] Window and Active Directory
-- [ ] Basic Python and Scripting
+- [ ] Basic Python, Scripting and Automation
 - [ ] DFIR (Digital Forensics & Incident Response)
 - [ ] Threat Intelligence and Threat Hunting
 - [ ] OSINT
