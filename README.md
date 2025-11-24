@@ -69,7 +69,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - [DOING] Watch the videos from Professor Messer's [SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
 
 ### Practical Hands-on Lab
-- [] NotebookLM - Create a summary and quizes.
+- [DOING] NotebookLM - Create a summary and quizes.
 
 ## Windows
 - [] HTB Windows Fundamentals: https://academy.hackthebox.com/module/details/49
