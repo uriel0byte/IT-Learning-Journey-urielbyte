@@ -66,7 +66,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - [] Networking: Packet/Traffic Analysis - Practical with Wireshark, Suricata, CTFs on packet/network analysis.
 
 ## Security+
-- [] Watch the videos from Professor Messer's [SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
+- [DOING] Watch the videos from Professor Messer's [SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
 
 ### Practical Hands-on Lab
 - [] NotebookLM - Create a summary and quizes.
