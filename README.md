@@ -125,7 +125,7 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 ## 📌Current Focus / What's Next
 
 -   Completing the "Linux Fundamentals" it's about time to move on to Networking (damn)
--   Start Network+ Series by Professor Messer (sheit)
+-   Start Security+ Series by Professor Messer
 -   Start new Overthewire wargame
 
 ---
