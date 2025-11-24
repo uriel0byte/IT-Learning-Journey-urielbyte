@@ -14,7 +14,7 @@ This repository is a public log of my self-paced IT learning journey. My goal is
 
 **Name:** [Supawat, uriel]
 
-**Goals: Blue Team | DFIR | Threat Intel | GRC | Investigor with OSINT**
+**Goals: Blue Team | DFIR | Threat Intel | GRC | Investigator with OSINT**
 - [ ] Linux
 - [ ] Basic Networking
 - [ ] Window and Active Directory
