@@ -92,7 +92,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
     * PicoCTF: [PicoCTF Profile](https://play.picoctf.org/users/urielbyte)
     * CyberDefenders: [CyberDef Profile](https://cyberdefenders.org/p/poseidon.smash)
     * Rootme: [Rootme]
-    * Cybrary: [Cybrary]
+    * Cybrary: [Cybrary](https://app.cybrary.it/browse/urielbyte)
     * DFIR: [Diva DFIR Trainning]
     * Blue Team Labs: [Blue Team]
     * NotebookLM : Creating Quizes and Flashcards.
