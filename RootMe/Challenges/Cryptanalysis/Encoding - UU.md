@@ -4,6 +4,9 @@
 
 Get the validation password. Very used by the HTTP protocol
 
+## What is UU
+UUEncoding is an algorithm for converting binary data into ASCII text available by default on Unix/Linux operating systems.
+
 ## Steps
 1.  Download the file.
 2.  Analyze the provided strings or use online identifiers like Dcode or Boxen.
