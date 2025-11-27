@@ -16,5 +16,5 @@ Each of NotebookLM contains 10 videos of Network+ by Professor Messer (Da G), wh
 
 8.  https://notebooklm.google.com/notebook/1feaf6a4-0f8a-4f62-9a0b-fbb1826d6956
 
-9.  There are all 8 parts of summary and quizes.
+There are all 8 parts of summary and quizes.
 
