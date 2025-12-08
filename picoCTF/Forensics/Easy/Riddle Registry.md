@@ -8,8 +8,8 @@ Find the PDF file here [Hidden Confidential](https://challenge-files.picoctf.net
 1.  Don't be fooled by the visible text; it’s just a decoy!
 2.  Look beyond the surface for hidden clues
 
-# What is 
-
+# What is Metadata
+Metadata in cybersecurity, particularly in the context of a CTF challenge, is the data that describes other data, and it serves as a critical, often overlooked, source of forensic evidence or hidden clues. This information can be embedded directly within files as EXIF data (revealing creation times, authors, or even GPS coordinates), exist as network traffic headers (detailing IP addresses, ports, and connection timings without showing the message content), or appear in web source code (like hidden HTML comments or specific HTTP response headers). In a CTF writeup, the metadata explanation demonstrates the process of using tools like exiftool or Wireshark to successfully extract these seemingly benign details, which ultimately unlock the path to finding the flag or exploiting a vulnerability.
 
 # Steps
 1. Download the provided PDF file.
