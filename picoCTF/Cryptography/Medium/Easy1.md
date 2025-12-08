@@ -9,8 +9,7 @@ We've given you the encrypted flag, key, and a table to help UFJKXQZQUNB with th
 2.  Please use all caps for the message.
 
 # Steps
-1. Download the encrypted flag using wget and read the file with cat
-2. Open an online tool like CyberChef
-3. Paste the encrypted text and put a ROT13 on. Increase the amount of rotation to the right one.
+1. Open CyberChef, put the Vigenere Decode in because when I first saw this I think of Viegenere, Copy the encrypted flag and the key.
+2. Voila!
 
-Answer: 
+Answer: picoCTF{CRYPTOISFUN}
