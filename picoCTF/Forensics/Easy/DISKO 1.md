@@ -36,7 +36,7 @@ Media descriptor 0xf8: This hex code identifies the type of media. 0xf8 typicall
 
 sectors 102400: This indicates the size of the volume. (102,400 sectors * 512 bytes/sector ≈ 50 MB).
 
-# In summary for your writeup: "Running the file command revealed that disko-1.dd is a raw disk image containing a FAT32 file system. This means we can analyze it using standard forensic tools or even mount it to browse the files directly."
+## In summary : Running the file command revealed that disko-1.dd is a raw disk image containing a FAT32 file system. This means we can analyze it using standard forensic tools or even mount it to browse the files directly.
 
 # Steps
 1. Download the disk image with wget.
