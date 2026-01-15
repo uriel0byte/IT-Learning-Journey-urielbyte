@@ -1,6 +1,6 @@
 # TryHackMe Advent of Cyber 2025 - Complete Documentation
 
-![AOC 2025 Certificate](TryHackMe/AOC-2025-Documentation/09-Certificates/aoc-2025-certificate.png)
+![AOC 2025 Certificate](./09-Certificates/aoc-2025-certificate.png)
 
 [![Days Completed](https://img.shields.io/badge/Days%20Completed-24%2F24-success)]()
 [![Certificate](https://img.shields.io/badge/Certificate-Earned-blue)]()
