@@ -1,0 +1,198 @@
+# TryHackMe Advent of Cyber 2025 - Complete Documentation
+
+![AOC 2025 Certificate](./certificates/aoc-2025-certificate.png)
+
+[![Days Completed](https://img.shields.io/badge/Days%20Completed-24%2F24-success)]()
+[![Certificate](https://img.shields.io/badge/Certificate-Earned-blue)]()
+[![Event](https://img.shields.io/badge/Event-December%202025-orange)]()
+
+## 🎯 Overview
+
+I completed TryHackMe's **Advent of Cyber 2025**—a 24-day intensive cybersecurity challenge that ran throughout December 2025. This repository documents my learning journey, practical skills gained, and how these experiences align with my Security+ certification goals and aspiration to become a SOC Analyst.
+
+### What is Advent of Cyber?
+
+Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event featuring daily hands-on challenges. The 2025 event covered offensive security, defensive security, DFIR, and cloud security with a focus on real-world scenarios.
+
+### My Achievement
+
+- ✅ Completed all 24 daily challenges
+- ✅ Earned certificate of completion
+- ✅ Invested 60+ hours in practical cybersecurity training
+- ✅ Gained hands-on experience with 15+ industry-standard security tools
+- ✅ Developed skills directly applicable to SOC Analyst roles
+
+## 📊 Skills Developed
+
+### Defensive Security
+![SIEM](https://img.shields.io/badge/SIEM-Splunk-green)
+![Alert Triage](https://img.shields.io/badge/SOC-Alert%20Triage-blue)
+![DFIR](https://img.shields.io/badge/DFIR-Forensics-purple)
+![Log Analysis](https://img.shields.io/badge/Logs-Analysis-orange)
+
+### Offensive Security
+![Web Exploitation](https://img.shields.io/badge/Web-Exploitation-red)
+![Network Scanning](https://img.shields.io/badge/Network-Nmap-yellow)
+![Phishing](https://img.shields.io/badge/Social-Engineering-pink)
+
+### Tools & Technologies
+![Linux](https://img.shields.io/badge/Linux-CLI-black)
+![Wireshark](https://img.shields.io/badge/Network-Wireshark-lightblue)
+![Azure](https://img.shields.io/badge/Cloud-Azure-blue)
+![cURL](https://img.shields.io/badge/API-cURL-green)
+
+## 📖 Repository Structure
+/AOC-2025-Documentation
+│
+├── README.md (This file)
+├── /01-Executive-Summary
+│ └── overview.md
+├── /02-Skills-Matrix
+│ ├── skills-mapping.md
+│ └── security-plus-alignment.md
+├── /03-Daily-Challenges
+│ ├── day-01-linux-cli.md
+│ ├── day-02-phishing.md
+│ ├── ... (all 24 days)
+│ └── day-24-curl-exploitation.md
+├── /04-Case-Studies
+│ ├── case-study-splunk-log-analysis.md
+│ ├── case-study-soc-alert-triage.md
+│ └── case-study-network-discovery.md
+├── /05-Technical-Skills
+│ └── tools-inventory.md
+├── /06-Learning-Journey
+│ ├── narrative.md
+│ └── reflections.md
+├── /07-Screenshots
+│ ├── day-01/
+│ └── ... (organized by day)
+├── /08-Resources
+│ └── references.md
+└── /09-Certificates
+└── aoc-2025-certificate.pdf
+
+
+## 🎯 Highlighted Case Studies
+
+### [Day 3: Splunk Log Analysis - Did you SIEM?](./04-Case-Studies/case-study-splunk-log-analysis.md)
+Analyzed web traffic and firewall logs using Splunk, identified attack chains from reconnaissance to data exfiltration, and detected SQL injection and ransomware staging attempts.
+
+**Skills:** SPL (Search Processing Language), anomaly detection, log correlation, incident investigation
+
+### [Day 10: SOC Alert Triaging](./04-Case-Studies/case-study-soc-alert-triage.md)
+Practiced real SOC analyst workflows using Microsoft Sentinel for alert prioritization and investigation in cloud environments.
+
+**Skills:** SIEM analysis, alert triage, Azure security, incident escalation
+
+### [Day 7: Network Discovery with Nmap](./04-Case-Studies/case-study-network-discovery.md)
+Performed network reconnaissance using Nmap to discover services, identify open ports, and map network infrastructure.
+
+**Skills:** Network scanning, service enumeration, protocol analysis, reconnaissance
+
+## 🛠️ Technical Skills Inventory
+
+### SIEM & Log Analysis
+- Splunk (SPL queries, dashboard creation, log correlation)
+- Microsoft Sentinel (Azure-based SIEM)
+- Anomaly detection and pattern recognition
+- Alert triage and investigation
+
+### Network Security
+- Nmap (port scanning, service discovery)
+- Wireshark (packet analysis)
+- Network protocol understanding
+- Traffic pattern analysis
+
+### Offensive Security
+- Web exploitation techniques
+- IDOR vulnerabilities
+- XSS (Cross-Site Scripting)
+- Phishing campaign creation
+- Social engineering tactics
+
+### Cloud Security
+- Microsoft Azure security services
+- Cloud-based SIEM operations
+- AWS security fundamentals
+
+### Operating Systems
+- Linux command-line interface
+- Windows security concepts
+- System administration tasks
+
+### Incident Response
+- Attack chain analysis
+- Threat hunting methodologies
+- C2 (Command & Control) detection
+- Forensic investigation techniques
+
+## 📈 Security+ Certification Alignment
+
+This AOC 2025 experience directly supports my Security+ (SY0-701) preparation:
+
+| Security+ Domain | AOC Days | Skills Gained |
+|-----------------|----------|---------------|
+| **Domain 1.0** - General Security Concepts | Days 2, 5, 11 | Authentication, authorization, attack types |
+| **Domain 2.0** - Threats & Vulnerabilities | Days 2, 5, 11, 24 | Phishing, XSS, IDOR, web exploitation |
+| **Domain 3.0** - Security Architecture | Days 7, 10 | Network architecture, cloud security |
+| **Domain 4.0** - Security Operations | Days 3, 10, 22 | SIEM, alert triage, threat hunting, C2 detection |
+
+## 📝 Learning Journey
+
+### Why I Participated
+As an ILS student transitioning to cybersecurity, I needed practical, hands-on experience to complement my Security+ theoretical studies. AOC 2025 provided structured daily challenges that built progressively from foundational to advanced concepts.
+
+### What I Learned
+- **Technical Skills:** SIEM operations, log analysis, network scanning, web exploitation
+- **Problem-Solving:** Systematic investigation methodologies, attack chain analysis
+- **Professional Skills:** Documentation, technical writing, time management
+- **Tool Proficiency:** Splunk, Nmap, Wireshark, cURL, Azure Sentinel
+
+### Growth & Challenges
+The event started with accessible Linux basics and gradually increased in complexity. Days 3 (Splunk) and 10 (Azure Sentinel) were particularly challenging, requiring deeper understanding of log correlation and cloud security. These challenges pushed me to research extensively and develop persistence when facing obstacles.
+
+### Connection to Career Goals
+Every skill learned aligns directly with SOC Analyst responsibilities: alert triage, log analysis, incident investigation, and threat detection. This practical experience complements my Security+ preparation and demonstrates to recruiters that I can apply theoretical knowledge in real scenarios.
+
+## 📊 Quantifiable Achievements
+
+- ✅ Completed 24 consecutive daily challenges
+- ✅ Analyzed 100+ security scenarios across multiple attack vectors
+- ✅ Gained hands-on experience with 15+ security tools
+- ✅ Invested 60+ hours in practical cybersecurity training
+- ✅ Documented comprehensive portfolio with 10,000+ words
+- ✅ Created 5+ detailed case studies demonstrating analytical skills
+- ✅ Investigated 24 mock security incidents from detection to resolution
+
+## 🎓 Next Steps
+
+### Immediate (Next 3 Months)
+- [ ] Complete CompTIA Security+ certification (scheduled for March 2026)
+- [ ] Continue TryHackMe SOC Level 1 learning path
+- [ ] Build home lab environment for continued practice
+
+### Short-term (3-6 Months)
+- [ ] Apply for SOC Analyst I positions
+- [ ] Pursue additional TryHackMe certifications (Junior SOC Analyst)
+- [ ] Contribute to cybersecurity communities
+
+### Long-term (6-12 Months)
+- [ ] Gain entry-level SOC experience
+- [ ] Pursue CompTIA CySA+ certification
+- [ ] Develop specialization (DFIR or threat hunting)
+
+## 🔗 Connect With Me
+
+- **GitHub:** [github.com/uriel0byte](https://github.com/uriel0byte)
+- **LinkedIn:** [Your LinkedIn Profile]
+- **TryHackMe:** [Your THM Profile]
+- **Email:** your.email@example.com
+
+## 📜 License
+
+This documentation is for educational and portfolio purposes. All challenges and content belong to TryHackMe. No flags or direct solutions are shared in compliance with TryHackMe's policies.
+
+---
+
+*Last Updated: 15 January 2026*
