@@ -42,36 +42,38 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 ![cURL](https://img.shields.io/badge/API-cURL-green)
 
 ## 📖 Repository Structure
+
+```
 /AOC-2025-Documentation
 │
 ├── README.md (This file)
 ├── /01-Executive-Summary
-│ └── overview.md
+│   └── overview.md
 ├── /02-Skills-Matrix
-│ ├── skills-mapping.md
-│ └── security-plus-alignment.md
+│   ├── skills-mapping.md
+│   └── security-plus-alignment.md
 ├── /03-Daily-Challenges
-│ ├── day-01-linux-cli.md
-│ ├── day-02-phishing.md
-│ ├── ... (all 24 days)
-│ └── day-24-curl-exploitation.md
+│   ├── day-01-linux-cli.md
+│   ├── day-02-phishing.md
+│   ├── ... (all 24 days)
+│   └── day-24-curl-exploitation.md
 ├── /04-Case-Studies
-│ ├── case-study-splunk-log-analysis.md
-│ ├── case-study-soc-alert-triage.md
-│ └── case-study-network-discovery.md
+│   ├── case-study-splunk-log-analysis.md
+│   ├── case-study-soc-alert-triage.md
+│   └── case-study-network-discovery.md
 ├── /05-Technical-Skills
-│ └── tools-inventory.md
+│   └── tools-inventory.md
 ├── /06-Learning-Journey
-│ ├── narrative.md
-│ └── reflections.md
+│   ├── narrative.md
+│   └── reflections.md
 ├── /07-Screenshots
-│ ├── day-01/
-│ └── ... (organized by day)
+│   ├── day-01/
+│   └── ... (organized by day)
 ├── /08-Resources
-│ └── references.md
+│   └── references.md
 └── /09-Certificates
-└── aoc-2025-certificate.pdf
-
+    └── aoc-2025-certificate.pdf
+```
 
 ## 🎯 Highlighted Case Studies
 
