@@ -1,9 +1,3 @@
-
----
-
-## 📋 Template 4: Skills Matrix
-
-```markdown
 # Skills Matrix - AOC 2025
 
 ## Overview
