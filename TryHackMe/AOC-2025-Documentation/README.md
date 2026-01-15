@@ -6,6 +6,16 @@
 [![Certificate](https://img.shields.io/badge/Certificate-Earned-blue)]()
 [![Event](https://img.shields.io/badge/Event-December%202025-orange)]()
 
+## Quick Stats
+
+- **Status:** Days 1-13 Complete | Days 14-24 In Progress
+- **Start Date:** December 1, 2025
+- **Completion:** 54% (13/24 days)
+- **Tools Mastered:** 25+
+- **Categories:** SIEM, Malware Analysis, Web Security, Cloud, AI Security
+
+---
+
 ## 🎯 Overview
 
 I completed TryHackMe's **Advent of Cyber 2025**—a 24-day intensive cybersecurity challenge that ran throughout December 2025. This repository documents my learning journey, practical skills gained, and how these experiences align with my Security+ certification goals and aspiration to become a SOC Analyst.
@@ -147,6 +157,19 @@ Performed network reconnaissance using Nmap to discover services, identify open 
 - C2 (Command & Control) detection
 - Forensic investigation techniques
 
+## 🎓 Security+ SY0-701 Connection
+
+This documentation demonstrates practical application of Security+ domains:
+
+- **Domain 1.0** (12%): Social engineering, authentication, authorization, cryptography
+- **Domain 2.0** (22%): Phishing, malware, vulnerabilities, password attacks, injection
+- **Domain 3.0** (18%): OS security, network architecture, cloud security, web apps
+- **Domain 4.0** (28%): **SIEM, log analysis, alert triage, incident response, threat hunting**
+- **Domain 5.0** (20%): Limited coverage (technical focus)
+
+**Strong Coverage:** Domains 2.0 and 4.0 = **50% of Security+ exam weight**
+
+
 ## 📈 Security+ Certification Alignment
 
 This AOC 2025 experience directly supports my Security+ (SY0-701) preparation:
@@ -185,22 +208,28 @@ Every skill learned aligns directly with SOC Analyst responsibilities: alert tri
 - ✅ Created 5+ detailed case studies demonstrating analytical skills
 - ✅ Investigated 24 mock security incidents from detection to resolution
 
-## 🎓 Next Steps
+## 📊 Challenge Overview (Days 1-13 Detailed)
 
-### Immediate (Next 3 Months)
-- [ ] Complete CompTIA Security+ certification (scheduled for March 2026)
-- [ ] Continue TryHackMe SOC Level 1 learning path
-- [ ] Build home lab environment for continued practice
+| Day | Title | Category | Difficulty | Tools | Status |
+|-----|-------|----------|------------|-------|--------|
+| 1 | Linux CLI | Foundational | ★☆☆☆ | Bash, grep, find | ✅ Complete |
+| 2 | Phishing | Offensive | ★★☆☆ | SET, SMTP | ✅ Complete |
+| 3 | Splunk SIEM | Defensive | ★★★☆ | Splunk, SPL | ✅ Complete |
+| 4 | AI in Security | Emerging Tech | ★★★☆ | AI agents | ✅ Complete |
+| 5 | IDOR | Web Security | ★★★☆ | DevTools, Burp | ✅ Complete |
+| 6 | Malware Analysis | DFIR | ★★★☆ | PeStudio, ProcMon | ✅ Complete |
+| 7 | Network Scanning | Network Sec | ★★☆☆ | Nmap, Netcat | ✅ Complete |
+| 8 | Prompt Injection | AI Security | ★★★☆ | Agentic AI | ✅ Complete |
+| 9 | Password Cracking | Cryptography | ★★★☆ | John, pdfcrack | ✅ Complete |
+| 10 | Alert Triaging | Cloud SIEM | ★★★★ | MS Sentinel, KQL | ✅ Complete |
+| 11 | XSS | Web Security | ★★★☆ | Browser DevTools | ✅ Complete |
+| 12 | Phishing Detection | Email Security | ★★★☆ | Email headers | ✅ Complete |
+| 13 | YARA Rules | DFIR | ★★★☆ | YARA engine | ✅ Complete |
+| 14-24 | TBD | Various | TBD | TBD | 🔄 In Progress |
 
-### Short-term (3-6 Months)
-- [ ] Apply for SOC Analyst I positions
-- [ ] Pursue additional TryHackMe certifications (Junior SOC Analyst)
-- [ ] Contribute to cybersecurity communities
+**Legend:** ★☆☆☆ Easy | ★★☆☆ Easy-Medium | ★★★☆ Medium | ★★★★ Medium-Hard
 
-### Long-term (6-12 Months)
-- [ ] Gain entry-level SOC experience
-- [ ] Pursue CompTIA CySA+ certification
-- [ ] Develop specialization (DFIR or threat hunting)
+---
 
 ## 🔗 Connect With Me
 
