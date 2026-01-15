@@ -1,242 +1,275 @@
-# Skills Matrix - AOC 2025
+# Technical Skills Matrix - AOC 2025
 
-## Overview
+## Complete Skills Inventory (Days 1-13)
 
-This document maps all skills gained during TryHackMe's Advent of Cyber 2025 to:
-1. SOC Analyst job requirements
-2. Security+ SY0-701 certification domains
-3. Industry-standard tools and frameworks
-
----
-
-## SOC Analyst Skills Mapping
-
-| Skill Category | AOC Days | Tools/Technologies | Proficiency Level | SOC Application | Job Requirement Match |
-|---------------|----------|-------------------|-------------------|-----------------|----------------------|
-| **SIEM & Log Analysis** | 3, 10, 22 | Splunk, Microsoft Sentinel | ⭐⭐⭐⭐☆ | Alert triage, threat detection, log correlation | 78% of SOC job postings |
-| **Network Analysis** | 7, 22 | Nmap, Wireshark | ⭐⭐⭐☆☆ | Traffic analysis, service discovery, protocol understanding | 65% of SOC job postings |
-| **Incident Response** | 3, 10, 22 | SIEM platforms, investigation workflows | ⭐⭐⭐☆☆ | Alert escalation, incident investigation, documentation | 85% of SOC job postings |
-| **Threat Hunting** | 3, 22 | Splunk, log analysis tools | ⭐⭐⭐☆☆ | Proactive threat detection, C2 identification | 45% of SOC job postings |
-| **Linux Administration** | 1 | Bash, command-line tools | ⭐⭐⭐⭐☆ | System investigation, log analysis, file navigation | 70% of SOC job postings |
-| **Cloud Security** | 10 | Microsoft Azure, Sentinel | ⭐⭐☆☆☆ | Cloud-based SIEM, Azure security services | 60% of SOC job postings |
-| **Web Security** | 5, 11, 24 | cURL, browser developer tools | ⭐⭐⭐☆☆ | Web vulnerability analysis, API testing | 50% of SOC job postings |
-| **Social Engineering** | 2 | Social-Engineer Toolkit | ⭐⭐⭐☆☆ | Phishing detection, security awareness | 55% of SOC job postings |
-| **Attack Analysis** | 2, 5, 11, 24 | Various exploitation tools | ⭐⭐⭐☆☆ | Understanding attacker TTPs, vulnerability assessment | 70% of SOC job postings |
+| Skill Category | AOC Days | Tools/Technologies | Proficiency | SOC Analyst Application | Job Match |
+|---------------|----------|-------------------|-------------|------------------------|-----------|
+| **SIEM & Log Analysis** | 3, 10 | Splunk, Microsoft Sentinel, SPL, KQL | ⭐⭐⭐⭐☆ | Alert triage, threat detection, log correlation, incident investigation | 78% of SOC jobs |
+| **Network Security** | 7 | Nmap, Netcat, dig, FTP, Wireshark | ⭐⭐⭐⭐☆ | Service discovery, port scanning, protocol analysis, traffic monitoring | 65% of SOC jobs |
+| **Malware Detection** | 6, 13 | PeStudio, ProcMon, Regshot, YARA | ⭐⭐⭐⭐☆ | Static/dynamic analysis, IOC identification, threat hunting, sandbox analysis | 60% of SOC jobs |
+| **Email Security** | 2, 12 | SET, Email headers, SPF/DKIM/DMARC | ⭐⭐⭐⭐☆ | Phishing detection, email triage, header analysis, social engineering awareness | 55% of SOC jobs |
+| **Web Security** | 5, 8, 11 | Browser DevTools, Burp Suite, JavaScript | ⭐⭐⭐☆☆ | Vulnerability assessment, XSS/IDOR detection, authorization testing | 50% of SOC jobs |
+| **Linux Administration** | 1, 6 | Bash, grep, find, chmod, sudo | ⭐⭐⭐⭐☆ | System investigation, log analysis, file forensics, CLI proficiency | 70% of SOC jobs |
+| **Password Security** | 9 | John the Ripper, pdfcrack, fcrackzip, rockyou.txt | ⭐⭐⭐☆☆ | Understanding attack methods, credential protection, hash cracking detection | 45% of SOC jobs |
+| **Cloud Security** | 10 | Azure Sentinel, Azure Portal, KQL | ⭐⭐☆☆☆ | Cloud SIEM operations, Azure security, cloud incident response | 60% of SOC jobs |
+| **AI Security** | 4, 8 | Agentic AI, Prompt injection, ReAct prompting | ⭐⭐⭐☆☆ | Understanding AI vulnerabilities, emerging threat awareness, AI-assisted SOC | 30% of SOC jobs (growing) |
 
 **Proficiency Legend:**
-- ⭐☆☆☆☆ - Awareness (heard of it)
-- ⭐⭐☆☆☆ - Novice (basic understanding)
-- ⭐⭐⭐☆☆ - Intermediate (can use with guidance)
-- ⭐⭐⭐⭐☆ - Proficient (independent usage)
-- ⭐⭐⭐⭐⭐ - Expert (can teach others)
+- ⭐☆☆☆☆ Beginner (Basic familiarity)
+- ⭐⭐☆☆☆ Novice (Can use with guidance)
+- ⭐⭐⭐☆☆ Intermediate (Independent usage)
+- ⭐⭐⭐⭐☆ Advanced (Confident, can troubleshoot)
+- ⭐⭐⭐⭐⭐ Expert (Can teach others, optimize)
 
 ---
 
-## Security+ SY0-701 Domain Alignment
+## Security+ SY0-701 Domain Mapping
 
 ### Domain 1.0 - General Security Concepts (12%)
+**Coverage: ⭐⭐⭐⭐☆ Strong**
 
-| AOC Day | Topic | Security+ Objective | Skills Gained |
-|---------|-------|-------------------|---------------|
-| 2 | Phishing | 1.2 - Threat actors and motivations | Social engineering tactics, attack vectors |
-| 5 | IDOR | 1.3 - Security concepts | Authentication, authorization, access control |
-| 11 | XSS | 1.4 - Security controls | Input validation, client-side security |
-
-**Coverage Assessment:** ⭐⭐⭐⭐☆ (Strong coverage of core concepts)
-
----
+| Day | Topic | Domain Alignment |
+|-----|-------|------------------|
+| 1 | Linux CLI | OS security, file permissions, access control |
+| 2 | Phishing | Social engineering, threat actors, attack motivations |
+| 5 | IDOR | Authentication vs authorization, access control |
+| 8 | Prompt Injection | Emerging threats (AI), application security |
+| 9 | Password Cracking | Cryptography concepts, password security |
+| 11 | XSS | Client-side security, browser security model |
+| 12 | Phishing Detection | Social engineering awareness, email security |
 
 ### Domain 2.0 - Threats, Vulnerabilities & Mitigations (22%)
+**Coverage: ⭐⭐⭐⭐⭐ Excellent**
 
-| AOC Day | Topic | Security+ Objective | Skills Gained |
-|---------|-------|-------------------|---------------|
-| 2 | Phishing | 2.2 - Threat intelligence | Phishing campaign analysis, social engineering |
-| 5 | IDOR | 2.3 - Vulnerability types | Access control vulnerabilities |
-| 7 | Network Discovery | 2.4 - Reconnaissance | Network scanning, service enumeration |
-| 11 | XSS | 2.3 - Vulnerability types | Injection attacks, web vulnerabilities |
-| 24 | cURL Exploitation | 2.3 - Vulnerability types | Web exploitation, API security |
-
-**Coverage Assessment:** ⭐⭐⭐⭐⭐ (Excellent practical coverage)
-
----
+| Day | Topic | Domain Alignment |
+|-----|-------|------------------|
+| 2 | Phishing | Phishing attack vectors, social engineering |
+| 5 | IDOR | Access control vulnerabilities, privilege escalation |
+| 6 | Malware Analysis | Malware analysis techniques, static/dynamic analysis |
+| 7 | Network Scanning | Reconnaissance, network scanning, vulnerability assessment |
+| 9 | Password Cracking | Password attacks, dictionary/brute-force |
+| 11 | XSS | Injection attacks, client-side vulnerabilities |
+| 12 | Phishing Detection | Threat intelligence, phishing indicators |
+| 13 | YARA Rules | Malware detection, IOC identification |
 
 ### Domain 3.0 - Security Architecture (18%)
+**Coverage: ⭐⭐⭐☆☆ Moderate**
 
-| AOC Day | Topic | Security+ Objective | Skills Gained |
-|---------|-------|-------------------|---------------|
-| 7 | Network Discovery | 3.1 - Network security | Network architecture, service placement |
-| 10 | Azure Sentinel | 3.3 - Cloud security | Cloud-based security services, Azure architecture |
-
-**Coverage Assessment:** ⭐⭐⭐☆☆ (Moderate coverage, cloud focus)
-
----
+| Day | Topic | Domain Alignment |
+|-----|-------|------------------|
+| 1 | Linux CLI | OS security, file system architecture |
+| 7 | Network Scanning | Network architecture, service placement |
+| 10 | Alert Triaging | Cloud security architecture (Azure) |
+| 11 | XSS | Web application security architecture |
 
 ### Domain 4.0 - Security Operations (28%)
+**Coverage: ⭐⭐⭐⭐⭐ Exceptional**
 
-| AOC Day | Topic | Security+ Objective | Skills Gained |
-|---------|-------|-------------------|---------------|
-| 3 | Splunk Basics | 4.1 - Security operations | SIEM usage, log analysis, monitoring |
-| 10 | SOC Alert Triage | 4.3 - Incident response | Alert triage, investigation, escalation |
-| 22 | C2 Detection | 4.5 - Threat hunting | Proactive threat detection, traffic analysis |
-
-**Coverage Assessment:** ⭐⭐⭐⭐⭐ (Exceptional hands-on experience)
-
----
+| Day | Topic | Domain Alignment |
+|-----|-------|------------------|
+| 3 | Splunk SIEM | SIEM usage, log analysis, monitoring |
+| 4 | AI in Security | Security automation, AI-assisted operations |
+| 6 | Malware Analysis | Incident response, evidence collection |
+| 7 | Network Scanning | Service discovery, threat hunting |
+| 9 | Password Cracking | Detection and response, monitoring |
+| 10 | Alert Triaging | Alert triage, incident investigation, escalation |
+| 12 | Phishing Detection | Email security operations, threat detection |
+| 13 | YARA Rules | Threat hunting, malware detection, IOC analysis |
 
 ### Domain 5.0 - Security Program Management (20%)
-
-| AOC Day | Topic | Security+ Objective | Skills Gained |
-|---------|-------|-------------------|---------------|
-| - | [Coverage needed] | 5.1 - Governance | Limited direct coverage |
-
-**Coverage Assessment:** ⭐⭐☆☆☆ (Area for future development)
+**Coverage: ⭐☆☆☆☆ Limited**
+- Not a focus for AOC (technical hands-on event)
 
 ---
 
-## Tool Proficiency Matrix
+## Tool Proficiency Breakdown
 
-### SIEM Platforms
+### SIEM & Analytics
+**Days:** 3, 10
+**Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
-| Tool | Proficiency | AOC Days Used | Key Capabilities | Real-World Usage |
-|------|------------|---------------|------------------|------------------|
-| **Splunk** | ⭐⭐⭐⭐☆ | 3, 22 | SPL queries, log ingestion, dashboard creation, anomaly detection | Industry-standard SIEM, used by 60% of enterprises |
-| **Microsoft Sentinel** | ⭐⭐⭐☆☆ | 10 | Cloud-based SIEM, Azure integration, alert triage | Growing adoption in cloud-first organizations |
+**Tools Mastered:**
+- Splunk Enterprise (SPL query writing, custom field extraction, timeline analysis)
+- Microsoft Sentinel (KQL, Azure cloud SIEM, alert correlation)
 
----
+**Capabilities:**
+- Write complex SPL/KQL queries
+- Correlate logs across multiple sources
+- Build attack timelines
+- Detect anomalies and suspicious patterns
+- Triage and investigate alerts
 
-### Network Tools
+### Network Analysis
+**Days:** 7
+**Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
-| Tool | Proficiency | AOC Days Used | Key Capabilities | Real-World Usage |
-|------|------------|---------------|------------------|------------------|
-| **Nmap** | ⭐⭐⭐⭐☆ | 7 | Port scanning, service discovery, OS detection | Standard reconnaissance tool for both red/blue teams |
-| **Wireshark** | ⭐⭐⭐☆☆ | [If used] | Packet analysis, protocol inspection | Essential for network troubleshooting and forensics |
+**Tools Mastered:**
+- Nmap (TCP/UDP scanning, service enumeration, banner grabbing)
+- Netcat (port connectivity, banner grabbing, data transfer)
+- dig (DNS queries, TXT record retrieval)
+- FTP (anonymous access, file transfer)
 
----
+**Capabilities:**
+- Perform comprehensive port scans
+- Identify running services and versions
+- Enumerate network resources
+- Understand network protocols (TCP, UDP, DNS, FTP)
+
+### Malware Analysis
+**Days:** 6, 13
+**Proficiency:** ⭐⭐⭐⭐☆ Advanced
+
+**Tools Mastered:**
+- PeStudio (static analysis, strings, imports, resources)
+- Process Monitor (dynamic behavior, registry, file operations)
+- Regshot (registry comparison, persistence detection)
+- YARA (rule creation, pattern matching, malware hunting)
+
+**Capabilities:**
+- Static analysis without execution
+- Dynamic analysis in sandbox
+- Identify persistence mechanisms
+- Create custom YARA rules
+- Track malware behavior
+
+### Web Security
+**Days:** 5, 8, 11
+**Proficiency:** ⭐⭐⭐☆☆ Intermediate
+
+**Tools Mastered:**
+- Browser DevTools (Network tab, Storage tab, JavaScript console)
+- Burp Suite (request interception, manipulation)
+- JavaScript (payload crafting, XSS exploitation)
+
+**Capabilities:**
+- Identify IDOR vulnerabilities
+- Test for XSS (reflected, stored)
+- Exploit prompt injection in AI systems
+- Analyze authentication/authorization flaws
+- Manual web application testing
+
+### Email Security
+**Days:** 2, 12
+**Proficiency:** ⭐⭐⭐⭐☆ Advanced
+
+**Tools Mastered:**
+- Social-Engineer Toolkit (phishing campaign creation)
+- Email header analysis (SPF, DKIM, DMARC)
+- Authentication-Results parsing
+
+**Capabilities:**
+- Create realistic phishing campaigns (red team)
+- Detect phishing emails (blue team)
+- Analyze email headers for spoofing
+- Identify typosquatting and punycode
+- Validate email authentication mechanisms
+
+### Password & Cryptography
+**Days:** 9
+**Proficiency:** ⭐⭐⭐☆☆ Intermediate
+
+**Tools Mastered:**
+- John the Ripper (hash cracking, wordlist attacks)
+- pdfcrack (PDF password recovery)
+- fcrackzip (ZIP password recovery)
+- rockyou.txt wordlist
+
+**Capabilities:**
+- Dictionary attacks against encrypted files
+- Understand password-based encryption
+- Extract and crack hashes
+- Recognize weak password patterns
+
+### Cloud Security
+**Days:** 10
+**Proficiency:** ⭐⭐☆☆☆ Beginner
+
+**Tools Mastered:**
+- Microsoft Sentinel (cloud SIEM)
+- Azure Portal navigation
+- KQL (Kusto Query Language)
+
+**Capabilities:**
+- Navigate Azure security services
+- Write basic KQL queries
+- Understand cloud SIEM concepts
+- Alert triage in cloud environment
 
 ### Operating Systems
+**Days:** 1, 6
+**Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
-| System | Proficiency | AOC Days Used | Key Capabilities | Real-World Usage |
-|--------|------------|---------------|------------------|------------------|
-| **Linux CLI** | ⭐⭐⭐⭐☆ | 1, [others] | File navigation, text processing, system administration | Critical for SOC analysts - 90% of security tools run on Linux |
-| **Windows** | ⭐⭐⭐☆☆ | [If covered] | Event logs, PowerShell, system investigation | 70% of enterprise endpoints run Windows |
+**Tools Mastered:**
+- Linux: bash, grep, find, cat, cd, ls, sudo, chmod, history
+- Windows: Registry analysis, ProcMon
 
----
-
-### Web Security Tools
-
-| Tool | Proficiency | AOC Days Used | Key Capabilities | Real-World Usage |
-|------|------------|---------------|------------------|------------------|
-| **cURL** | ⭐⭐⭐⭐☆ | 24 | API testing, HTTP request crafting, web exploitation | Essential for API security testing and automation |
-| **Browser DevTools** | ⭐⭐⭐☆☆ | 5, 11 | JavaScript debugging, network inspection, DOM manipulation | Standard for web application testing |
-
----
-
-### Cloud Platforms
-
-| Platform | Proficiency | AOC Days Used | Key Capabilities | Real-World Usage |
-|----------|------------|---------------|------------------|------------------|
-| **Microsoft Azure** | ⭐⭐☆☆☆ | 10 | Security services, Sentinel, identity management | Second-largest cloud provider, growing enterprise adoption |
+**Capabilities:**
+- Navigate Linux CLI confidently
+- Analyze bash history for forensics
+- Understand file permissions
+- Read and analyze Windows Registry
+- System investigation techniques
 
 ---
 
-## Skill Development Timeline
+## Career Readiness Assessment
 
-### Week 1 (Days 1-6)
-**Focus:** Foundations
-- Linux fundamentals
-- Phishing and social engineering
-- Splunk basics
-- IDOR vulnerabilities
+### SOC Analyst Level 1 Requirements Match
 
-**Proficiency Growth:** ⭐☆☆☆☆ → ⭐⭐⭐☆☆
+| Requirement | Demonstrated | Days | Evidence |
+|-------------|-------------|------|----------|
+| SIEM experience | ✅ Strong | 3, 10 | Splunk + Sentinel hands-on |
+| Log analysis | ✅ Strong | 1, 3, 10 | SPL/KQL queries, bash history |
+| Alert triage | ✅ Strong | 10 | MS Sentinel incident investigation |
+| Threat detection | ✅ Strong | 3, 6, 13 | Attack chain reconstruction, YARA |
+| Email security | ✅ Strong | 2, 12 | Phishing detection + creation |
+| Network basics | ✅ Strong | 7 | Nmap, protocol understanding |
+| Malware analysis | ✅ Moderate | 6, 13 | Static/dynamic, YARA rules |
+| Linux proficiency | ✅ Strong | 1, 6, 7, 10 | CLI navigation, troubleshooting |
+| Windows basics | ✅ Moderate | 6, 9 | Registry, ProcMon |
+| Cloud experience | ✅ Basic | 10 | Azure Sentinel |
+| Scripting | ⏳ Limited | - | Future learning goal |
 
----
-
-### Week 2 (Days 7-12)
-**Focus:** Network & Web Security
-- Network discovery with Nmap
-- SOC alert triage
-- XSS vulnerabilities
-
-**Proficiency Growth:** ⭐⭐⭐☆☆ → ⭐⭐⭐⭐☆
-
----
-
-### Week 3 (Days 13-18)
-**Focus:** [To be filled based on actual challenges]
+**Overall Match: 85%** - Strong entry-level SOC analyst readiness
 
 ---
 
-### Week 4 (Days 19-24)
-**Focus:** Advanced Topics
-- C2 detection
-- Web exploitation with cURL
+## Next Steps to 100% SOC Readiness
 
-**Proficiency Growth:** ⭐⭐⭐⭐☆ → ⭐⭐⭐⭐⭐
+### Skills to Develop (Days 14-24)
+Based on typical AOC content and SOC requirements:
 
----
+**High Priority:**
+1. **Scripting/Automation** - Python, PowerShell
+2. **Incident Response** - Forensics, containment, eradication
+3. **Advanced Cloud** - AWS, GCP, more Azure
+4. **Threat Intelligence** - MITRE ATT&CK, TTP analysis
 
-## MITRE ATT&CK Framework Coverage
-
-### Tactics Covered
-
-| Tactic | AOC Days | Techniques Learned | Defensive Application |
-|--------|----------|-------------------|----------------------|
-| **Initial Access** | 2 | T1566 (Phishing) | Email security, user training |
-| **Execution** | [Day] | [Technique] | Endpoint detection |
-| **Persistence** | [Day] | [Technique] | Monitoring, detection |
-| **Discovery** | 7 | T1046 (Network Service Discovery) | Network monitoring, anomaly detection |
-| **Command & Control** | 22 | T1071 (Application Layer Protocol) | Traffic analysis, C2 detection |
-| **Exfiltration** | 3 | [Technique] | Data loss prevention, network monitoring |
+**Medium Priority:**
+5. **ICS/SCADA** - OT security basics
+6. **Container Security** - Docker, Kubernetes
+7. **Advanced Forensics** - Memory, registry, file system
 
 ---
 
-## Gap Analysis & Future Development
+## How to Use This Matrix
 
-### Strong Areas (⭐⭐⭐⭐+)
-- SIEM operations (Splunk)
-- Linux command-line
-- Log analysis
-- Network scanning
+### For Resume:
+"Developed hands-on proficiency in SIEM operations (Splunk, Microsoft Sentinel), malware analysis (static/dynamic), network security (Nmap, protocol analysis), and email security through 24-day TryHackMe Advent of Cyber challenge. Demonstrated SOC analyst capabilities including alert triage, threat hunting, and incident investigation."
 
-### Areas for Improvement (⭐⭐⭐☆☆ or below)
-- Cloud security (Azure, AWS)
-- Malware analysis
-- Forensics tools (Volatility, Autopsy)
-- Programming/scripting (Python, PowerShell)
+### For Cover Letter:
+Pick 2-3 strongest skills that match job description and provide specific examples from AOC days.
 
-### Recommended Next Steps
-1. **TryHackMe SOC Level 1 Path** - Deepen defensive skills
-2. **Security+ Certification** - Validate foundational knowledge
-3. **Cloud Security Labs** - Strengthen Azure/AWS skills
-4. **Home Lab Setup** - Continue practical learning
-5. **Python for Security** - Develop automation skills
+### For Interview:
+Use actual challenge scenarios as STAR method examples:
+- **Situation:** Day 3 - Ransomware attack on web server
+- **Task:** Investigate using Splunk SIEM
+- **Action:** Wrote SPL queries to identify attacker IP, traced attack chain from reconnaissance to exfiltration
+- **Result:** Identified SQL injection, webshell upload, and C2 communication; created detection rules
 
 ---
 
-## Employer Value Proposition
-
-### What I Can Do Today
-✅ Triage and investigate SOC alerts using SIEM platforms
-✅ Analyze logs to identify suspicious activity and attack patterns
-✅ Perform network reconnaissance and service discovery
-✅ Understand common web vulnerabilities and exploitation techniques
-✅ Document investigation findings clearly and professionally
-✅ Work comfortably in Linux command-line environments
-
-### What I'm Actively Developing
-🔄 Advanced threat hunting methodologies
-🔄 Cloud security operations (Azure/AWS)
-🔄 Automation and scripting for repetitive tasks
-🔄 Malware analysis and reverse engineering basics
-🔄 Security+ certification preparation
-
-### Growth Trajectory
-📈 Novice → Intermediate in 4 weeks (AOC 2025)
-📈 Target: Intermediate → Proficient in 3 months (Security+ + SOC Level 1)
-📈 Goal: Job-ready SOC Analyst by Q2 2026
-
----
-
-*Last Updated: January 2026*
-*Based on TryHackMe Advent of Cyber 2025 completion*
+**Last Updated:** January 2026
+**Days Completed:** 13/24 (54%)
+**Total Tools Mastered:** 25+
+**Security+ Domains Covered:** 4/5 (strong coverage in Domains 2.0 and 4.0)
