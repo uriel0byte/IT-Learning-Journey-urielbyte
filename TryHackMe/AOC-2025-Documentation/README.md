@@ -78,8 +78,7 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 ├── /01-Executive-Summary
 │   └── overview.md
 ├── /02-Skills-Matrix
-│   ├── skills-mapping.md
-│   └── security-plus-alignment.md
+│   └── mapping.md
 ├── /03-Daily-Challenges
 │   ├── day-01-linux-cli.md
 │   ├── day-02-phishing.md
