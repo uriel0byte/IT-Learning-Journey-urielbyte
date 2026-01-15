@@ -29,18 +29,29 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 ![Alert Triage](https://img.shields.io/badge/SOC-Alert%20Triage-blue)
 ![Email Security](https://img.shields.io/badge/Email-Phishing%20Detection-purple)
 ![YARA](https://img.shields.io/badge/Detection-YARA%20Rules-orange)
+- SIEM (Splunk, Microsoft Sentinel) - Days 3, 10
+- Email Security (Phishing Detection) - Days 2, 12
+- Alert Triaging (Azure Sentinel) - Day 10
+- YARA Rules (Malware Detection) - Day 13
 
 ### Offensive Security
 ![Phishing](https://img.shields.io/badge/Social-Engineering-red)
 ![Web Exploitation](https://img.shields.io/badge/Web-XSS%20%26%20IDOR-red)
 ![Network Scanning](https://img.shields.io/badge/Network-Nmap-yellow)
+- Phishing Campaigns (SET) - Day 2
+- Web Exploitation (XSS, IDOR) - Days 5, 11
+- Network Scanning (Nmap) - Day 7
 
 ### DFIR & Malware
 ![Malware Analysis](https://img.shields.io/badge/Malware-Static%20%26%20Dynamic-darkred)
 ![YARA](https://img.shields.io/badge/Detection-YARA-orange)
+- Static/Dynamic Analysis (PeStudio, ProcMon) - Day 6
+- YARA Pattern Matching - Day 13
+
 
 ### Emerging Tech
 ![AI Security](https://img.shields.io/badge/AI-Security%20%26%20Exploitation-lightblue)
+- AI Security & Exploitation - Days 4, 8
 
 ### Tools & Technologies
 ![Linux](https://img.shields.io/badge/Linux-CLI-black)
