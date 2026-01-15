@@ -233,9 +233,9 @@ Every skill learned aligns directly with SOC Analyst responsibilities: alert tri
 ## 🔗 Connect With Me
 
 - **GitHub:** [github.com/uriel0byte](https://github.com/uriel0byte)
-- **LinkedIn:** [Your LinkedIn Profile]
-- **TryHackMe:** [Your THM Profile]
-- **Email:** your.email@example.com
+- **LinkedIn:** []
+- **TryHackMe:** []
+- **Email:** poseidon.smash@gmail.com
 
 ## 📜 License
 
@@ -243,4 +243,4 @@ This documentation is for educational and portfolio purposes. All challenges and
 
 ---
 
-*Last Updated: 15 January 2026*
+*Last Updated: January, 15 2026*
