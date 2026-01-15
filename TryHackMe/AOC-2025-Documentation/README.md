@@ -22,24 +22,31 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 - ✅ Gained hands-on experience with 15+ industry-standard security tools
 - ✅ Developed skills directly applicable to SOC Analyst roles
 
-## 📊 Skills Developed
+## 📊 Skills Developed (Days 1-13)
 
 ### Defensive Security
-![SIEM](https://img.shields.io/badge/SIEM-Splunk-green)
+![SIEM](https://img.shields.io/badge/SIEM-Splunk%20%26%20Sentinel-green)
 ![Alert Triage](https://img.shields.io/badge/SOC-Alert%20Triage-blue)
-![DFIR](https://img.shields.io/badge/DFIR-Forensics-purple)
-![Log Analysis](https://img.shields.io/badge/Logs-Analysis-orange)
+![Email Security](https://img.shields.io/badge/Email-Phishing%20Detection-purple)
+![YARA](https://img.shields.io/badge/Detection-YARA%20Rules-orange)
 
 ### Offensive Security
-![Web Exploitation](https://img.shields.io/badge/Web-Exploitation-red)
+![Phishing](https://img.shields.io/badge/Social-Engineering-red)
+![Web Exploitation](https://img.shields.io/badge/Web-XSS%20%26%20IDOR-red)
 ![Network Scanning](https://img.shields.io/badge/Network-Nmap-yellow)
-![Phishing](https://img.shields.io/badge/Social-Engineering-pink)
+
+### DFIR & Malware
+![Malware Analysis](https://img.shields.io/badge/Malware-Static%20%26%20Dynamic-darkred)
+![YARA](https://img.shields.io/badge/Detection-YARA-orange)
+
+### Emerging Tech
+![AI Security](https://img.shields.io/badge/AI-Security%20%26%20Exploitation-lightblue)
 
 ### Tools & Technologies
 ![Linux](https://img.shields.io/badge/Linux-CLI-black)
-![Wireshark](https://img.shields.io/badge/Network-Wireshark-lightblue)
-![Azure](https://img.shields.io/badge/Cloud-Azure-blue)
-![cURL](https://img.shields.io/badge/API-cURL-green)
+![Cloud](https://img.shields.io/badge/Cloud-Azure%20Sentinel-blue)
+![Password Cracking](https://img.shields.io/badge/Passwords-John%20%26%20Hashcat-darkgreen)
+
 
 ## 📖 Repository Structure
 
