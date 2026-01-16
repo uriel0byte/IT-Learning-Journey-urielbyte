@@ -15,7 +15,7 @@
 - **Status:** ✅ All 24 Days Complete
 - **Start Date:** December 1, 2025
 - **Completion:** 100% (24/24 days)
-- **Tools Mastered:** 50+
+- **Tools Mastered:** 40+
 - **Categories:** SIEM, Malware Analysis, Web Security, Cloud, AI Security, ICS/OT, Containers, Forensics
 
 ---
@@ -185,6 +185,8 @@ Performed network reconnaissance using Nmap to discover services, identify open 
 
 **Skills:** Network scanning, service enumeration, protocol analysis, reconnaissance
 
+---
+
 ## 🛠️ Technical Skills Inventory
 
 ### SIEM & Log Analysis
@@ -255,28 +257,21 @@ Performed network reconnaissance using Nmap to discover services, identify open 
 - Forensic investigation techniques
 - Multi-source log correlation
 
-## 🎓 Security+ SY0-701 Connection
-
-This documentation demonstrates practical application of Security+ domains:
-
-- **Domain 1.0** (12%): Social engineering, authentication, authorization, cryptography (Days 2, 5, 9, 11, 17, 18, 24)
-- **Domain 2.0** (22%): Phishing, malware, vulnerabilities, password attacks, injection, race conditions (Days 2, 5, 6, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24)
-- **Domain 3.0** (18%): OS security, network architecture, cloud security, web apps, containers, ICS/OT (Days 7, 10, 14, 16, 19, 23)
-- **Domain 4.0** (28%): **SIEM, log analysis, alert triage, incident response, threat hunting, forensics** (Days 3, 10, 13, 15, 16, 21, 22)
-- **Domain 5.0** (20%): Limited coverage (technical focus)
-
-**Strong Coverage:** Domains 2.0 and 4.0 = **50% of Security+ exam weight**
+---
 
 ## 📈 Security+ Certification Alignment
 
-This AOC 2025 experience directly supports my Security+ (SY0-701) preparation:
+This AOC 2025 experience directly supports my Security+ (SY0-701) preparation with strong coverage of **Domains 2.0 and 4.0, representing 50% of the exam weight.**
 
-| Security+ Domain | AOC Days | Skills Gained |
-|-----------------|----------|---------------|
-| **Domain 1.0** - General Security Concepts | Days 2, 5, 9, 11, 17, 18 | Authentication, authorization, attack types, cryptography |
-| **Domain 2.0** - Threats & Vulnerabilities | Days 2, 5, 6, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24 | Phishing, XSS, IDOR, malware, race conditions, C2, cloud misconfigs |
-| **Domain 3.0** - Security Architecture | Days 7, 10, 14, 16, 19, 23 | Network architecture, cloud security, containers, ICS/OT, forensics |
-| **Domain 4.0** - Security Operations | Days 3, 10, 13, 15, 16, 21, 22 | SIEM, alert triage, threat hunting, C2 detection, forensics, malware analysis |
+| Security+ Domain | Weight | AOC Days | Skills Gained |
+|-----------------|--------|----------|---------------|
+| **Domain 1.0** - General Security Concepts | 12% | Days 2, 5, 9, 11, 17, 18 | Authentication, authorization, attack types, cryptography |
+| **Domain 2.0** - Threats & Vulnerabilities | 22% | Days 2, 5, 6, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24 | Phishing, XSS, IDOR, malware, race conditions, C2, cloud misconfigs |
+| **Domain 3.0** - Security Architecture | 18% | Days 7, 10, 14, 16, 19, 23 | Network architecture, cloud security, containers, ICS/OT, forensics |
+| **Domain 4.0** - Security Operations | 28% | Days 3, 10, 13, 15, 16, 21, 22 | SIEM, alert triage, threat hunting, C2 detection, forensics, malware analysis |
+| **Domain 5.0** - Security Program Management | 20% | Limited coverage | Technical focus |
+
+---
 
 ## 📝 Learning Journey
 
@@ -295,6 +290,8 @@ The event started with accessible Linux basics and gradually increased in comple
 ### Connection to Career Goals
 Every skill learned aligns directly with SOC Analyst responsibilities: alert triage, log analysis, incident investigation, threat detection, and forensics. This practical experience complements my Security+ preparation and demonstrates to recruiters that I can apply theoretical knowledge in real scenarios.
 
+---
+
 ## 📊 Quantifiable Achievements
 
 - ✅ Completed 24 consecutive daily challenges
@@ -304,6 +301,8 @@ Every skill learned aligns directly with SOC Analyst responsibilities: alert tri
 - ✅ Documented comprehensive portfolio with 15,000+ words
 - ✅ Created 5+ detailed case studies demonstrating analytical skills
 - ✅ Investigated 24 mock security incidents from detection to resolution
+
+---
 
 ## 📊 Challenge Overview (All 24 Days)
 
