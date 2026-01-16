@@ -122,50 +122,50 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 │
 ├── README.md (This file)
 ├── /01-Executive-Summary
-│ └── overview.md
+│   └── overview.md
 ├── /02-Skills-Matrix
-│ └── mapping.md
+│   └── mapping.md
 ├── /03-Daily-Challenges
-│ ├── day-01-linux-cli.md
-│ ├── day-02-phishing.md
-│ ├── day-03-splunk-basics.md
-│ ├── day-04-ai-security.md
-│ ├── day-05-idor.md
-│ ├── day-06-malware-analysis.md
-│ ├── day-07-network-discovery.md
-│ ├── day-08-prompt-injection.md
-│ ├── day-09-password-cracking.md
-│ ├── day-10-soc-alert-triage.md
-│ ├── day-11-xss.md
-│ ├── day-12-phishing-detection.md
-│ ├── day-13-yara-rules.md
-│ ├── day-14-containers.md
-│ ├── day-15-web-forensics.md
-│ ├── day-16-registry-forensics.md
-│ ├── day-17-cyberchef.md
-│ ├── day-18-obfuscation.md
-│ ├── day-19-ics-scada.md
-│ ├── day-20-race-conditions.md
-│ ├── day-21-hta-malware.md
-│ ├── day-22-c2-detection.md
-│ ├── day-23-aws-iam.md
-│ └── day-24-curl-exploitation.md
+│   ├── day-01-linux-cli.md
+│   ├── day-02-phishing.md
+│   ├── day-03-splunk-basics.md
+│   ├── day-04-ai-security.md
+│   ├── day-05-idor.md
+│   ├── day-06-malware-analysis.md
+│   ├── day-07-network-discovery.md
+│   ├── day-08-prompt-injection.md
+│   ├── day-09-password-cracking.md
+│   ├── day-10-soc-alert-triage.md
+│   ├── day-11-xss.md
+│   ├── day-12-phishing-detection.md
+│   ├── day-13-yara-rules.md
+│   ├── day-14-containers.md
+│   ├── day-15-web-forensics.md
+│   ├── day-16-registry-forensics.md
+│   ├── day-17-cyberchef.md
+│   ├── day-18-obfuscation.md
+│   ├── day-19-ics-scada.md
+│   ├── day-20-race-conditions.md
+│   ├── day-21-hta-malware.md
+│   ├── day-22-c2-detection.md
+│   ├── day-23-aws-iam.md
+│   └── day-24-curl-exploitation.md
 ├── /04-Case-Studies
-│ ├── case-study-splunk-log-analysis.md
-│ ├── case-study-soc-alert-triage.md
-│ └── case-study-network-discovery.md
+│   ├── case-study-splunk-log-analysis.md
+│   ├── case-study-soc-alert-triage.md
+│   └── case-study-network-discovery.md
 ├── /05-Technical-Skills
-│ └── tools-inventory.md
+│   └── tools-inventory.md
 ├── /06-Learning-Journey
-│ ├── narrative.md
-│ └── reflections.md
+│   ├── narrative.md
+│   └── reflections.md
 ├── /07-Screenshots
-│ ├── day-01/
-│ └── ... (organized by day)
+│   ├── day-01/
+│   └── ... (organized by day)
 ├── /08-Resources
-│ └── references.md
+│   └── references.md
 └── /09-Certificates
-└── aoc-2025-certificate.pdf
+    └── aoc-2025-certificate.pdf
 ```
 
 ## 🎯 Highlighted Case Studies
@@ -189,51 +189,83 @@ Performed network reconnaissance using Nmap to discover services, identify open 
 
 ### SIEM & Log Analysis
 - Splunk (SPL queries, dashboard creation, log correlation)
-- Microsoft Sentinel (Azure-based SIEM)
+- Microsoft Sentinel (Azure-based SIEM, KQL queries)
+- RITA & Zeek (C2 detection, PCAP analysis)
+- Sysmon log analysis
+- Apache log forensics
 - Anomaly detection and pattern recognition
 - Alert triage and investigation
 
 ### Network Security
 - Nmap (port scanning, service discovery)
 - Wireshark (packet analysis)
+- RITA (beacon detection, threat hunting)
+- Zeek (network monitoring)
 - Network protocol understanding
 - Traffic pattern analysis
 
 ### Offensive Security
-- Web exploitation techniques
-- IDOR vulnerabilities
-- XSS (Cross-Site Scripting)
-- Phishing campaign creation
-- Social engineering tactics
+- Web exploitation techniques (XSS, IDOR, Race Conditions)
+- Command-line exploitation (cURL, bash scripting)
+- Phishing campaign creation (Social Engineering Toolkit)
+- Brute-force attacks
+- User-Agent spoofing
+- Cookie/session hijacking
 
 ### Cloud Security
 - Microsoft Azure security services
+- AWS IAM (privilege escalation, role assumption)
+- AWS S3 (bucket enumeration, data exfiltration)
 - Cloud-based SIEM operations
-- AWS security fundamentals
+- Container security (Docker escape)
+
+### Forensics & Malware Analysis
+- Windows Registry forensics (Registry Explorer)
+- Web attack forensics (Apache + Sysmon correlation)
+- HTA malware analysis
+- Static malware analysis
+- Code obfuscation/deobfuscation
+- YARA rules creation
+- IOC extraction
+
+### Cryptography & Encoding
+- CyberChef (multi-layer deobfuscation)
+- Base64, XOR, ROT13, MD5
+- Password cracking (John the Ripper, Hashcat)
+- Hash identification and cracking
+
+### ICS/OT Security
+- SCADA system understanding
+- PLC (Programmable Logic Controller) operations
+- Modbus TCP protocol
+- Python pymodbus library
+- Industrial control system security
 
 ### Operating Systems
 - Linux command-line interface
 - Windows security concepts
+- Bash scripting
+- PowerShell analysis
 - System administration tasks
 
 ### Incident Response
-- Attack chain analysis
+- Attack chain reconstruction
 - Threat hunting methodologies
 - C2 (Command & Control) detection
 - Forensic investigation techniques
+- Multi-source log correlation
 
 ## 🎓 Security+ SY0-701 Connection
 
 This documentation demonstrates practical application of Security+ domains:
 
-- **Domain 1.0** (12%): Social engineering, authentication, authorization, cryptography
-- **Domain 2.0** (22%): Phishing, malware, vulnerabilities, password attacks, injection
-- **Domain 3.0** (18%): OS security, network architecture, cloud security, web apps
-- **Domain 4.0** (28%): **SIEM, log analysis, alert triage, incident response, threat hunting**
+- **Domain 1.0** (12%): Social engineering, authentication, authorization, cryptography (Days 2, 5, 9, 11, 17, 18, 24)
+- **Domain 2.0** (22%): Phishing, malware, vulnerabilities, password attacks, injection, race conditions (Days 2, 5, 6, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24)
+- **Domain 3.0** (18%): OS security, network architecture, cloud security, web apps, containers, ICS/OT (Days 7, 10, 14, 16, 19, 23)
+- **Domain 4.0** (28%): **SIEM, log analysis, alert triage, incident response, threat hunting, forensics** (Days 3, 10, 13, 15, 16, 21, 22)
 - **Domain 5.0** (20%): Limited coverage (technical focus)
 
 **Strong Coverage:** Domains 2.0 and 4.0 = **50% of Security+ exam weight**
-
 
 ## 📈 Security+ Certification Alignment
 
@@ -241,10 +273,10 @@ This AOC 2025 experience directly supports my Security+ (SY0-701) preparation:
 
 | Security+ Domain | AOC Days | Skills Gained |
 |-----------------|----------|---------------|
-| **Domain 1.0** - General Security Concepts | Days 2, 5, 11 | Authentication, authorization, attack types |
-| **Domain 2.0** - Threats & Vulnerabilities | Days 2, 5, 11, 24 | Phishing, XSS, IDOR, web exploitation |
-| **Domain 3.0** - Security Architecture | Days 7, 10 | Network architecture, cloud security |
-| **Domain 4.0** - Security Operations | Days 3, 10, 22 | SIEM, alert triage, threat hunting, C2 detection |
+| **Domain 1.0** - General Security Concepts | Days 2, 5, 9, 11, 17, 18 | Authentication, authorization, attack types, cryptography |
+| **Domain 2.0** - Threats & Vulnerabilities | Days 2, 5, 6, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24 | Phishing, XSS, IDOR, malware, race conditions, C2, cloud misconfigs |
+| **Domain 3.0** - Security Architecture | Days 7, 10, 14, 16, 19, 23 | Network architecture, cloud security, containers, ICS/OT, forensics |
+| **Domain 4.0** - Security Operations | Days 3, 10, 13, 15, 16, 21, 22 | SIEM, alert triage, threat hunting, C2 detection, forensics, malware analysis |
 
 ## 📝 Learning Journey
 
@@ -252,45 +284,55 @@ This AOC 2025 experience directly supports my Security+ (SY0-701) preparation:
 As an ILS student transitioning to cybersecurity, I needed practical, hands-on experience to complement my Security+ theoretical studies. AOC 2025 provided structured daily challenges that built progressively from foundational to advanced concepts.
 
 ### What I Learned
-- **Technical Skills:** SIEM operations, log analysis, network scanning, web exploitation
-- **Problem-Solving:** Systematic investigation methodologies, attack chain analysis
+- **Technical Skills:** SIEM operations, log analysis, network scanning, web exploitation, container security, cloud security, ICS/OT security
+- **Problem-Solving:** Systematic investigation methodologies, attack chain analysis, multi-source log correlation
 - **Professional Skills:** Documentation, technical writing, time management
-- **Tool Proficiency:** Splunk, Nmap, Wireshark, cURL, Azure Sentinel
+- **Tool Proficiency:** Splunk, Nmap, Wireshark, cURL, Azure Sentinel, CyberChef, Burp Suite, Docker, AWS CLI, RITA, Zeek, Registry Explorer
 
 ### Growth & Challenges
-The event started with accessible Linux basics and gradually increased in complexity. Days 3 (Splunk) and 10 (Azure Sentinel) were particularly challenging, requiring deeper understanding of log correlation and cloud security. These challenges pushed me to research extensively and develop persistence when facing obstacles.
+The event started with accessible Linux basics and gradually increased in complexity. Days 3 (Splunk), 10 (Azure Sentinel), 15 (Web Forensics), 19 (ICS/SCADA), and 22 (C2 Detection) were particularly challenging, requiring deeper understanding of log correlation, cloud security, industrial systems, and network-based threat hunting. These challenges pushed me to research extensively and develop persistence when facing obstacles.
 
 ### Connection to Career Goals
-Every skill learned aligns directly with SOC Analyst responsibilities: alert triage, log analysis, incident investigation, and threat detection. This practical experience complements my Security+ preparation and demonstrates to recruiters that I can apply theoretical knowledge in real scenarios.
+Every skill learned aligns directly with SOC Analyst responsibilities: alert triage, log analysis, incident investigation, threat detection, and forensics. This practical experience complements my Security+ preparation and demonstrates to recruiters that I can apply theoretical knowledge in real scenarios.
 
 ## 📊 Quantifiable Achievements
 
 - ✅ Completed 24 consecutive daily challenges
 - ✅ Analyzed 100+ security scenarios across multiple attack vectors
-- ✅ Gained hands-on experience with 15+ security tools
+- ✅ Gained hands-on experience with 50+ security tools
 - ✅ Invested 60+ hours in practical cybersecurity training
-- ✅ Documented comprehensive portfolio with 10,000+ words
+- ✅ Documented comprehensive portfolio with 15,000+ words
 - ✅ Created 5+ detailed case studies demonstrating analytical skills
 - ✅ Investigated 24 mock security incidents from detection to resolution
 
-## 📊 Challenge Overview (Days 1-13 Detailed)
+## 📊 Challenge Overview (All 24 Days)
 
 | Day | Title | Category | Difficulty | Tools | Status |
 |-----|-------|----------|------------|-------|--------|
-| 1 | Linux CLI | Foundational | ★☆☆☆ | Bash, grep, find | ✅ Complete |
-| 2 | Phishing | Offensive | ★★☆☆ | SET, SMTP | ✅ Complete |
-| 3 | Splunk SIEM | Defensive | ★★★☆ | Splunk, SPL | ✅ Complete |
-| 4 | AI in Security | Emerging Tech | ★★★☆ | AI agents | ✅ Complete |
-| 5 | IDOR | Web Security | ★★★☆ | DevTools, Burp | ✅ Complete |
-| 6 | Malware Analysis | DFIR | ★★★☆ | PeStudio, ProcMon | ✅ Complete |
-| 7 | Network Scanning | Network Sec | ★★☆☆ | Nmap, Netcat | ✅ Complete |
-| 8 | Prompt Injection | AI Security | ★★★☆ | Agentic AI | ✅ Complete |
-| 9 | Password Cracking | Cryptography | ★★★☆ | John, pdfcrack | ✅ Complete |
-| 10 | Alert Triaging | Cloud SIEM | ★★★★ | MS Sentinel, KQL | ✅ Complete |
-| 11 | XSS | Web Security | ★★★☆ | Browser DevTools | ✅ Complete |
-| 12 | Phishing Detection | Email Security | ★★★☆ | Email headers | ✅ Complete |
-| 13 | YARA Rules | DFIR | ★★★☆ | YARA engine | ✅ Complete |
-| 14-24 | TBD | Various | TBD | TBD | 🔄 In Progress |
+| 1 | Shells Bells | Linux CLI | ★☆☆☆ | Bash, grep, find | ✅ Complete |
+| 2 | Merry Clickmas | Phishing | ★★☆☆ | SET, SMTP | ✅ Complete |
+| 3 | Did you SIEM? | Splunk SIEM | ★★★☆ | Splunk, SPL | ✅ Complete |
+| 4 | old sAlnt nick | AI Security | ★★★☆ | AI agents | ✅ Complete |
+| 5 | Santa's Little IDOR | IDOR | ★★★☆ | DevTools, Burp | ✅ Complete |
+| 6 | Egg-xecutal | Malware Analysis | ★★★☆ | PeStudio, ProcMon | ✅ Complete |
+| 7 | Scan-ta Clause | Network Discovery | ★★☆☆ | Nmap, Netcat | ✅ Complete |
+| 8 | Sched-yule conflict | Prompt Injection | ★★★☆ | Agentic AI | ✅ Complete |
+| 9 | A Cracking Christmas | Password Cracking | ★★★☆ | John, pdfcrack | ✅ Complete |
+| 10 | Tinsel Triage | SOC Alert Triage | ★★★★ | MS Sentinel, KQL | ✅ Complete |
+| 11 | Merry XSSMas | XSS | ★★★☆ | Browser DevTools | ✅ Complete |
+| 12 | Phishmas Greetings | Phishing Detection | ★★★☆ | Email headers | ✅ Complete |
+| 13 | YARA mean one! | YARA Rules | ★★★☆ | YARA engine | ✅ Complete |
+| 14 | DoorDasher's Demise | Containers | ★★★☆ | Docker | ✅ Complete |
+| 15 | Drone Alone | Web Forensics | ★★★★ | Splunk, Sysmon | ✅ Complete |
+| 16 | Registry Furensics | Windows Forensics | ★★★☆ | Registry Explorer | ✅ Complete |
+| 17 | Hoperation Save McSkidy | CyberChef | ★★★☆ | CyberChef | ✅ Complete |
+| 18 | The Egg Shell File | Obfuscation | ★★★☆ | CyberChef, PowerShell | ✅ Complete |
+| 19 | Claus for Concern | ICS/SCADA | ★★★★ | Python, Modbus | ✅ Complete |
+| 20 | Toy to The World | Race Conditions | ★★★☆ | Burp Suite | ✅ Complete |
+| 21 | Malhare.exe | HTA Malware | ★★★★ | pluma, CyberChef | ✅ Complete |
+| 22 | Command & Carol | C2 Detection | ★★★☆ | RITA, Zeek | ✅ Complete |
+| 23 | S3cret Santa | AWS Security | ★★★☆ | AWS CLI | ✅ Complete |
+| 24 | Hoperation Eggsploit | cURL Exploitation | ★★★☆ | cURL, bash | ✅ Complete |
 
 **Legend:** ★☆☆☆ Easy | ★★☆☆ Easy-Medium | ★★★☆ Medium | ★★★★ Medium-Hard
 
@@ -309,4 +351,4 @@ This documentation is for educational and portfolio purposes. All challenges and
 
 ---
 
-*Last Updated: January, 15 2026*
+*Last Updated: January 17, 2026*
