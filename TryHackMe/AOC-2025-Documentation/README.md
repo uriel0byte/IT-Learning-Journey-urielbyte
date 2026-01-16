@@ -12,11 +12,11 @@
 
 ## Quick Stats
 
-- **Status:** Days 1-13 Complete | Days 14-24 In Progress
+- **Status:** ✅ All 24 Days Complete
 - **Start Date:** December 1, 2025
-- **Completion:** 54% (13/24 days)
-- **Tools Mastered:** 25+
-- **Categories:** SIEM, Malware Analysis, Web Security, Cloud, AI Security
+- **Completion:** 100% (24/24 days)
+- **Tools Mastered:** 50+
+- **Categories:** SIEM, Malware Analysis, Web Security, Cloud, AI Security, ICS/OT, Containers, Forensics
 
 ---
 
@@ -39,48 +39,81 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 
 - ✅ Completed all 24 daily challenges
 - ✅ Earned certificate of completion
-- ✅ Invested 40+ hours in practical cybersecurity training
-- ✅ Gained hands-on experience with 15+ industry-standard security tools
-- ✅ Developed skills
+- ✅ Invested 60+ hours in practical cybersecurity training
+- ✅ Gained hands-on experience with 50+ industry-standard security tools
+- ✅ Developed skills across 15+ cybersecurity domains
 
 ---
 
-## 📊 Skills Developed (Days 1-13)
+## 📊 Skills Developed (All 24 Days)
 
 ### Defensive Security
 ![SIEM](https://img.shields.io/badge/SIEM-Splunk%20%26%20Sentinel-green)
 ![Alert Triage](https://img.shields.io/badge/SOC-Alert%20Triage-blue)
 ![Email Security](https://img.shields.io/badge/Email-Phishing%20Detection-purple)
 ![YARA](https://img.shields.io/badge/Detection-YARA%20Rules-orange)
-- SIEM (Splunk, Microsoft Sentinel) - Days 3, 10
+![Forensics](https://img.shields.io/badge/DFIR-Registry%20%26%20Web%20Forensics-darkblue)
+![C2 Detection](https://img.shields.io/badge/Threat%20Hunting-RITA%20%26%20Zeek-teal)
+
+- SIEM (Splunk, Microsoft Sentinel) - Days 3, 10, 15
 - Email Security (Phishing Detection) - Days 2, 12
 - Alert Triaging (Azure Sentinel) - Day 10
 - YARA Rules (Malware Detection) - Day 13
+- Windows Registry Forensics - Day 16
+- Web Attack Forensics (Apache logs, Sysmon) - Day 15
+- C2 Detection (RITA, Zeek) - Day 22
 
 ### Offensive Security
 ![Phishing](https://img.shields.io/badge/Social-Engineering-red)
-![Web Exploitation](https://img.shields.io/badge/Web-XSS%20%26%20IDOR-red)
+![Web Exploitation](https://img.shields.io/badge/Web-XSS%20%26%20IDOR%20%26%20Race%20Conditions-red)
 ![Network Scanning](https://img.shields.io/badge/Network-Nmap-yellow)
+![cURL](https://img.shields.io/badge/CLI-cURL%20Exploitation-darkred)
+
 - Phishing Campaigns (SET) - Day 2
-- Web Exploitation (XSS, IDOR) - Days 5, 11
+- Web Exploitation (XSS, IDOR, Race Conditions) - Days 5, 11, 20
 - Network Scanning (Nmap) - Day 7
+- Command-line Web Hacking (cURL) - Day 24
 
 ### DFIR & Malware
 ![Malware Analysis](https://img.shields.io/badge/Malware-Static%20%26%20Dynamic-darkred)
 ![YARA](https://img.shields.io/badge/Detection-YARA-orange)
+![HTA Analysis](https://img.shields.io/badge/HTA-Malware%20Analysis-crimson)
+![Obfuscation](https://img.shields.io/badge/Deobfuscation-PowerShell%20%26%20Base64-maroon)
+
 - Static/Dynamic Analysis (PeStudio, ProcMon) - Day 6
 - YARA Pattern Matching - Day 13
+- HTA Malware Analysis - Day 21
+- Code Obfuscation & Deobfuscation - Day 18
+- Registry Forensics - Day 16
+- Web Attack Forensics - Day 15
 
+### Cloud & Containers
+![AWS](https://img.shields.io/badge/Cloud-AWS%20IAM%20%26%20S3-orange)
+![Containers](https://img.shields.io/badge/Containers-Docker-blue)
+
+- AWS IAM Privilege Escalation - Day 23
+- Docker Container Escape - Day 14
+- Cloud Security Misconfigurations - Days 14, 23
 
 ### Emerging Tech
 ![AI Security](https://img.shields.io/badge/AI-Security%20%26%20Exploitation-lightblue)
+![ICS/SCADA](https://img.shields.io/badge/ICS%2FOT-Modbus%20%26%20SCADA-darkgreen)
+
 - AI Security & Exploitation - Days 4, 8
+- ICS/SCADA/Modbus Security - Day 19
+
+### Cryptography & Encoding
+![CyberChef](https://img.shields.io/badge/CyberChef-Encoding%20%26%20Decoding-purple)
+![Password Cracking](https://img.shields.io/badge/Passwords-John%20%26%20Hashcat-darkgreen)
+
+- CyberChef (Encoding/Decoding) - Day 17
+- Password Cracking - Day 9
+- Base64, XOR, MD5, ROT13 - Days 17, 18
 
 ### Tools & Technologies
 ![Linux](https://img.shields.io/badge/Linux-CLI-black)
-![Cloud](https://img.shields.io/badge/Cloud-Azure%20Sentinel-blue)
-![Password Cracking](https://img.shields.io/badge/Passwords-John%20%26%20Hashcat-darkgreen)
-
+![Burp Suite](https://img.shields.io/badge/Burp-Suite-orange)
+![Python](https://img.shields.io/badge/Python-Scripting-blue)
 
 ## 📖 Repository Structure
 
@@ -89,30 +122,50 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 │
 ├── README.md (This file)
 ├── /01-Executive-Summary
-│   └── overview.md
+│ └── overview.md
 ├── /02-Skills-Matrix
-│   └── mapping.md
+│ └── mapping.md
 ├── /03-Daily-Challenges
-│   ├── day-01-linux-cli.md
-│   ├── day-02-phishing.md
-│   ├── ... (all 24 days)
-│   └── day-24-curl-exploitation.md
+│ ├── day-01-linux-cli.md
+│ ├── day-02-phishing.md
+│ ├── day-03-splunk-basics.md
+│ ├── day-04-ai-security.md
+│ ├── day-05-idor.md
+│ ├── day-06-malware-analysis.md
+│ ├── day-07-network-discovery.md
+│ ├── day-08-prompt-injection.md
+│ ├── day-09-password-cracking.md
+│ ├── day-10-soc-alert-triage.md
+│ ├── day-11-xss.md
+│ ├── day-12-phishing-detection.md
+│ ├── day-13-yara-rules.md
+│ ├── day-14-containers.md
+│ ├── day-15-web-forensics.md
+│ ├── day-16-registry-forensics.md
+│ ├── day-17-cyberchef.md
+│ ├── day-18-obfuscation.md
+│ ├── day-19-ics-scada.md
+│ ├── day-20-race-conditions.md
+│ ├── day-21-hta-malware.md
+│ ├── day-22-c2-detection.md
+│ ├── day-23-aws-iam.md
+│ └── day-24-curl-exploitation.md
 ├── /04-Case-Studies
-│   ├── case-study-splunk-log-analysis.md
-│   ├── case-study-soc-alert-triage.md
-│   └── case-study-network-discovery.md
+│ ├── case-study-splunk-log-analysis.md
+│ ├── case-study-soc-alert-triage.md
+│ └── case-study-network-discovery.md
 ├── /05-Technical-Skills
-│   └── tools-inventory.md
+│ └── tools-inventory.md
 ├── /06-Learning-Journey
-│   ├── narrative.md
-│   └── reflections.md
+│ ├── narrative.md
+│ └── reflections.md
 ├── /07-Screenshots
-│   ├── day-01/
-│   └── ... (organized by day)
+│ ├── day-01/
+│ └── ... (organized by day)
 ├── /08-Resources
-│   └── references.md
+│ └── references.md
 └── /09-Certificates
-    └── aoc-2025-certificate.pdf
+└── aoc-2025-certificate.pdf
 ```
 
 ## 🎯 Highlighted Case Studies
