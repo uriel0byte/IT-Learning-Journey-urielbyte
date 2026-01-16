@@ -1,4 +1,8 @@
-# TryHackMe Advent of Cyber 2025 - Complete Documentation
+# 🎄 Advent of Cyber 2025 Documentation
+
+**Documentation of my journey through TryHackMe's Advent of Cyber 2025 challenge**
+
+---
 
 ![AOC 2025 Certificate](./09-Certificates/aoc-2025-certificate.png)
 
@@ -16,21 +20,30 @@
 
 ---
 
-## 🎯 Overview
+## 📋 Project Overview
 
-I completed TryHackMe's **Advent of Cyber 2025**—a 24-day intensive cybersecurity challenge that ran throughout December 2025. This repository documents my learning journey, practical skills gained, and how these experiences align with my Security+ certification goals and aspiration to become a SOC Analyst.
+This repository contains comprehensive documentation of all 24 days of the **Advent of Cyber 2025** challenge by TryHackMe. As an ILS (Information and Library Science) student transitioning into cybersecurity, this challenge provided hands-on experience across multiple security domains.
+
+**Challenge Period:** December 1-24, 2025  
+**Completion Status:** ✅ 24/24 Days Completed  
+**Location:** Bangkok, Thailand  
+**Goal:** Build practical cybersecurity skills and earn industry-recognized certification
 
 ### What is Advent of Cyber?
 
 Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event featuring daily hands-on challenges. The 2025 event covered offensive security, defensive security, DFIR, and cloud security with a focus on real-world scenarios.
 
+---
+
 ### My Achievement
 
 - ✅ Completed all 24 daily challenges
 - ✅ Earned certificate of completion
-- ✅ Invested 60+ hours in practical cybersecurity training
+- ✅ Invested 40+ hours in practical cybersecurity training
 - ✅ Gained hands-on experience with 15+ industry-standard security tools
-- ✅ Developed skills directly applicable to SOC Analyst roles
+- ✅ Developed skills
+
+---
 
 ## 📊 Skills Developed (Days 1-13)
 
