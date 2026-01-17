@@ -29,6 +29,7 @@ The 2025 event covered a comprehensive range of cybersecurity domains:
 - Digital forensics and incident response (DFIR)
 - Threat hunting methodologies
 - Security monitoring
+- C2 beacon detection and analysis
 
 **Offensive Security:**
 - Web application exploitation
@@ -36,16 +37,26 @@ The 2025 event covered a comprehensive range of cybersecurity domains:
 - Social engineering and phishing
 - Vulnerability assessment
 - API security testing
+- Command-line exploitation
 
 **Cloud Security:**
 - Microsoft Azure security services
 - Cloud-based SIEM (Microsoft Sentinel)
+- AWS IAM and S3 security
+- Container security (Docker)
 - Cloud infrastructure protection
 
 **Emerging Technologies:**
 - AI agents in security operations
 - Automated vulnerability detection
 - Machine learning for threat detection
+- Prompt injection attacks
+
+**ICS/OT Security:**
+- SCADA systems
+- PLC operations
+- Modbus protocol
+- Industrial control systems
 
 ---
 
@@ -84,13 +95,14 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 
 - **Splunk:** Search Processing Language (SPL), dashboard creation, log ingestion, anomaly detection
 - **Microsoft Sentinel:** Cloud-based SIEM operations, Azure integration, alert triage
+- **RITA & Zeek:** C2 detection, network traffic analysis, PCAP processing
 - **Log Correlation:** Identifying attack chains across multiple data sources
 - **Anomaly Detection:** Spotting suspicious patterns in large datasets
 - **Incident Investigation:** Tracing attacker activity from initial access to exfiltration
 
 **Real-World Application:** These skills directly address the #1 requirement in SOC Analyst job postings, which mention SIEM expertise in 78% of listings.
 
-**Covered in:** Days 3, 10, 22
+**Covered in:** Days 3, 10, 15, 22
 
 ---
 
@@ -99,6 +111,8 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 
 - **Nmap:** Port scanning, service discovery, OS detection, network mapping
 - **Wireshark:** Packet capture analysis, protocol inspection
+- **RITA:** Beacon detection, threat hunting on network traffic
+- **Zeek:** Network monitoring, connection analysis, IDS capabilities
 - **Network Protocols:** TCP/IP, HTTP, MQTT, understanding of OSI model
 - **Service Enumeration:** Identifying running services and potential vulnerabilities
 - **Traffic Analysis:** Detecting C2 (Command & Control) communications
@@ -113,41 +127,121 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 **Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
 
 - **IDOR Vulnerabilities:** Understanding access control weaknesses
-- **XSS (Cross-Site Scripting):** Client-side injection attacks
+- **XSS (Cross-Site Scripting):** Client-side injection attacks, payload crafting
+- **Race Conditions:** Timing attacks, parallel request exploitation
 - **cURL Exploitation:** Direct HTTP manipulation, API testing
+- **Web Forensics:** Analyzing web attack patterns in logs (Apache + Sysmon)
 - **Authentication/Authorization:** Security model understanding
-- **Web Forensics:** Analyzing web attack patterns in logs
 
 **Real-World Application:** Web applications are the #1 attack surface for modern organizations.
 
-**Covered in:** Days 5, 11, 24
+**Covered in:** Days 5, 11, 15, 20, 24
 
 ---
 
 ### Social Engineering & Phishing
-**Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
+**Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
 
-- **Phishing Campaign Creation:** Using Social-Engineer Toolkit
+- **Phishing Campaign Creation:** Using Social-Engineer Toolkit (SET)
 - **Social Engineering Tactics:** Understanding psychological manipulation
-- **Detection Techniques:** Identifying phishing indicators
+- **Detection Techniques:** Identifying phishing indicators, email header analysis
+- **Email Forensics:** SPF/DKIM/DMARC validation, spoofing detection
 - **Security Awareness:** User training concepts
 
 **Real-World Application:** Phishing is involved in 90% of successful breaches.
 
-**Covered in:** Day 2
+**Covered in:** Days 2, 12
 
 ---
 
-### Cloud Security (Azure)
-**Proficiency Level:** ⭐⭐☆☆☆ (Novice-Intermediate)
+### Digital Forensics & Incident Response
+**Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
 
-- **Microsoft Azure:** Basic navigation and service understanding
-- **Azure Sentinel:** Cloud-native SIEM operations
+- **Windows Registry Forensics:** Registry Explorer, hive analysis, persistence detection
+- **Web Attack Forensics:** Apache logs, Sysmon correlation, command injection detection
+- **Malware Analysis:** HTA files, VBScript analysis, static analysis techniques
+- **Code Deobfuscation:** PowerShell, Base64, XOR, ROT13, multi-layer decoding
+- **C2 Detection:** RITA, Zeek, beacon analysis, DNS tunneling identification
+- **Attack Chain Reconstruction:** Identifying attacker progression through logs
+
+**Real-World Application:** DFIR skills are critical for incident response teams and SOC escalation paths.
+
+**Covered in:** Days 15, 16, 18, 21, 22
+
+---
+
+### Malware Analysis & Detection
+**Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
+
+- **Static Analysis:** PeStudio, strings analysis, PE headers, imports/exports examination
+- **Dynamic Analysis:** Process Monitor, Regshot, sandbox analysis, behavior tracking
+- **YARA Rules:** Pattern matching, IOC identification, threat hunting, custom rule creation
+- **Persistence Detection:** Registry analysis, startup locations, scheduled tasks
+- **HTA Malware:** HTML Application analysis, embedded VBScript detection
+
+**Real-World Application:** Essential for malware triage and threat intelligence operations.
+
+**Covered in:** Days 6, 13, 21
+
+---
+
+### Cryptography & Encoding
+**Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
+
+- **CyberChef:** Multi-layer deobfuscation, encoding chains, cryptographic operations
+- **Encoding Schemes:** Base64, XOR, ROT13, URL encoding, hexadecimal
+- **Password Cracking:** John the Ripper, dictionary attacks, wordlist usage (rockyou.txt)
+- **File Encryption:** pdfcrack, fcrackzip, attacking password-protected files
+- **Hash Analysis:** Understanding password-based encryption, hash identification
+
+**Real-World Application:** Understanding encoding is essential for malware analysis and data exfiltration detection.
+
+**Covered in:** Days 9, 17, 18, 21
+
+---
+
+### Cloud Security (AWS + Azure)
+**Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
+
+- **AWS IAM:** Privilege escalation, role assumption (AssumeRole), policy analysis
+- **AWS S3:** Bucket enumeration, data exfiltration, misconfiguration detection
+- **Microsoft Azure:** Basic navigation, service understanding, Azure security services
+- **Azure Sentinel:** Cloud-native SIEM operations, KQL queries
+- **Container Security:** Docker escape techniques, daemon API exploitation
 - **Cloud Security Concepts:** Shared responsibility model, cloud-specific threats
 
-**Real-World Application:** 90% of organizations use cloud services; Azure is the 2nd largest cloud provider.
+**Real-World Application:** Cloud security is now essential as 95% of organizations use multi-cloud environments.
 
-**Covered in:** Day 10
+**Covered in:** Days 10, 14, 23
+
+---
+
+### ICS/OT Security
+**Proficiency Level:** ⭐⭐☆☆☆ (Novice-Intermediate)
+
+- **SCADA Systems:** Understanding industrial control systems, operational technology
+- **PLC Operations:** Programmable Logic Controller basics, functionality
+- **Modbus TCP Protocol:** Reading/writing coils, holding registers, protocol interaction
+- **Python for ICS:** Using pymodbus library for protocol automation
+- **Industrial Security:** Understanding attacks on critical infrastructure
+
+**Real-World Application:** Critical infrastructure protection is increasingly important as ICS/OT systems face cyber threats.
+
+**Covered in:** Day 19
+
+---
+
+### AI Security & Emerging Threats
+**Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
+
+- **AI for Red Team:** Exploit generation, attack automation
+- **AI for Blue Team:** Log analysis, anomaly detection
+- **Prompt Injection:** Exploiting LLM vulnerabilities, agent manipulation, function leaking
+- **Agentic AI Security:** Understanding AI agent attack surfaces
+
+**Real-World Application:** As organizations adopt AI tools, understanding AI security vulnerabilities becomes critical.
+
+**Covered in:** Days 4, 8
 
 ---
 
@@ -155,9 +249,9 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 **Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
 
 - **Command Line:** File navigation, text processing, system administration
-- **Bash Commands:** grep, find, cat, chmod, etc.
+- **Bash Commands:** grep, find, cat, chmod, sudo, history analysis
 - **Log Analysis:** Using CLI tools to parse and analyze logs
-- **System Investigation:** File system forensics
+- **System Investigation:** File system forensics, bash history analysis
 
 **Real-World Application:** 90% of security tools run on Linux; essential for SOC work.
 
@@ -166,13 +260,13 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 ---
 
 ### Incident Response & Threat Hunting
-**Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
+**Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
 
 - **Alert Triage:** Prioritizing security alerts by severity and impact
 - **Investigation Workflows:** Systematic approach to incident analysis
-- **Threat Hunting:** Proactive searching for threats
-- **Attack Chain Analysis:** Understanding attacker progression
-- **C2 Detection:** Identifying command and control infrastructure
+- **Threat Hunting:** Proactive searching for threats using behavioral indicators
+- **Attack Chain Analysis:** Understanding attacker progression and motivations
+- **C2 Detection:** Identifying command and control infrastructure communication
 
 **Real-World Application:** Core SOC Analyst responsibilities.
 
@@ -183,12 +277,12 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 ## Quantifiable Achievements
 
 | Metric | Achievement |
-|--------|-------------|
+|--------|----------------|
 | **Challenges Completed** | 24/24 (100%) |
 | **Training Hours** | 60+ hours |
 | **Security Incidents Analyzed** | 24+ mock scenarios |
-| **Tools Mastered** | 15+ security tools |
-| **Documentation Created** | 10,000+ words |
+| **Tools Used** | 50+ security tools |
+| **Documentation Created** | 15,000+ words |
 | **Case Studies Written** | 3-5 detailed investigations |
 | **Screenshots Captured** | 50+ sanitized images |
 | **GitHub Commits** | 30+ portfolio updates |
@@ -222,10 +316,10 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 
 | Domain | Weight | AOC 2025 Coverage | Strength |
 |--------|--------|-------------------|----------|
-| **1.0 - General Security Concepts** | 12% | Days 2, 5, 11 | ⭐⭐⭐⭐☆ |
-| **2.0 - Threats & Vulnerabilities** | 22% | Days 2, 5, 7, 11, 24 | ⭐⭐⭐⭐⭐ |
-| **3.0 - Security Architecture** | 18% | Days 7, 10 | ⭐⭐⭐☆☆ |
-| **4.0 - Security Operations** | 28% | Days 3, 10, 22 | ⭐⭐⭐⭐⭐ |
+| **1.0 - General Security Concepts** | 12% | Days 2, 5, 9, 11, 17, 18 | ⭐⭐⭐⭐☆ |
+| **2.0 - Threats & Vulnerabilities** | 22% | Days 2, 5, 6, 7, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24 | ⭐⭐⭐⭐⭐ |
+| **3.0 - Security Architecture** | 18% | Days 1, 7, 10, 14, 16, 19, 23 | ⭐⭐⭐⭐☆ |
+| **4.0 - Security Operations** | 28% | Days 3, 6, 10, 12, 13, 15, 16, 21, 22 | ⭐⭐⭐⭐⭐ |
 | **5.0 - Security Program Management** | 20% | Limited coverage | ⭐⭐☆☆☆ |
 
 **Overall Alignment:** AOC 2025 provides strong practical reinforcement for 70% of Security+ exam content, particularly in Security Operations and Threats/Vulnerabilities—the highest-weighted domains.
@@ -245,7 +339,7 @@ As a result of completing AOC 2025 and creating this documentation, I can:
 ✅ **Work comfortably in Linux environments** for security operations  
 ✅ **Communicate technical findings clearly** through professional documentation  
 ✅ **Understand common attack vectors** and defensive strategies  
-✅ **Learn new tools quickly** as demonstrated by mastering 15+ tools in 24 days
+✅ **Learn new tools quickly** as demonstrated by mastering 50+ tools in 24 days
 
 ### What Sets Me Apart
 
@@ -284,9 +378,9 @@ Web security challenges (XSS, IDOR) connected offensive and defensive perspectiv
 **Key Breakthrough:** Defensive security requires thinking like an attacker.
 
 ### Week 4: Advanced Concepts
-C2 detection (Day 22) and advanced exploitation (Day 24) pushed me beyond comfort zones. These challenges required synthesizing skills from earlier days.
+Docker container escape (Day 14), forensics (Days 15, 16), CyberChef deobfuscation (Day 17), ICS/SCADA (Day 19), race conditions (Day 20), HTA malware (Day 21), C2 detection (Day 22), AWS security (Day 23), and cURL exploitation (Day 24) pushed me beyond comfort zones. These challenges required synthesizing skills from earlier days and introduced entirely new domains like industrial control systems and advanced cloud security.
 
-**Key Breakthrough:** Cybersecurity is about connecting dots across multiple data sources—no single indicator tells the whole story.
+**Key Breakthrough:** Cybersecurity is about connecting dots across multiple data sources—no single indicator tells the whole story. The ability to pivot between offensive and defensive perspectives strengthens both.
 
 ---
 
@@ -296,6 +390,7 @@ C2 detection (Day 22) and advanced exploitation (Day 24) pushed me beyond comfor
 - **Splunk SPL Syntax:** Spent 3+ extra hours mastering search language
 - **Azure Infrastructure Issues:** Day 10 had known issues; required patience and alternative approaches
 - **Network Protocol Understanding:** Needed additional research on MQTT and advanced HTTP concepts
+- **ICS/SCADA Concepts:** Industrial systems were unfamiliar; required conceptual understanding before practical application
 
 ### Time Management
 - **Holiday Season Conflicts:** Completed challenges during family obligations
@@ -352,9 +447,9 @@ This portfolio is organized to provide multiple entry points depending on reader
 ## Contact & Portfolio Links
 
 **GitHub:** [github.com/uriel0byte](https://github.com/uriel0byte)  
-**LinkedIn:** [Your LinkedIn Profile]  
-**TryHackMe Profile:** [Your THM Profile]  
-**Email:** your.email@example.com  
+**LinkedIn:** []  
+**TryHackMe Profile:** []  
+**Email:** poseidon.smash@gmail.com  
 
 **This Portfolio:**
 - Main Documentation: [Link to repo]
@@ -377,6 +472,6 @@ I am actively seeking SOC Analyst I positions where I can apply these skills, co
 
 ---
 
-*Last Updated: January 15, 2026*  
+*Last Updated: January 18, 2026*  
 *Advent of Cyber 2025: December 1-31, 2025*  
 *Documentation Created: January 2026*
