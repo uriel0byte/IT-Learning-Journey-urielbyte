@@ -155,7 +155,7 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 ---
 
 ### Digital Forensics & Incident Response
-**Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
+**Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
 
 - **Windows Registry Forensics:** Registry Explorer, hive analysis, persistence detection
 - **Web Attack Forensics:** Apache logs, Sysmon correlation, command injection detection
@@ -171,7 +171,7 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 ---
 
 ### Malware Analysis & Detection
-**Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
+**Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
 
 - **Static Analysis:** PeStudio, strings analysis, PE headers, imports/exports examination
 - **Dynamic Analysis:** Process Monitor, Regshot, sandbox analysis, behavior tracking
@@ -186,7 +186,7 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 ---
 
 ### Cryptography & Encoding
-**Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
+**Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
 
 - **CyberChef:** Multi-layer deobfuscation, encoding chains, cryptographic operations
 - **Encoding Schemes:** Base64, XOR, ROT13, URL encoding, hexadecimal
@@ -201,7 +201,7 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 ---
 
 ### Cloud Security (AWS + Azure)
-**Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
+**Proficiency Level:** ⭐⭐☆☆☆ (Novice-Intermediate)
 
 - **AWS IAM:** Privilege escalation, role assumption (AssumeRole), policy analysis
 - **AWS S3:** Bucket enumeration, data exfiltration, misconfiguration detection
@@ -260,7 +260,7 @@ This demonstrates my ability to maintain consistency, manage competing prioritie
 ---
 
 ### Incident Response & Threat Hunting
-**Proficiency Level:** ⭐⭐⭐⭐☆ (Proficient)
+**Proficiency Level:** ⭐⭐⭐☆☆ (Intermediate)
 
 - **Alert Triage:** Prioritizing security alerts by severity and impact
 - **Investigation Workflows:** Systematic approach to incident analysis
@@ -419,28 +419,6 @@ This portfolio is organized to provide multiple entry points depending on reader
 
 **For Peer Learners:**
 → Learning Journey Narrative + Resources
-
----
-
-## Next Steps in My Cybersecurity Journey
-
-### Immediate (Q1 2026)
-- [ ] Complete Security+ certification (exam scheduled March 2026)
-- [ ] Continue TryHackMe SOC Level 1 learning path
-- [ ] Build home lab for continued hands-on practice
-- [ ] Apply for SOC Analyst I / Junior SOC Analyst positions
-
-### Short-Term (Q2-Q3 2026)
-- [ ] Gain entry-level SOC experience
-- [ ] Pursue TryHackMe Junior SOC Analyst certification
-- [ ] Contribute to cybersecurity community (writeups, mentoring)
-- [ ] Deepen Azure/AWS cloud security knowledge
-
-### Long-Term (2026-2027)
-- [ ] Achieve 1 year SOC experience
-- [ ] Pursue CompTIA CySA+ certification
-- [ ] Develop specialization (DFIR, Threat Hunting, or Cloud Security)
-- [ ] Transition to SOC Analyst II role
 
 ---
 
