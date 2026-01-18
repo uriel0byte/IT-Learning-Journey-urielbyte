@@ -107,10 +107,10 @@ Phishing is involved in **90% of successful breaches**, making it the #1 initial
 
 ## 📸 Evidence
 
-![SET Phishing Campaign](../07-Screenshots/day-02/set-email-configuration.png)
+![SET Phishing Campaign]()
 *Configured Social-Engineer Toolkit to send spoofed phishing email from Flying Deer*
 
-![Credential Capture](../07-Screenshots/day-02/credentials-harvested.png)
+![Credential Capture]()
 *Successfully captured admin credentials via fake TBFC login portal*
 
 ---
