@@ -11,84 +11,78 @@
 
 ## 🎯 Challenge Overview
 
-### The Story
-McSkidy has been kidnapped! Without her, Wareville's defenses are faltering, and Christmas itself hangs by a thread. The TBFC (The Best Festival Company) team is investigating **tbfc-web01**, a server processing Christmas wishlists. Somewhere within its data may lie the truth: traces of McSkidy's final actions, or perhaps clues to King Malhare's twisted vision for EASTMAS.
+This challenge introduced Linux command-line basics through a narrative where McSkidy has been kidnapped. As part of the investigation team, I needed to analyze the **tbfc-web01** server to uncover clues by navigating the file system, searching for files, and examining command histories.
 
-### Official Learning Objectives
-- Learn the basics of the command-line interface (CLI)
-- Explore its use for personal objectives and IT administration
-- Apply knowledge to unveil Christmas mysteries
+**Learning Objectives:**
+- Master basic Linux CLI commands
+- Understand file system navigation and permissions
+- Apply CLI skills for security investigation
 
 ---
 
-## 🎯 What This Challenge Was About
-This was an introduction to Linux command-line basics. The challenge put me in the role of an IT administrator who needed to navigate the file system, search for files, and manage permissions. It started easy with basic commands and gradually introduced more complex tasks like finding hidden files and understanding file permissions.
-
 ## 💡 What I Learned
 
-### 1. Linux CLI Fundamentals
-**What clicked:** The power of the command line for system investigation. No GUI needed!
+### Linux CLI Fundamentals
+Gained hands-on experience with essential commands for system investigation:
+- **Navigation:** `ls`, `cd`, `pwd` for file system exploration
+- **File Operations:** `cat`, `grep`, `find` for searching and viewing files
+- **Hidden Files:** Using `ls -la` to reveal files starting with `.` (often used by attackers or system configs)
+- **Privilege Escalation:** `sudo su` to access root-level directories
+- **History Analysis:** Examining `.bash_history` for forensic investigation
 
-**Key commands I mastered:**
-- `echo "Hello World!"` - Basic output
-- `ls` / `ls -la` - List files (including hidden)
-- `cat filename` - Display file contents
-- `cd directory` - Change directory
-- `pwd` - Print working directory
-- `grep "pattern" file` - Search within files
-- `find /path -name pattern` - Search for files
-- `sudo su` - Switch to root user
-- `whoami` - Check current user
-- `history` - View command history
+### Bash History Forensics
+**Critical discovery:** The `.bash_history` file stores every command a user has executed, making it invaluable for incident investigation. I traced McSkidy's investigation trail and discovered suspicious commands from Sir Carrotbane showing data exfiltration via `curl` commands.
 
-### 2. Hidden Files in Linux
-**The dot (.) prefix:** Files starting with `.` are hidden from normal `ls` view. Used by:
-- System administrators (config files)
-- Attackers (malware, backdoors)
-- McSkidy (security guides!)
-
-**Discovery:** `ls -la` reveals ALL files, including hidden ones.
-
-### 3. Bash History Analysis
-**Major takeaway:** Every command is saved in `.bash_history` - a goldmine for forensic investigations!
-
-**What I found:**
-- McSkidy's investigation trail in `/home/mcskidy/.bash_history`
-- Root's suspicious commands in `/root/.bash_history`
-- Sir Carrotbane's malicious `curl` commands uploading stolen data
+**Security Insight:** Attackers often try to clear bash history, but finding it intact can reveal the entire attack chain.
 
 ---
 
 ## 🛠️ Tools & Techniques Used
 
 ### Tools
-1. **Bash Terminal** - Linux command-line interface
-2. **grep** - Pattern matching in files and logs
-3. **find** - File system search utility
-4. **cat** - File content viewer
+1. **Bash Terminal** - Linux command-line interface (Linux CLI)
+2. **grep** - Pattern matching in files and logs (pattern matching)
+3. **find** - File system search utility (file system search)
+4. **cat** - File content viewer 
 5. **sudo** - Privilege escalation
 
 ### Techniques
 - File system navigation
 - Hidden file discovery (`.` prefix)
 - Log analysis (`/var/log/auth.log`)
-- Bash history forensics
+- Bash Command history forensics
 - Root user investigation
 - Pattern matching with grep
 
 ---
 
-## 🤔 Challenge I Faced
+## 🤔 Challenges I Faced
 I didn't have any problems at all for all of the question provided but I struggled a while at trying to get access to (Side Quest 1 - The Great Disappearing Act) for about 1 hour and finally push through and finished it. So, I tried to do that Side Quest 1 but it was out of my league. I don't have enough knowledge to be able to finish it so I moved on.
 
+---
+
 ## ✅ How This Helps My Career
-Linux proficiency seems to appear in a lot of SOC analyst job postings because most security tools (SIEM, IDS/IPS, forensics tools) run on Linux servers. Being comfortable with the command line is non-negotiable. This challenge gave me hands-on practice with the exact commands I'll use daily to investigate log files, search for indicators of compromise, and analyze system configurations.
+Linux proficiency seems to appear in a lot of SOC analyst job postings because most security tools (SIEM, IDS/IPS, forensics tools) run on Linux servers. Being comfortable with the command line is non-negotiable. This challenge gave me hands-on practice with the exact commands I'll use daily to investigate:
+- Investigating log files
+- Searching for indicators of compromise (IOCs)
+- Analyzing system configurations
+- Conducting forensic investigations
 
-## 🔗 Security+ Connection
-**Domain 3.3:** Security Architecture - Understanding operating system security including file permissions, access control, and system hardening concepts.
+**Interview Talking Point:** "I can confidently navigate Linux systems via CLI, search for suspicious files using find/grep, and analyze bash history for forensic investigation—skills I demonstrated while solving TryHackMe's Advent of Cyber challenges."
 
-## 📸 Screenshot
-![Key Finding](../07-Screenshots/day-XX/main-screenshot.png)
-*Successfully using find and grep to locate specific files in the directory structure*
+---
+
+# 🔗 Security+ Connection
+
+**Domain 3.0 - Security Architecture (18%):** Operating system security, file permissions, access control models, and system hardening concepts.
+
+**Domain 4.0 - Security Operations (28%):** Log analysis, incident investigation, and forensic techniques.
+
+---
+
+## 📸 Evidence
+
+![Linux CLI Investigation](../07-Screenshots/day-01/bash-history-analysis.png)
+*Successfully analyzed bash history to uncover suspicious command execution patterns*
 
 ---
