@@ -82,7 +82,7 @@ Linux proficiency seems to appear in a lot of SOC analyst job postings because m
 
 ## 📸 Evidence
 
-![Linux CLI Investigation](../07-Screenshots/day-01/bash-history-analysis.png)
+![Linux CLI Investigation]()
 *Successfully analyzed bash history to uncover suspicious command execution patterns*
 
 ---
