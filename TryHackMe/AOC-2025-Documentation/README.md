@@ -311,7 +311,7 @@ Every skill learned aligns directly with SOC Analyst responsibilities: alert tri
 | 1 | Shells Bells | Linux CLI | ★☆☆☆ | Bash, grep, find | ✅ Complete |
 | 2 | Merry Clickmas | Phishing | ★★☆☆ | SET, SMTP | ✅ Complete |
 | 3 | Did you SIEM? | Splunk SIEM | ★★★☆ | Splunk, SPL | ✅ Complete |
-| 4 | old sAlnt nick | AI Security | ★★★☆ | AI agents | ✅ Complete |
+| 4 | old sAlnt nick | AI Security | ★☆☆☆ | AI agents | ✅ Complete |
 | 5 | Santa's Little IDOR | IDOR | ★★★☆ | DevTools, Burp | ✅ Complete |
 | 6 | Egg-xecutal | Malware Analysis | ★★★☆ | PeStudio, ProcMon | ✅ Complete |
 | 7 | Scan-ta Clause | Network Discovery | ★★☆☆ | Nmap, Netcat | ✅ Complete |
