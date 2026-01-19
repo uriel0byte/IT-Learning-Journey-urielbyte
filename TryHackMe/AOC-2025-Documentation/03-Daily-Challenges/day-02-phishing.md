@@ -3,7 +3,7 @@
 ## 📋 Quick Facts
 - **Date Completed:** December 2, 2025
 - **Time Spent:** 2 hours
-- **Difficulty:** ★☆☆☆ (Easy)
+- **Difficulty:** ★★☆☆ (Medium)
 - **Category:** Social Engineering / Red Team Operations
 - **Room URL:** https://tryhackme.com/room/phishing-aoc2025-h2tkye9fzU
 
