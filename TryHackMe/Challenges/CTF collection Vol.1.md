@@ -20,7 +20,7 @@ Can you decode the following? VEhNe2p1NTdfZDNjMGQzXzdoM19iNDUzfQ==
 4. Copy and paste the provided text.
 5. Click BAKE or button to continue the process.
  
-Answer: THM{ju57_d3c0d3_7h3_b453}
+Answer: THM{ju57_d3c0d3_7h3_----}
 
 ---
 
@@ -36,7 +36,7 @@ Meta! meta! meta! meta...................................
 4. Type "exiftool <path to the file>".
 5. Found the flag in Owner Name section.
 
-Answer: THM{3x1f_0r_3x17}
+Answer: THM{3x1f_0r_----}
 
 ---
 
@@ -54,7 +54,7 @@ Something is hiding. That's all you need to know.
 6. Then the prompt popped up again just type "y".
 7. Got the file that had been hiding inside the picture. Just cat it.
 
-Answer: THM{500n3r_0r_l473r_17_15_0ur_7urn}
+Answer: THM{500n3r_0r_l473r_17_15_0ur_----}
 
 ---
 
@@ -66,7 +66,7 @@ Huh, where is the flag?
 ## Steps
 1. So basically, you just have to copy text inside the white box...
 
-Answer: THM{wh173_fl46}
+Answer: THM{wh173_----}
 
 ---
 
@@ -79,7 +79,7 @@ Such technology is quite reliable.
 1. Download the task file.
 2. It's QR code. Just use your phone or better use online tool to scan the provided QR code.
 
-Answer: THM{qr_m4k3_l1f3_345y}
+Answer: THM{qr_m4k3_l1f3_----}
 
 ---
 
@@ -94,7 +94,7 @@ Both works, it's all up to you.
 3. Type " strings <file> | grep "THM" "
 4. Got the flag.
 
-Answer: THM{345y_f1nd_345y_60}
+Answer: THM{345y_f1nd_345y_--}
 
 ---
 
@@ -108,7 +108,7 @@ Can you decode it? 3agrSy1CewF9v8ukcSkPSYm3oKUoByUpKG4L
 2. So it looks like Base58. Let's use CyberChef again.
 3. Got the flag.
 
-Answer: THM{17_h45_l3553r_l3773r5}
+Answer: THM{17_h45_l3553r_----3r5}
 
 ---
 
@@ -123,7 +123,7 @@ Left, right, left, right... Rot 13 is too mainstream. Solve this MAF{atbe_max_vt
 3. Now it said that it's too main stream let's try to decrease or increase the amount of rotation. (There is an option in ROT13 block on leftside for you to do that)
 4. Got the flag.
 
-Answer: THM{hail_the_caesar}
+Answer: THM{hail_the_c----}
 
 ---
 
@@ -137,7 +137,7 @@ No downloadable file, no ciphered or encoded text. Huh .......
 2. Right click on the Task 10 block. Click Inspect or just F12.
 3. And there is a section that has a flag.
 
-Answer: THM{4lw4y5_ch3ck_7h3_c0m3mn7}
+Answer: THM{4lw4y5_ch3ck_7h3_c0m----}
 
 ---
 
@@ -153,7 +153,7 @@ I accidentally messed up with this PNG file. Can you help me fix it? Thanks, ^^
 4. [Repair & Render] The corrected hex string is converted back into binary data, and since the signature is now valid, the image is displayed, revealing the flag. Using CyberChef: "From Hex" → "Render Image" | Why? This reassembles the file correctly based on the fixed header.
 5. Got the flag in picture form.
 
-Answer: THM{y35_w3_c4n}
+Answer: THM{y35_w3_---}
 
 ## Key Knowledge
 The PNG file was corrupted by having its "Magic Number" (File Signature) removed or replaced. The fix is to convert the file to hex, replace the corrupted bytes with the correct PNG signature, and then convert it back to a readable image.
@@ -177,7 +177,7 @@ Some hidden flag inside Tryhackme social account.
 2. So I tried everything like TryHackMe CTF Collection Vol.1 flag or TryHackMe rooms reddit flag. I can't remember exactly what was the words.
 3. If you're having a hard time to find just go to this (https://www.reddit.com/r/tryhackme/comments/eizxaq/new_room_coming_soon/) It's in here... 
 
-Answer: THM{50c14l_4cc0un7_15_p4r7_0f_051n7}
+Answer: THM{50c14l_4cc0un7_15_p4r7_0f_0----}
 
 ---
 
@@ -194,7 +194,7 @@ What is this?
 3. So I used Dcode an online tool (https://www.dcode.fr/brainfuck-language).
 4. Copy paste and you got the flag...
 
-Answer: THM{0h_my_h34d}
+Answer: THM{0h_my_----}
 
 ---
 
@@ -211,7 +211,7 @@ S2: 1010101010101010101010101010101010
 2. So i search for tools online (https://xor.pw/) or (https://www.compscilib.com/calculate/binaryxor?variation=default).
 3. And just copy paste the given strings.
 
-Answer: THM{3xclu51v3_0r}
+Answer: THM{3xclu51v3_--}
 
 # What is XOR
 XOR, which stands for Exclusive OR, is a logical operation that outputs true (1) only when its inputs differ. If the inputs are the same, it outputs false (0).
@@ -242,7 +242,7 @@ Please exfiltrate my file :)
 6. Let's just "cat" hello_there.txt
 7. Got the flag.
 
-Answer: THM{y0u_w4lk_m3_0u7}
+Answer: THM{y0u_w4lk_m3_---}
 
 ---
 
@@ -257,7 +257,7 @@ There is something lurking in the dark.
 3. Fire it up with "java -jar StegSolve.jar"
 4. Add the dark picture file to it. And play around with it.
 
-Answer: THM{7h3r3_15_h0p3_1n_7h3_d4rkn355}
+Answer: THM{7h3r3_15_h0p3_1n_7h3_d4rk----}
 
 ## What is StegSolve
 StegSolve is a powerful, graphical Java-based tool used primarily in Capture The Flag (CTF) competitions for image steganography analysis.
@@ -285,7 +285,7 @@ P/S: The flag formatted as THM{Listened Flag}, the flag should be in All CAPS
 3. Brought us to the soundcloud. And I am pretty bad at this so...
 4. There might be a way to download it and translate it to words right?
 
-Answer: THM{SOUNDINGQR}
+Answer: THM{SOUNDI----}
 
 ---
 
@@ -301,7 +301,7 @@ Targetted time: 2 January 2020
 1. Search "Wayback machine". If you can't find it (https://web.archive.org/web/20200102131252/https://www.embeddedhacker.com/)
 2. Copy paste the provided website, select the date, scroll through a bit you will find it. 
 
-Answer: THM{ch3ck_th3_h4ckb4ck}
+Answer: THM{ch3ck_th3_h4ck----}
 
 ## What is WayBack Machine
 The Wayback Machine is a massive digital archive of the World Wide Web, founded by the non-profit Internet Archive.
@@ -315,7 +315,7 @@ Its purpose is to provide "universal access to all knowledge" by periodically ta
 ## Description
 Can you solve the following? By the way, I lost the key. Sorry >.<
 
-MYKAHODTQ{RVG_YVGGK_FAL_WXF}
+MYKAHODTQ{RVG_YVGGK_FAL_---}
 
 Flag format: TRYHACKME{FLAG IN ALL CAP}
 
@@ -326,7 +326,7 @@ Flag format: TRYHACKME{FLAG IN ALL CAP}
 4. At first, I tried "TRYHACKME" and the result is pretty close. but still looked weird.
 5. So I tried "THM" and that's it...
 
-Answer: TRYHACKME{YOU_FOUND_THE_KEY}
+Answer: TRYHACKME{YOU_FOUND_THE_---}
 
 ## What is Vigenere Cipher
 The Vigenère Cipher is a method of encrypting alphabetic text using a series of different Caesar ciphers, making it a form of polyalphabetic substitution.
@@ -334,8 +334,6 @@ The Vigenère Cipher is a method of encrypting alphabetic text using a series of
 It uses a keyword (e.g., "LEMON"). This keyword is repeated over the entire plaintext message.
 
 Each letter of the plaintext is shifted by an amount determined by the corresponding letter of the repeating keyword. For example, if the plaintext letter is 'A' and the key letter is 'L', the shift for 'A' is determined by the position of 'L' in the alphabet (L=11, where A=0).
-
-
 
 ---
 
@@ -351,7 +349,7 @@ Decode the following text.
 2. So I tried to convert it to normal ascii text but it's not working. So I convert it to hexadecimal first then to text.
 3. Got the flag.
 
-Answer: THM{17_ju57_4n_0rd1n4ry_b4535}
+Answer: THM{17_ju57_4n_0rd1n4ry_b----}
 
 ## What are Decimal, Hexadecimal, Binary, Octal and Plaintext
 These terms refer to different number systems used in computing and a form of unencrypted text.
@@ -382,6 +380,6 @@ I just hacked my neighbor's WiFi and try to capture some packet. He must be up t
 6. I suggested looking at HTTP specifically because it's a common protocol used for web traffic, and flags are often embedded within HTTP requests or responses in network challenges. To determine which protocol to focus on, consider the context of your task or any hints provided. Analyzing the packet capture metadata can also reveal which protocols are present. For instance, if you notice a lot of traffic on port 80 or 443, it indicates HTTP or HTTPS traffic, respectively. By filtering for these protocols, you can more efficiently search for flags.
 7. Found a frame that has text file in it. Look closely...
 
-Answer: THM{d0_n07_574lk_m3}
+Answer: THM{d0_n07_574lk_--}
 
 ---
