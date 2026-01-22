@@ -3,7 +3,7 @@
 ## 📋 Quick Facts
 - **Date Completed:** December 5, 2025
 - **Time Spent:** 3 hours
-- **Difficulty:** ★★★☆ (Medium-Hard)
+- **Difficulty:** ★★★☆ (Hard)
 - **Category:** Web Security / Access Control Vulnerabilities
 - **Room URL:** https://tryhackme.com/room/idor-aoc2025-zl6MywQid9
 
