@@ -16,7 +16,7 @@ An image format that uses text-based XML code to describe lines, shapes, and col
 # Steps
 1. Download the provided file.
 2. At first, I just automatically use the only tool I can think of "exiftool" and found two links. Which lead to SVG and DCMI Type so I read a bit.
-3. Found that SVG can be open in a browser. Then I open up the only web browser to I know "inspect" and just scroll around and found it.
+3. Found that SVG can be open in a browser. Then I open up the only web browser's tool I know "inspect" and just scroll around and found it.
 4. Or just use "cat" or "strings" commands directly because SVG is essentially a text file, you don't always need image viewers to analyze it.
 
 Answer: picoCTF{3nh4nc3d_d0a757bf}
