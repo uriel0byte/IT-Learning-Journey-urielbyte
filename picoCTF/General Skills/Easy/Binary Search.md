@@ -14,7 +14,8 @@ Additional details will be available after launching your challenge instance.
 3.  The program will randomly choose a new number each time you connect. You can always try again, but you should start your binary search over from the beginning - try around 500. Can you think of why?
 
 # The Core Concept: Divide and Conquer
-*I have to be honest here, I'd finished this room months ago but didn't write a writeup or learn anythin behind it so I take a chance to do here*
+**Note: I have to be honest here, I'd finished this room months ago but didn't write a writeup or learn anythin behind it so I take a chance to do here**
+
 The "point" of this room is to demonstrate the efficiency of O(log n) algorithms compared to random guessing or linear searching.
 
 In a normal "linear" search (like looking for a word in a dictionary by reading every single page from the start), you might have to check every single item. If the number is 1,000, you might need 1,000 guesses.
