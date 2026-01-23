@@ -44,15 +44,15 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 ---
 
 ## Linux (fun but a lot)
-- [DOING] Roadmap.sh Linux Checkboxes: https://roadmap.sh/linux
-- [] Linux Unhatched on Cisco NetAcad: https://www.netacad.com/courses/linux-unhatched
+- [] Roadmap.sh Linux Checkboxes: https://roadmap.sh/linux
+- [WORKING] Linux Unhatched on Cisco NetAcad: https://www.netacad.com/courses/linux-unhatched
 - [DONE] Linux Journey tutorials including a little bit of networking: https://linuxjourney.com/
 - [DONE] HTB Linux Module: https://academy.hackthebox.com/module/details/18
 - [DONE] LinuxFoundationX LFS101x on edX: https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS101x+1T2025
 - [DONE] Linux Survival: https://linuxsurvival.com/linux-tutorial-introduction/
 
 ### Practical Hands-on Lab
-- [DOING] LabEx Linux Hands-on Labs: https://labex.io/free-labs/linux
+- [WORKING] LabEx Linux Hands-on Labs: https://labex.io/free-labs/linux
 - [DONE] Overthewire Bandit: https://overthewire.org/wargames/bandit/
 
 ## Networking (cool but hate it)
@@ -62,14 +62,14 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - [DONE] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
 
 ### Practical Hands-on Lab
-- [DONE] NotebookLM - Create a summary and quizes.
+- [DONE] NotebookLM - Create summaries and quizes.
 - [] Networking: Packet/Traffic Analysis - Practical with Wireshark, Suricata, CTFs on packet/network analysis.
 
 ## Security+
-- [DOING] Watch the videos from Professor Messer's [SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
+- [DONE] Watch the videos from Professor Messer's [SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
 
 ### Practical Hands-on Lab
-- [DOING] NotebookLM - Create a summary and quizes.
+- [DONE] NotebookLM - Create summaries and quizes.
 
 ## Windows
 - [] HTB Windows Fundamentals: https://academy.hackthebox.com/module/details/49
@@ -95,9 +95,13 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
     * Cybrary: [Cybrary](https://app.cybrary.it/browse/urielbyte)
     * DFIR: [Diva DFIR Trainning]
     * Blue Team Labs: [Blue Team]
-    * NotebookLM : Creating Quizes and Flashcards.
     * Interesting additional resources :
         - Hacker101: https://www.hacker101.com/start-here
+
+ * **Utilizing AIs**
+    * NotebookLM: Creating Summaries, Quizes and Flashcards.
+    * Gemini: Helping on CTFs.
+    * Perplexity: Reviewing topics such as Network+ and Security+
 
 * **Roadmaps & Knowledge Bases:**
     * Roadmap.sh: [Roadmap.sh Profile](https://roadmap.sh/u/urielbyte)
@@ -124,12 +128,11 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 ## 📌Current Focus / What's Next
 
--   Completing the "Linux Fundamentals" it's about time to move on to Networking (damn)
--   Start Security+ Series by Professor Messer
+-   Learn + Review Linux on Linux Unhatched Course
 -   Start new Overthewire wargame
 
 ---
 
 [![roadmap.sh](https://roadmap.sh/card/tall/68a1ad2ddb704a26333adc9f?variant=dark)](https://roadmap.sh)
 
-_Last Updated: [2025-10-23]_
+_Last Updated: [2026-01-23]_
