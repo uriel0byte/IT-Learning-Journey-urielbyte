@@ -316,7 +316,7 @@ Every skill learned aligns directly with SOC Analyst responsibilities: alert tri
 | 6 | Egg-xecutal | Malware Analysis | ★★★☆ | PeStudio, ProcMon | ✅ Complete |
 | 7 | Scan-ta Clause | Network Discovery | ★★☆☆ | Nmap, Netcat | ✅ Complete |
 | 8 | Sched-yule conflict | Prompt Injection | ★★☆☆ | Agentic AI | ✅ Complete |
-| 9 | A Cracking Christmas | Password Cracking | ★★★☆ | John, pdfcrack | ✅ Complete |
+| 9 | A Cracking Christmas | Password Cracking | ★☆☆☆ | John, pdfcrack | ✅ Complete |
 | 10 | Tinsel Triage | SOC Alert Triage | ★★★★ | MS Sentinel, KQL | ✅ Complete |
 | 11 | Merry XSSMas | XSS | ★★★☆ | Browser DevTools | ✅ Complete |
 | 12 | Phishmas Greetings | Phishing Detection | ★★★☆ | Email headers | ✅ Complete |
