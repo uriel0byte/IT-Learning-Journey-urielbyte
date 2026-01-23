@@ -58,6 +58,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 ## Networking (cool but hate it)
 - [] Networking For Hackers! (Common Network Protocols): https://www.youtube.com/watch?v=p3vaaD9pn9I
 - [] Networking For Beginners : https://www.youtube.com/watch?v=z_CU-IeOEzU
+- [] HTB Network Foundations: https://academy.hackthebox.com/module/details/289
 - [DONE] Watch videos from Professor Messer's [N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
 - [DONE] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
 
