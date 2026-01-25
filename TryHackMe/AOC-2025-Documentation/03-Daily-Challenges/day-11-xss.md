@@ -330,7 +330,9 @@ XSS is one of the most common web vulnerabilities and appears in almost every we
 
 ![Overall](../07-Screenshots/Day11.png)
 *Reviewed system logs showing XSS payload execution and browser interpretation of injected JavaScript code*
+
 *Successfully injected Reflected XSS payload via search function, alert box confirmed code execution*
+
 *Submitted Stored XSS payload through message form, script executes automatically on every page load affecting all users*
 
 ---
