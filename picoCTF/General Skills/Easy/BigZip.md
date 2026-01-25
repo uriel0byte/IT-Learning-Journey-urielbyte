@@ -9,7 +9,7 @@ Unzip this archive and find the flag.
 
 # Steps
 1. Download the provided zip file.
-2. Unzip the file and we got the "drop-in" directory.
-3. 
+2. Unzip the file.
+3. Now we have to use grep the way that it can search in directory and subdirectories. So, I used "grep -ri "pico"" if we are inside the unzip directory or "grep -ri "pico" big-zip-files/" to specify the destination.
 
-Answer: 
+Answer:  picoCTF{gr3p_15_m4g1c_ef8790dc}
