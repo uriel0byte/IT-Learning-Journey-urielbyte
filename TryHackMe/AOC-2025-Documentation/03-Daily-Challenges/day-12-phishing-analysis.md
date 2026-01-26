@@ -443,13 +443,10 @@ Phishing analysis is a **core daily responsibility** for SOC analysts and one of
 
 ## 📸 Evidence
 
-![Email Header Analysis - Spoofing Detection](../07-Screenshots/day-12/email-headers-spoofing.png)
+![Email Header Analysis - Spoofing Detection](../07-Screenshots/Day12-1.png)
 *Analyzed email headers showing SPF/DKIM/DMARC failures and Return-Path mismatch, confirming email spoofing attempt from Eggsploit Bunnies*
 
-![Punycode Detection in Email Domain](../07-Screenshots/day-12/punycode-typosquatting.png)
-*Identified punycode abuse using visually similar Latin character ƒ in sender domain, verified through Return-Path ACE prefix encoding*
-
-![Phishing Email Triage Dashboard](../07-Screenshots/day-12/email-triage-signals.png)
+![Phishing Email Triage Dashboard](../07-Screenshots/Day12-2.png)
 *Successfully triaged 6+ phishing emails by identifying three clear signals per message (impersonation, social engineering, malicious attachments)*
 
 ---
