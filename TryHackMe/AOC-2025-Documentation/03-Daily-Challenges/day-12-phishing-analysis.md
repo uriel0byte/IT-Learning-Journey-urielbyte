@@ -447,7 +447,7 @@ Phishing analysis is a **core daily responsibility** for SOC analysts and one of
 *Analyzed email headers showing SPF/DKIM/DMARC failures and Return-Path mismatch, confirming email spoofing attempt from Eggsploit Bunnies*
 
 ![Phishing Email Triage Dashboard](../07-Screenshots/Day12-2.png)
-*Successfully triaged 6+ phishing emails by identifying three clear signals per message (impersonation, social engineering, malicious attachments)*
+*Successfully triaged 6+ phishing emails by identifying three clear signals per message*
 
 ---
 
