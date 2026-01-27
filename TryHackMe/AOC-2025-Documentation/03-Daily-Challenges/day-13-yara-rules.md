@@ -475,10 +475,10 @@ YARA is an **industry-standard tool** for malware analysis and threat hunting:
 
 ## 📸 Evidence
 
-![Regex Pattern Matching](../07-Screenshots/Day13-1png)
+![Regex Pattern Matching](../07-Screenshots/Day13-1.png)
 *Built regex pattern /TBFC:[A-Za-z0-9]+/ to extract alphanumeric codewords from hidden messages in image files*
 
-![YARA Scan Results](../07-Screenshots/Day13-2png)
+![YARA Scan Results](../07-Screenshots/Day13-2.png)
 *Successfully ran YARA rule recursively against directory, detected alphanumeric codewords from hidden messages in image files containing TBFC: codewords*
 
 ---
