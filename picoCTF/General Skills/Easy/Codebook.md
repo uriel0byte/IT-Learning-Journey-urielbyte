@@ -46,6 +46,14 @@ def print_flag():
     print(flag)
   except FileNotFoundError:
     print('Couldn\'t find codebook.txt. Did you download that file into the same directory as this script?')
+
+def main():
+  print_flag()
+
+
+
+if __name__ == "__main__":
+  main()
 ```
 
 Answer: picoCTF{c0d3b00k_455157_7d102d7a} 
