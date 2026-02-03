@@ -3,7 +3,7 @@
 # Description
 Do you know how to move between directories and read files in the shell? Start the container, ssh to it, and then ls once connected to begin.
 
-Login via ssh as ctf-player with the password, 8c606eb1 on the host wily-courier.picoctf.net and port 51678. (These numbers are not the same for each player)
+Login via ssh as c**-player with the password, ****** on the host w**y-courier.picoctf.net and port 516*8. (These numbers are not the same for each player)
 
 # Hints
 1. Finding a cheatsheet for bash would be really helpful!
