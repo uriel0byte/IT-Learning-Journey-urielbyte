@@ -12,7 +12,7 @@ Login via ssh as c**-player with the password, ****** on the host w**y-courier.p
 1. Used "ssh ctf-player@wily-courier.picoctf.net -p 51678" to connect to the remote host.
 2. All the rest of the steps are easier to show than just explain...
 
-```
+```bash
 ctf-player@pico-chall$ pwd
 /home/ctf-player/drop-in
 
