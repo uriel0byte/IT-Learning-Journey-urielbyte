@@ -614,19 +614,6 @@ Encoding/decoding and CyberChef are **critical for multiple security roles**:
 
 ---
 
-## 📸 Evidence
-
-![CyberChef Multi-Step Recipe Chain](../07-Screenshots/day-17/cyberchef-recipe-chain.png)
-*Built complex CyberChef recipe with chained operations: From Base64 → XOR with key → ROT13, demonstrating multi-step decoding for Lock 5*
-
-![Web Inspector Headers and Magic Question](../07-Screenshots/day-17/web-inspector-headers.png)
-*Used Network tab in browser developer tools to inspect HTTP headers, found X-Magic header containing magic question clue for guard*
-
-![MD5 Hash Cracking with CrackStation](../07-Screenshots/day-17/crackstation-md5-lookup.png)
-*Extracted MD5 hash from login logic, used CrackStation online tool to crack hash and retrieve plaintext password for Lock 4*
-
----
-
 ## 📚 Key Takeaways for Future Reference
 
 **Encoding vs. Encryption Quick Reference:**
