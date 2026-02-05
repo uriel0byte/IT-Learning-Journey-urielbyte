@@ -88,6 +88,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 * **Labs & Hands-on:**
     * Hack The Box Academy: [HTB Profile](https://app.hackthebox.com/profile/#2566537)
     * TryHackMe: [THM Profile](https://tryhackme.com/p/poseidon.smash)
+    * LabEx and Linux Journey: [LabEx Profile](https://labex.io/users/uriel0byte-11746032)
     * OverTheWire
         - OverTheWire Bandit: [Over The Wire Bandit](OverTheWire-Bandit/README.md)
     * PicoCTF: [PicoCTF Profile](https://play.picoctf.org/users/urielbyte)
@@ -106,7 +107,6 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 * **Roadmaps & Knowledge Bases:**
     * Roadmap.sh: [Roadmap.sh Profile](https://roadmap.sh/u/urielbyte)
-    * LabEx and Linux Journey: [LabEx Profile](https://labex.io/users/uriel0byte-11746032)
     * 90DaysOfCyberSecurity: [90DaysOfCyberSecurity](https://github.com/farhanashrafdev/90DaysOfCyberSecurity/tree/main)
     * The Book of Secret Knowledge: [the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge?tab=readme-ov-file#manualshowtostutorials-toc)
 
