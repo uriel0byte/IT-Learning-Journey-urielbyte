@@ -6,7 +6,7 @@
 
 This repository is a public log of my self-paced IT learning journey. My goal is to become a skilled system administrator and eventually move into a cybersecurity role. I use this space to track my progress, document my labs and projects, and organize my notes.
 
-รีโพนี้เป็นบันทึกสาธารณะของเส้นทางการเรียนรู้ไอทีแบบค่อยเป็นค่อยไปของผม เป้าหมายของผมคือการเป็นผู้ดูแลระบบและก้าวไปสู่บทบาทด้านความปลอดภัยทางไซเบอร์ในที่สุด ผมใช้พื้นที่นี้เพื่อติดตามความคืบหน้า บันทึกผลงานการทดลองและโปรเจกต์ และจัดระเบียบบันทึกต่างๆ
+รีโพนี้เป็นบันทึกสาธารณะของเส้นทางการเรียนรู้ไอทีแบบค่อยเป็นค่อยไปของผม เป้าหมายของผมคือการเป็นผู้ดูแลระบบและก้าวไปสู่บทบาทด้านความปลอดภัยทางไซเบอร์ ผมใช้รีโพนี้เพื่อติดตามความคืบหน้า บันทึกผลงานการทดลองและโปรเจกต์ และจัดระเบียบบันทึกต่างๆ
 
 ---
 
@@ -45,7 +45,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ## Linux (fun but a lot)
 - [] Roadmap.sh Linux Checkboxes: https://roadmap.sh/linux
-- [WORKING] Linux Unhatched on Cisco NetAcad: https://www.netacad.com/courses/linux-unhatched
+- [DONE] Linux Unhatched on Cisco NetAcad: https://www.netacad.com/courses/linux-unhatched
 - [DONE] Linux Journey tutorials including a little bit of networking: https://linuxjourney.com/
 - [DONE] HTB Linux Module: https://academy.hackthebox.com/module/details/18
 - [DONE] LinuxFoundationX LFS101x on edX: https://learning.edx.org/course/course-v1:LinuxFoundationX+LFS101x+1T2025
@@ -129,11 +129,12 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 ## 📌Current Focus / What's Next
 
--   Learn + Review Linux on Linux Unhatched Course
+-   Doing the rest of LabEx Linux labs
+-   Review Linux Journey again
 -   Start new Overthewire wargame
 
 ---
 
 [![roadmap.sh](https://roadmap.sh/card/tall/68a1ad2ddb704a26333adc9f?variant=dark)](https://roadmap.sh)
 
-_Last Updated: [2026-01-23]_
+_Last Updated: [2026-02-06]_
