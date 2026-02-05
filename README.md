@@ -40,10 +40,11 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - **Security fundamentals**
 - **Windows** Windows Server administration, Active Directory, and PowerShell scripting.
 - **Python and Shell scripting** Basic Automation and scripting.
+- **Computer Architecture basics**
 
 ---
 
-## Linux (fun but a lot)
+## Linux
 - [] Roadmap.sh Linux Checkboxes: https://roadmap.sh/linux
 - [DONE] Linux Unhatched on Cisco NetAcad: https://www.netacad.com/courses/linux-unhatched
 - [DONE] Linux Journey tutorials including a little bit of networking: https://linuxjourney.com/
@@ -55,31 +56,44 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - [WORKING] LabEx Linux Hands-on Labs: https://labex.io/free-labs/linux
 - [DONE] Overthewire Bandit: https://overthewire.org/wargames/bandit/
 
-## Networking (cool but hate it)
+---
+
+## Networking
 - [] Networking For Hackers! (Common Network Protocols): https://www.youtube.com/watch?v=p3vaaD9pn9I
 - [] Networking For Beginners : https://www.youtube.com/watch?v=z_CU-IeOEzU
 - [] HTB Network Foundations: https://academy.hackthebox.com/module/details/289
-- [DONE] Watch videos from Professor Messer's [N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
+- [DONE] Watch videos from Professor Messer's [CompTIA Network+ N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
 - [DONE] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
 
 ### Practical Hands-on Lab
 - [DONE] NotebookLM - Create summaries and quizes.
 - [] Networking: Packet/Traffic Analysis - Practical with Wireshark, Suricata, CTFs on packet/network analysis.
 
+---
+
 ## Security+
-- [DONE] Watch the videos from Professor Messer's [SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
+- [DONE] Watch the videos from Professor Messer's [CompTIA Security+ SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
 
 ### Practical Hands-on Lab
 - [DONE] NotebookLM - Create summaries and quizes.
+
+---
 
 ## Windows
 - [] HTB Windows Fundamentals: https://academy.hackthebox.com/module/details/49
 - [] THM Windows Fundamentals: https://tryhackme.com/module/windows-fundamentals
 
+---
+
 ## Python
 - [] Codecademy's Learn Python Track: https://codecademy.com/learn/learn-python
 - [] LabEx Learn Python by Labs: https://labex.io/free-labs/python
 - [] CheckIO: https://checkio.org/
+
+---
+
+## Computer Architecture basics
+- [] Watch videos from Professor Messer's [CompTIA A+ 220-1202 Playlist](https://www.youtube.com/watch?v=IhcZqUs1IF8&list=PLG49S3nxzAnn7PDGQ17m5AYbDRhnW7vOb)
 
 ---
 
