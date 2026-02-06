@@ -26,12 +26,12 @@
 5.  Task 5
     From your scans, what version is FTP running on the target?
     
-    Answer: vsftpd 3.0.3 | by using 
+    Answer: vsftpd 3.0.3 | by using nmap -sV -O -T5 10.129.129.108
 
 6.  Task 6
     From your scans, what OS type is running on the target?
     
-    Answer: Unix
+    Answer: Unix | by using nmap -sV -O -T5 10.129.129.108
 
 7.  Task 7
     What is the command we need to run in order to display the 'ftp' client help menu?
@@ -58,7 +58,6 @@
     
      Answer: get
      
-12.  Task 12
-     What is the command used to download the file we found on the FTP server?
+12.  Submit root flag
     
-     Answer: get
+     Answer: 035db21c881520061c53e0536e44f815 | Connected to the ftp server using "ftp <ip>". Once the prompt pop up asking for username and password, Username: anonymous and Password just leave it blank. Used ls to list files and found flag.txt. Used get to download the file. Exit out and cat the downloaded file.
