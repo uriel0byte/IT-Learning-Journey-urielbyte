@@ -8,6 +8,8 @@ What is 0x3D (base 16) in decimal (base 10)?
 
 # Steps
 1. Fire up CyberChef.
-2. 
+2. Select From Base, and To Base to Recipe section.
+3. Change the Radix of From Base to 16 and the Radix of To Base to 10 (Decimal). Insert the input field with 0x3D.
+4. Reconstruct the correct flag form.
 
 Answer: picoCTF{61}
