@@ -1,6 +1,3 @@
-# FTP
-[FTP](https://github.com/uriel0byte/IT-Learning-Journey-urielbyte/blob/a62fbbbdb3905daf983e4ab0a0f4c17c6bab2857/Notes/FTP/ftp_ctf_writeup.md)
-
 # Steps
 0.  First connect to HTB using OpenVPN by download the VPN Config provided. After that, spawn the target machine.
   
@@ -37,7 +34,7 @@
 7.  Task 7
     What username is able to log into the target over telnet with a blank password?
     
-    Answer: Root
+    Answer: root
 
 8.  Submit root flag
     
