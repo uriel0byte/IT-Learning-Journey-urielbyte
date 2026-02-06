@@ -24,3 +24,45 @@ ftp <host>
 ftp <host> <port>
 ```
 
+## Enumeration: Before connecting, it is common to scan the port to identify the specific server software (e.g., vsftpd 3.0.3) and the OS (e.g., Unix), as specific versions may have known vulnerabilities.
+Bash
+
+```bash
+nmap -sV -p 21 <target>
+```
+
+## Common FTP Commands for CTF
+
+Once connected to the FTP shell, you can use these commands to navigate and retrieve flags:
+
+```bash
+USER anonymous                 # Log in as anonymous (often requires blank password)
+ls                             # List files in current directory (Linux standard)
+dir                            # Alternative command to list files (Windows style)
+cd <directory>                 # Change directory
+get <filename>                 # Download a file to your local machine
+put <filename>                 # Upload a file (if write permissions exist)
+exit                           # Disconnect from server
+?                              # Show help menu (or ftp -?)
+```
+
+## Connectivity Check: Before attempting to connect, you can verify the target is reachable using ICMP:
+
+```bash
+ping <target_ip>
+```
+
+## CTF Challenge Patterns
+
+Anonymous Login: The most common check. Try logging in with the username anonymous and a blank password.
+
+Hidden Files: Use ls -a (if supported) to look for hidden files starting with a dot (e.g., .env, .ssh).
+
+Version Exploits: Identify the server version (e.g., vsftpd). Some older versions have famous backdoors (like vsftpd 2.3.4).
+Security Considerations
+
+- Disable Anonymous Access: Unless explicitly required for public data.
+
+- Use Encryption: Use SFTP or FTPS (FTP over SSL) to protect credentials.
+
+- Strong Authentication: Enforce strong passwords and consider IP restrictions.
