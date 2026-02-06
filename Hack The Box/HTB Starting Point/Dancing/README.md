@@ -43,3 +43,5 @@
     Submit root flag
     
     Answer: 5f61c10dffbc77a704d76016a22f1664 | by doing ls to list all the files. We see two directories shows up so I just cd to each directories and ls to see all the files           inside     each directories and we found flag.txt in James.P directory then I do get flag.txt. Then I disconnect from the smb server and cat that flag.txt BRAVO!
+
+Badge: https://labs.hackthebox.com/achievement/machine/2566537/395
