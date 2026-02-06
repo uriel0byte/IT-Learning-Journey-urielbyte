@@ -61,3 +61,5 @@
 12.  Submit root flag
     
      Answer: 035db21c881520061c53e0536e44f815 | Connected to the ftp server using "ftp <ip>". Once the prompt pop up asking for username and password, Username: anonymous and Password just leave it blank. Used ls to list files and found flag.txt. Used get to download the file. Exit out and cat the downloaded file.
+
+Badge: https://labs.hackthebox.com/achievement/machine/2566537/393
