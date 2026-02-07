@@ -41,6 +41,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - **Windows** Windows Server administration, Active Directory, and PowerShell scripting.
 - **Python and Shell scripting** Basic Automation and scripting.
 - **Computer Architecture basics**
+- **Web basics**
 
 ---
 
@@ -97,6 +98,9 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ---
 
+## Webs
+- [] TryHackMe How The Web Works Module just free rooms [How The Web Works](https://tryhackme.com/module/how-the-web-works)
+
 ## 📘 My Learning Platforms & Resources
 
 * **Labs & Hands-on:**
@@ -151,4 +155,4 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 [![roadmap.sh](https://roadmap.sh/card/tall/68a1ad2ddb704a26333adc9f?variant=dark)](https://roadmap.sh)
 
-_Last Updated: [2026-02-06]_
+_Last Updated: [2026-02-07]_
