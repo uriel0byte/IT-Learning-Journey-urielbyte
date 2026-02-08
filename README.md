@@ -54,7 +54,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - [DONE] Linux Survival: https://linuxsurvival.com/linux-tutorial-introduction/
 
 ### Practical Hands-on Lab
-- [WORKING] LabEx Linux Hands-on Labs: https://labex.io/free-labs/linux
+- [WORKING] Complete all Linux Hands-on Labs on LabEx: https://labex.io/free-labs/linux
 - [DONE] Overthewire Bandit: https://overthewire.org/wargames/bandit/
 
 ---
@@ -155,4 +155,4 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 [![roadmap.sh](https://roadmap.sh/card/tall/68a1ad2ddb704a26333adc9f?variant=dark)](https://roadmap.sh)
 
-_Last Updated: [2026-02-07]_
+_Last Updated: [2026-02-08]_
