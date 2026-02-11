@@ -640,6 +640,7 @@ sort:prevalence-asc beacon:>=50
 
 ![RITA Filter Syntax Application](../07-Screenshots/Day22-2.png)
 *Applied advanced RITA filter: dst:rabbithole.malhare.net beacon:>=70 sort:duration-desc to hunt for long-duration C2 sessions*
+
 *Detected C2 beaconing to rabbithole.malhare.net with beacon score ≥70%, showing high connection count and low prevalence indicators*
 
 
