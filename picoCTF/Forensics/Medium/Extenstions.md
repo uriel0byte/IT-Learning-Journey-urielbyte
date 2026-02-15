@@ -23,7 +23,9 @@ IHDR^sRGBgAMA
              a  pHYs%%IR$&IDATx^kB;.0L&_N=%LZJut$y'H&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>&l2>˿'~n疓?^xQ2>osD9
 ```
 
-3. This looks like an PNG file but in a wrong format. Only way I know how to fix this is to make a hexdump and edit the header.
+3. This looks like an PNG file and it looks like in a legit format. but let's check the header just in case.
+4. Found that it looks fine, now let's just try change the file extension from .txt to .png
+5. Now I can see that flag.
 
 
-Answer: picoCTF{}
+Answer: picoCTF{now_you_know_about_extensions}
