@@ -257,7 +257,7 @@ If an actual adversary gained such access:
 ## 🛠️ Tools & Techniques Used
 
 ### Tools
-1. **Social-Engineer Toolkit (SET)** - Phishing campaign automation
+1. **Social-Engineer Toolkit (SET)** - Phishing campaign automation (`setoolkit`)
 2. **server.py** - Custom credential harvesting server
 3. **SMTP** - Email delivery protocol (port 25)
 4. **Firefox** - Testing phishing page appearance
