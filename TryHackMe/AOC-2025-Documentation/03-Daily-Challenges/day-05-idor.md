@@ -11,7 +11,7 @@
 
 ## 🎯 Challenge Overview
 
-This challenge investigated access control vulnerabilities on the TryPresentMe website after suspicious activity involving a user named "Sir Carrotbane" who had accumulated unauthorized vouchers. I learned about IDOR (Insecure Direct Object Reference) vulnerabilities, explored different forms of object reference manipulation (numeric IDs, Base64, MD5 hashes, UUIDs), and understood the critical difference between authentication and authorization.
+This challenge investigated access control vulnerabilities on the TryPresentMe website after a suspiciously named account, "Sir Carrotbane," accumulated unauthorized vouchers. Parents were unable to activate legitimate vouchers and were receiving targeted phishing emails containing private information—signs of a serious data breach. I learned about IDOR (Insecure Direct Object Reference) vulnerabilities, explored different forms of object reference manipulation, and understood how missing authorization checks lead to data exposure.
 
 **Learning Objectives:**
 - Understand the concepts of authentication and authorization
@@ -23,165 +23,158 @@ This challenge investigated access control vulnerabilities on the TryPresentMe w
 
 ## 💡 What I Learned
 
-### Authentication vs. Authorization
+### Authentication vs. Authorization (Critical Concept)
 
-This was a key concept that took time to understand:
-
-**Authentication:** Verifying *who* you are (username + password → session token/cookie)
-- Happens on every request via session information
-- If session expires, you're redirected to login (reauthentication required)
+**Authentication:** Verifying *who* you are
+- Supplying username + password → receive session token/cookie
+- Happens on **every subsequent request** (not just login)
+- Session expiry → redirect to login for reauthentication
 
 **Authorization:** Verifying *what you're allowed to do*
-- Cannot happen before authentication (system must know who you are first)
-- Checks permissions: "Can this user view this data? Perform this action?"
+- Cannot happen **before** authentication
+- Checks: "Does this user own or have permission to view this item?"
+- Must be enforced on **every request**, server-side
 
-**Critical Rule:** Authorization cannot happen before authentication. If the system doesn't know who you are, it can't verify your permissions.
+**Critical Rule:**
+```
+Authentication  → Who are you?
+Authorization   → What can you do?
+One cannot exist without the other first.
+```
 
 ### What is IDOR?
 
-**IDOR (Insecure Direct Object Reference)** is an access control vulnerability where a web application uses references (IDs) to determine what data to return but *doesn't verify if the user is authorized* to access that data.
+**IDOR (Insecure Direct Object Reference)** is an access control vulnerability where a web application uses references (IDs) to retrieve data but **doesn't verify if the requesting user is authorized** to access it.
 
 **Simple Example:**
-- URL: `https://awesome.website.thm/TrackPackage?packageID=1001`
-- What if you change `packageID=1002`?
-- If the server doesn't check authorization → you see someone else's package details
-
-**Why it happens:**
-Web applications use simple SQL queries like:
-```sql
-SELECT person, address, status FROM Packages WHERE packageID = value;
+```
+URL: https://site.com/TrackPackage?packageID=1001
+Change to: https://site.com/TrackPackage?packageID=1002
+Result: You see someone else's package details!
 ```
 
-If there's no check that the requester *owns* that package, anyone can access any package by guessing IDs.
+**Why it happens — the vulnerable SQL pattern:**
+```sql
+SELECT person, address, status FROM Packages WHERE packageID = value;
+-- No check: "Does this user OWN packageID 1002?"
+```
 
-### Types of Privilege Escalation
+**Note from room co-author:** Some prefer calling this "Authorization Bypass" — which is more accurate. IDOR is the industry-standard name, but the root cause is always **missing authorization checks**.
 
-**Horizontal Privilege Escalation (most IDOR cases):**
-- You use a feature you're authorized to use
-- But gain access to *someone else's data*
-- Example: Viewing your account is allowed → but you view someone else's account
+### Four IDOR Attack Types I Practiced
 
-**Vertical Privilege Escalation:**
-- You gain access to *more features/higher privileges*
-- Example: Normal user performing admin actions
-
-### IDOR Attack Techniques
-
-I exploited IDOR in multiple forms on the TryPresentMe application:
-
-**1. Simple Numeric ID Manipulation**
-- Used Browser Developer Tools (Network tab + Storage tab)
-- Found `user_id=10` in Local Storage (`auth_user` data)
-- Changed `user_id` to `11` → immediately viewed another user's account
-- This is the most basic IDOR: sequential numeric IDs without authorization checks
+**1. Simple Numeric ID (Most Basic)**
+- Found `user_id=10` in Browser Dev Tools → Local Storage
+- Changed to `user_id=11` → Instantly viewed another user's account
+- Sequential IDs = predictable = vulnerable
 
 **2. Base64 Encoded IDs**
-- Clicked "view child" icon → Network request showed `Mg==`
-- Decoded Base64: `Mg==` = `2`
-- To exploit: Base64 encode different numbers and test requests
-- *Lesson:* Encoding is NOT security; it's just obfuscation
+- Network request showed `Mg==` for "view child"
+- Decoded: `Mg== = 2` (just the number 2)
+- **Key lesson:** Encoding ≠ Security. It's just obfuscation.
 
 **3. MD5 Hashed IDs**
-- Some references appeared as MD5 hashes
-- If you understand what value was hashed (e.g., sequential child IDs)
-- You can replicate the hash function and brute force valid hashes
-- Used hash identifiers to determine hashing algorithm
+- References appeared as MD5 hashes
+- If you understand what was hashed (sequential IDs), replicate the function
+- Hash identifier tools reveal the algorithm used
 
 **4. UUID Version 1 Predictability**
 - Voucher codes used UUID v1 format
-- **Critical flaw:** UUID v1 includes timestamp information
-- If you know when vouchers were generated (e.g., 20:00-21:00)
-- You can generate all possible UUIDs for that timeframe (3600 UUIDs for 1 hour)
-- Brute force attack to recover valid vouchers
+- **Critical flaw:** UUID v1 contains timestamp information
+- Knowing vouchers generated between 20:00-24:00 → generate all 14,400 possible UUIDs
+- Brute force the valid voucher
 
-### How to Fix IDOR (SDOR - Secure Direct Object Reference)
+### Types of Privilege Escalation
 
-**✅ Server-side authorization checks (ESSENTIAL):**
-- Always verify: *"Does this user own or have permission to view this item?"*
-- Check on EVERY request, not just login
+**Horizontal (most IDOR cases):**
+- Use authorized feature → access someone **else's data** at the same level
+- Example: View your account ✅ → View another user's account ❌
 
-**❌ Don't rely on obfuscation:**
-- Base64, hashing, or random-looking IDs don't fix IDOR
-- If authorization checks are missing, it's still vulnerable
+**Vertical:**
+- Gain access to **higher-privilege features**
+- Example: Normal user → performing admin actions
 
-**✅ Use unpredictable references:**
-- Random or hard-to-guess IDs for public links
-- But remember: randomness alone ≠ security
+### Fixing IDOR → SDOR (Secure Direct Object Reference)
 
-**✅ Monitor and log:**
-- Record failed access attempts
-- Early signs of IDOR exploitation attempts
+**✅ What actually fixes it:**
+- Server-side authorization check on **every request**: "Does this user own this item?"
+- Random/unpredictable IDs for public links (but randomness alone ≠ security)
+- Monitor and log failed access attempts (early IDOR detection)
+- Test by trying to access another user's data while logged in
 
-**✅ Test your application:**
-- Try accessing another user's data while logged in as different user
-- Ensure it's blocked by authorization logic
+**❌ What does NOT fix it:**
+- Base64 encoding IDs
+- MD5 hashing IDs
+- Making IDs "look random"
+- Any client-side obfuscation
+
+**Bottom line:** If the server doesn't verify authorization, the vulnerability exists regardless of how the ID looks.
 
 ---
 
 ## 🛠️ Tools & Techniques Used
 
 ### Tools
-1. **Browser Developer Tools** - Network tab (inspect requests), Storage tab (Local Storage manipulation)
+1. **Browser Developer Tools** - Network tab (inspect requests), Storage tab (Local Storage)
 2. **Base64 Decoder** - Decode obfuscated IDs
-3. **Hash Identifier** - Determine hashing algorithms (MD5, SHA1, etc.)
-4. **CyberChef** - Decode/encode various formats
-5. **Burp Suite (optional bonus)** - Intruder for automated IDOR testing
+3. **Hash Identifier** - Determine hashing algorithm (MD5, SHA1, etc.)
+4. **UUID Decoder** - Identify UUID version and timestamp extraction
+5. **CyberChef** - Encode/decode various formats
+6. **Burp Suite** - Intruder for automated brute force (bonus tasks)
 
 ### Techniques
-- Parameter manipulation (changing `user_id` values)
-- Local Storage tampering (modifying session data)
-- Base64 encoding/decoding for ID obfuscation bypass
-- Hash replication (understanding hash inputs to reproduce valid hashes)
-- UUID timestamp exploitation (generating UUIDs based on known timeframes)
-- Horizontal privilege escalation exploitation
+- Local Storage manipulation (changing `user_id`)
+- Base64 encoding/decoding bypass
+- Hash algorithm identification and replication
+- UUID v1 timestamp exploitation
+- Horizontal privilege escalation
 - Authorization bypass testing
 
 ---
 
 ## 🤔 Challenges I Faced
 
-**Understanding Authentication vs. Authorization:** This conceptual difference was confusing at first. It took time to grasp that authentication happens on *every request* (via session cookies), not just at login, and that authorization *depends on* authentication.
+**Authentication vs. Authorization Confusion:** The conceptual difference was hard to grasp at first—especially that authentication happens on **every request** via session cookies, not just at login. It took a while to click.
 
-**Playing with ID Values:** I had to manually test different ID values in URLs and request bodies to see how the IDOR worked. Trial and error was necessary to understand the behavior.
+**Web Security Mindset:** Honestly, **I don't really like web stuff**. This room burned me out a bit and took 3 hours. I'm still not confident with web security topics but I recognize building this foundation is necessary.
 
-**Web Security Mindset:** Overall, this challenge took a lot of time to understand these new concepts. To be honest, it was kind of confusing for me—**I don't really like web stuff**, but I recognize I need to learn it to have a strong foundation in cybersecurity.
+**UUID Exploitation:** Understanding that UUID v1 contains timestamp information and is therefore predictable was a completely new concept. The idea of generating 14,400 UUIDs for a 4-hour window made sense logically but was a lot to process.
 
-**Burnout and Confidence:** This room took a lot of time and kind of burned me out a little bit. I'm still not confident about web security topics, but I'm committed to building that foundation even though it's not my favorite area.
-
-**Why it was hard:**
-- First exposure to web access control concepts
-- Understanding how references (numeric, Base64, hashed, UUIDs) work
-- Connecting theory (authentication/authorization) to practical exploitation
-- Web application testing requires a different mindset than other security domains
+**Overall:** Not my favorite domain, but committed to learning it anyway for a solid cybersecurity foundation.
 
 ---
 
 ## ✅ How This Helps My Career
 
-Despite not enjoying web security as much, **IDOR and access control vulnerabilities are critical for SOC analysts and penetration testers**:
-
 **Why IDOR Matters:**
+- **Broken Access Control = #1 in OWASP Top 10** (2021 and ongoing)
 - **50% of SOC analyst job postings** mention web security skills
-- Access control flaws are consistently in **OWASP Top 10** (Broken Access Control is #1 in 2021)
-- Real-world impact: Data breaches, privacy violations, financial fraud
+- Real-world impact: data breaches, privacy violations, financial fraud
 
-**SOC Analyst Perspective (Defensive):**
-- **Web application firewall (WAF) alerts** often flag suspicious parameter manipulation
-- **Log analysis** can reveal IDOR exploitation attempts (unusual ID access patterns)
-- **Incident investigation** requires understanding how attackers exploit authorization flaws
+**SOC Analyst Applications (Defensive - My Focus):**
 
-**Penetration Testing Perspective (Offensive):**
-- IDOR testing is a standard part of web application penetration tests
-- Understanding different reference types (Base64, hashes, UUIDs) is essential
-- Helps identify common developer mistakes during security assessments
+**Alert Detection:**
+- WAF (Web Application Firewall) alerts flag suspicious parameter manipulation
+- Sequential ID access patterns in logs = IDOR exploitation in progress
+- Example: User accessing `/account/10`, `/account/11`, `/account/12` rapidly
 
-**Authentication/Authorization Framework:**
-This challenge taught me the foundation of access control, which applies beyond web:
-- API security (same IDOR principles apply)
-- Database access control
-- Cloud IAM (Identity and Access Management) concepts
+**Incident Investigation:**
+- Understanding how attackers exploited authorization flaws
+- Determining scope of data exposed (which accounts were accessed)
+- Identifying if stolen vouchers/data are linked to phishing campaigns
 
-**Interview Talking Point:** "I've identified and exploited IDOR vulnerabilities in web applications, including bypassing Base64 obfuscation, hash-based references, and UUID v1 timestamp exploitation. I understand the critical difference between authentication and authorization, and how missing authorization checks lead to horizontal privilege escalation. While web security isn't my strongest area, I recognize its importance and have hands-on experience testing access control mechanisms."
+**Risk Assessment:**
+- Evaluating web applications for IDOR vulnerabilities
+- Recommending server-side authorization controls
+- Understanding OWASP Top 10 risk prioritization
+
+**Authentication/Authorization Framework (Beyond Web):**
+The same principles apply everywhere:
+- **API security** - Same IDOR concepts apply to REST APIs
+- **Cloud IAM** - Identity and Access Management
+- **Database access control** - Row-level security
+
+**Interview Talking Point:** "I have hands-on experience identifying IDOR vulnerabilities across multiple reference types—numeric IDs, Base64 encoding, MD5 hashes, and UUID v1 timestamp exploitation. I understand the critical distinction between authentication and authorization, and why server-side checks must be enforced on every request. From a defensive perspective, I can detect IDOR exploitation attempts through log analysis, recognize sequential access patterns in WAF alerts, and assess the scope of data exposure during incident investigations. I understand Broken Access Control as the #1 OWASP vulnerability and why it consistently leads to real-world data breaches."
 
 ---
 
@@ -197,13 +190,116 @@ This challenge taught me the foundation of access control, which applies beyond 
 
 ## 📸 Evidence
 
-![IDOR User ID Manipulation](../07-Screenshots/day-05/user-id-local-storage.png)
-*Modified user_id in Local Storage from 10 to 11, gaining access to another user's account without authorization checks*
+**Note:** Screenshots were not captured during initial completion. Documentation based on hands-on completion and room content review.
 
-![Base64 Encoded IDOR](../07-Screenshots/day-05/base64-child-id.png)
-*Discovered Base64-encoded child IDs (Mg== = 2) demonstrating that encoding is not security*
+### Key Findings:
+- Changed `user_id` from 10 → 11 in Local Storage to access another user's account
+- Decoded Base64 `Mg==` = 2, demonstrating encoding is not security
+- Identified MD5-hashed child IDs exploitable via hash replication
+- Discovered UUID v1 voucher codes are timestamp-predictable (brute-forceable)
+- Confirmed root cause: missing server-side authorization checks on every request
 
-![Developer Tools IDOR Testing](../07-Screenshots/day-05/network-tab-idor.png)
-*Used Browser Developer Tools Network tab to inspect requests and identify IDOR vulnerability in view_accountinfo endpoint*
+---
+
+## 📚 Key Takeaways for Future Reference
+
+### Core IDOR Concept
+
+```
+IDOR = Application uses IDs to retrieve data
+     + No server-side check "Does this user OWN this ID?"
+     = Anyone can access anyone's data
+```
+
+### Authentication vs. Authorization Quick Reference
+
+| Concept | Question | When |
+|--------|----------|------|
+| **Authentication** | Who are you? | Every request (via session token) |
+| **Authorization** | What can you do? | After authentication, every request |
+
+**Session lifecycle:**
+```
+Login → Session token issued → Token sent with every request
+Token expired → Redirect to login → Reauthenticate
+```
+
+### IDOR Types at a Glance
+
+| Type | Example | How to Exploit |
+|------|---------|---------------|
+| **Numeric** | `user_id=10` | Increment/decrement numbers |
+| **Base64** | `Mg==` | Decode → change → re-encode |
+| **MD5 Hash** | `cfcd208...` | Identify algorithm → hash new values |
+| **UUID v1** | `abc-def-...` | Extract timestamp → generate all UUIDs in window |
+
+### Detecting IDOR Exploitation in Logs (SOC Focus)
+
+**Red Flags to Watch For:**
+```
+# Sequential ID access in short timeframe
+GET /account/10  [200 OK]
+GET /account/11  [200 OK]
+GET /account/12  [200 OK]
+GET /account/13  [200 OK]
+← This pattern = IDOR enumeration
+
+# Rapid Base64 variant requests
+GET /child/MQ==   [200 OK]   (= 1)
+GET /child/Mg==   [200 OK]   (= 2)
+GET /child/Mw==   [200 OK]   (= 3)
+← Base64 IDOR enumeration
+
+# Mass voucher claim attempts (UUID brute force)
+POST /vouchers/claim  [400 Bad Request] × 14,399
+POST /vouchers/claim  [200 OK] × 1
+← UUID v1 timestamp brute force
+```
+
+**WAF Rules to Create:**
+- Alert on sequential parameter access (>5 sequential IDs from same IP)
+- Flag rapid requests to same endpoint with different ID values
+- Monitor 400 errors followed by 200 success on voucher/account endpoints
+
+### SDOR Checklist (Secure Direct Object Reference)
+
+**For Developers (Reporting Findings):**
+- [ ] Server-side check: "Does user X own resource Y?"
+- [ ] Check applied on **every request**, not just login
+- [ ] Use unpredictable IDs (UUIDs v4, not v1)
+- [ ] Never rely on Base64/hashing for security
+- [ ] Log and alert on failed authorization attempts
+- [ ] Test by accessing other users' resources while authenticated
+
+### OWASP Top 10 Context
+
+**Broken Access Control = #1 (2021)**
+
+Includes:
+- IDOR
+- Missing function-level access control
+- Privilege escalation
+- CORS misconfiguration
+- JWT token manipulation
+
+**Why #1?**
+- Easy to exploit (just change a number)
+- Hard to detect without proper logging
+- Massive real-world impact (data breaches)
+
+### Quick IDOR Testing Methodology
+
+```
+1. Authenticate to application
+2. Use Developer Tools → Network tab
+3. Identify requests with ID parameters:
+   - Numeric: user_id=10
+   - Encoded: Mg==
+   - Hashed: cfcd208...
+   - UUID: abc-def-ghi
+4. Try changing the ID to another valid value
+5. If you see different user's data → IDOR confirmed
+6. Document: endpoint, parameter, data exposed
+```
 
 ---
