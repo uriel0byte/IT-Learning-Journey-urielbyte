@@ -11,139 +11,148 @@
 
 ## 🎯 Challenge Overview
 
-This challenge simulated a real SOC (Security Operations Center) scenario where TBFC's Azure environment was under attack by the Evil Easter Bunnies. Alerts were flooding in, and I played the role of McSkidy triaging incidents using Microsoft Sentinel, a cloud-native SIEM platform. I learned systematic alert prioritization, investigated high-severity privilege escalation alerts, correlated events across multiple hosts using KQL (Kusto Query Language), and reconstructed attack chains from initial access to persistence.
+The Best Festival Company's SOC was in chaos—screens flickered with red and orange warnings as alerts flooded in like a digital thunderstorm. Something strange was happening across the Azure environment, and whispers spread: the Evil Easter Bunnies were behind it. Playing the role of McSkidy, I triaged 8 incidents (4 high-severity, 4 medium-severity) using Microsoft Sentinel, a cloud-native SIEM platform. I systematically prioritized alerts using the 4-factor model, investigated high-severity privilege escalation attacks across multiple Linux hosts (app-01, app-02, websrv-01, storage-01), correlated events using KQL queries, and reconstructed complete attack chains from initial root SSH logins through privilege escalation to kernel module persistence.
 
 **Learning Objectives:**
-- Understand the importance of alert triage and prioritization in a SOC environment
+- Understand the importance of alert triage and prioritization in SOC
 - Explore Microsoft Sentinel to review and analyze security alerts
-- Correlate logs to identify real attacker activities and determine alert verdicts
+- Correlate logs to identify real attacker activities and determine verdicts
 - Practice real-world SOC analyst workflows
 
 ---
 
 ## 💡 What I Learned
 
-### The Importance of Alert Triage
+### The Critical Importance of Alert Triage
 
-**The Problem:** When alerts flood in, jumping into each one isn't efficient. Not all alerts are equal:
-- Some are noise
-- Others are false positives
-- A few may indicate real threats in progress
+**The Problem: "It's Raining Alerts"**
 
-**Alert Triaging:** The process of systematically assessing and prioritizing alerts to:
-- Identify which alerts deserve immediate attention
+When alerts flood in, jumping straight into each one isn't efficient:
+- Some alerts are **noise** (benign activity misclassified)
+- Others are **false positives** (detection rules need tuning)
+- A few indicate **real threats in progress** (need immediate action)
+
+**Alert Triaging Definition:**
+The systematic process of assessing and prioritizing alerts to:
+- Identify which deserve immediate attention
 - Determine which can be deprioritized
 - Decide which can be safely ignored temporarily
 
-**Goal:** Separate chaos from clarity, allowing analysts to focus time and resources where it truly matters.
+**Goal:** Separate chaos from clarity → focus time and resources where it truly matters.
 
 ### The Four Key Triage Factors
 
-When multiple alerts appear, analysts need a consistent method to assess and prioritize them quickly.
+| Factor | Question | Why It Matters | Action |
+|--------|----------|---------------|---------|
+| **Severity Level** | How bad? | Indicates urgency + business risk | Start with Critical/High first |
+| **Timestamp & Frequency** | When? | Identifies ongoing attacks or patterns | Build timeline |
+| **Attack Stage** | Where in lifecycle? | Shows attacker progression | Understand their objective |
+| **Affected Asset** | Who/what is hit? | Prioritizes by asset criticality | Protect high-value targets |
 
-**1. Severity Level**
-- Review alert's severity rating: Informational → Low → Medium → High → Critical
-- **Why it matters:** Indicates urgency of response and potential business risk
-- **What I do:** Start with Critical/High severity alerts first
+**Summary of Dimensions:**
+```
+Severity    → How bad?
+Time        → When?
+Context     → Where in attack lifecycle?
+Impact      → Who or what is affected?
+```
 
-**2. Timestamp and Frequency**
-- Identify when alert was triggered
-- Check for related activity before and after that time
-- **Why it matters:** Helps identify ongoing attacks or patterns of repeated behavior
-- **What I do:** Build a timeline of events
+### 6-Step Investigation Methodology
 
-**3. Attack Stage**
-- Determine which stage of attack lifecycle the alert indicates:
-  - Reconnaissance (information gathering)
-  - Initial Access (entry point)
-  - Privilege Escalation (gaining higher permissions)
-  - Persistence (maintaining access)
-  - Data Exfiltration (stealing data)
-- **Why it matters:** Gives insight into how far the attacker has progressed and their objective
-- **What I do:** Understand attacker progression
+**After triage identifies priority alerts, follow this process:**
 
-**4. Affected Asset**
-- Identify the system, user, or resource involved
-- Assess its importance to operations
-- **Why it matters:** Prioritizes response based on asset's criticality and potential impact
-- **What I do:** Protect high-value targets first
+**Step 1: Investigate Alert in Detail**
+- Open alert, review entities, event data, detection logic
+- Confirm if activity represents real malicious behavior
 
-**Summary:** These four factors represent essential dimensions of triage:
-- **Severity:** How bad?
-- **Time:** When?
-- **Context:** Where in the attack lifecycle?
-- **Impact:** Who or what is affected?
-
-### Investigation Methodology (6-Step Process)
-
-After identifying which alerts deserve attention, follow these steps:
-
-**1. Investigate the Alert in Detail**
-- Open the alert and review entities, event data, detection logic
-- Confirm whether activity represents real malicious behavior
-
-**2. Check Related Logs**
+**Step 2: Check Related Logs**
 - Examine relevant log sources
-- Look for patterns or unusual actions that align with the alert
+- Look for patterns or unusual actions aligning with alert
 
-**3. Correlate Multiple Alerts**
-- Identify other alerts involving same user, IP address, or device
-- Correlation often reveals broader attack sequence or coordinated activity
+**Step 3: Correlate Multiple Alerts**
+- Identify other alerts involving same user, IP, device
+- Correlation reveals broader attack sequences
 
-**4. Build Context and Timeline**
-- Combine timestamps, user actions, and affected assets
+**Step 4: Build Context and Timeline**
+- Combine timestamps, user actions, affected assets
 - Reconstruct sequence of events
 - Determine if attack is ongoing or contained
 
-**5. Decide on Next Action**
-- **Escalate:** If indicators of compromise (IOCs) exist
-- **Investigate further:** If more evidence or correlation needed
-- **Close/Suppress:** If confirmed false positive (update detection rules)
+**Step 5: Decide on Next Action**
+- **Escalate:** If IOCs exist
+- **Investigate further:** If more evidence needed
+- **Close/Suppress:** If confirmed false positive (update rules)
 
-**6. Document Findings and Lessons Learned**
-- Keep clear record of analysis, decisions, remediation steps
-- Proper documentation strengthens processes and supports continuous improvement
+**Step 6: Document Findings**
+- Record analysis, decisions, remediation steps
+- Documentation strengthens processes, supports improvement
 
 ### Microsoft Sentinel (Cloud-Native SIEM)
 
-**What it is:** Microsoft Sentinel is a cloud-native Security Information and Event Management (SIEM) and Security Orchestration, Automation, and Response (SOAR) platform.
+**What it is:** Cloud-native Security Information and Event Management (SIEM) + Security Orchestration, Automation, and Response (SOAR) platform.
 
-**Capabilities:**
-- Collects data from Azure services, applications, and connected sources
-- Detects, investigates, and responds to threats in real-time
+**Key Capabilities:**
+- Collects data from Azure services, applications, connected sources
+- Detects, investigates, responds to threats in real-time
 - Provides visibility into Azure tenant activity
-- Allows efficient pivoting from one alert to another
+- Efficient pivoting between alerts
 
-**Key Features Used:**
-- **Incidents Tab:** View triggered incidents with severity filtering
-- **Threat Management:** Centralized incident dashboard
-- **Evidence Section:** Raw event data behind alerts
-- **Investigation Tools:** Correlation and timeline analysis
-- **Log Analytics:** Custom KQL queries for deep-dive investigation
+**Interface Components:**
+
+**Incidents Tab (Threat Management):**
+- Centralized dashboard of triggered incidents
+- Severity filtering (Informational → Critical)
+- Timeline view of incident creation
+
+**Alert Details View:**
+- Events count (how many triggered this alert)
+- Creation timestamp
+- Entities involved (hosts, users, IPs)
+- Attack tactic classification (MITRE ATT&CK)
+- "View full details" button → deeper investigation
+
+**Evidence Section:**
+- Raw event data behind alerts
+- Actual commands executed
+- Timestamps of suspicious activity
+- Logs from affected systems
+
+**Log Analytics:**
+- Custom KQL queries for deep-dive investigation
+- Access to custom log tables (e.g., `Syslog_CL`)
+
+**Investigation Tools:**
+- Similar incidents detection
+- Incident timeline reconstruction
+- Entity correlation across alerts
 
 ### Understanding Related Alerts (Attack Chain Reconstruction)
 
-**Critical Concept:** Multiple alerts linked to the same entity (machine, user, IP) typically indicate different stages of the same intrusion, not isolated incidents.
+**Critical Concept:**
+Multiple alerts linked to same entity (machine, user, IP) typically indicate **different stages of the same intrusion**, not isolated incidents.
 
-**Example Attack Chain on app-02:**
+**Example — Attack Chain on app-02:**
 
-| Alert | Attack Stage | What It Suggests |
-|-------|--------------|------------------|
-| **Root Login from External IP** | Initial Access | Attacker gained remote SSH access to system |
-| **SUID Discovery** | Privilege Escalation | Attacker looked for ways to escalate privileges |
-| **Kernel Module Insertion** | Persistence | Attacker installed malicious kernel module for persistence |
+| Alert | Attack Stage | What It Reveals |
+|-------|--------------|-----------------|
+| Root SSH Login from External IP | Initial Access | Attacker gained remote access |
+| SUID Discovery | Privilege Escalation (Recon) | Attacker looking for escalation paths |
+| Kernel Module Insertion | Persistence | Attacker ensuring survival across reboots |
 
-**Why This Matters:** By analyzing which alerts share the same entities, we can:
-- Trace the attack path from initial access to persistence
-- Understand attacker progression
-- Prioritize response based on attack stage
+**Why This Matters:**
+- Traces complete attack path (access → escalation → persistence)
+- Shows attacker progression and objectives
+- Prioritizes response based on how far they've gotten
 
-### KQL (Kusto Query Language) - NEW and CHALLENGING
+**Application:**
+When app-02 shows 3 separate alerts, don't treat as 3 isolated issues — this is **one coordinated attack** with multiple stages.
 
-**What is KQL:** Query language used in Microsoft Sentinel (similar to SPL in Splunk, but different syntax).
+### KQL (Kusto Query Language) — NEW and CHALLENGING
+
+**What is KQL:**
+Query language for Microsoft Sentinel (similar to SPL in Splunk, but different syntax).
 
 **Basic Query Structure:**
-
 ```kql
 set query_now = datetime(2025-10-30T05:09:25.9886229Z);
 Syslog_CL
@@ -151,33 +160,38 @@ Syslog_CL
 | project _timestamp_t, host_s, Message
 ```
 
-**What this does:**
-- Sets a time reference point
-- Queries the `Syslog_CL` custom log table
-- Filters for specific host (`app-02`)
-- Projects (displays) only timestamp, host, and message fields
+**Breaking it down:**
+- `set query_now =` → Sets time reference point
+- `Syslog_CL` → Custom log table (Linux system logs)
+- `|` → Pipe operator (chains commands like SPL)
+- `where host_s == 'app-02'` → Filters for specific host
+- `project` → Selects which columns to display
 
 **KQL Operators I Learned:**
-- `|` - Pipe operator (like SPL, chains commands)
-- `where` - Filters results (like SQL WHERE)
-- `project` - Selects which columns to display
-- `==` - Equality comparison
-- `datetime()` - Time formatting function
 
-**What I Found Using KQL:**
-Investigating `app-02`, I discovered this suspicious sequence:
-1. Execution of `cp` (copy) command to create shadow file backup
-2. Addition of user account "Alice" to sudoers group
-3. Modification of backupuser account by root
-4. Insertion of `malicious_mod.ko` kernel module
-5. Successful SSH authentication by root user
+| Operator | Purpose | Example |
+|----------|---------|---------|
+| `\|` | Pipe (chain commands) | `Syslog_CL \| where ...` |
+| `where` | Filter results | `where host_s == 'app-02'` |
+| `project` | Select columns | `project _timestamp_t, host_s` |
+| `==` | Equality | `host_s == 'app-02'` |
+| `datetime()` | Time formatting | `datetime(2025-10-30...)` |
 
-**Analysis:** This sequence suggests privilege escalation and persistence behavior, not normal system operations.
+**What I Found Using KQL (app-02 Investigation):**
+
+Suspicious event sequence:
+1. `cp` (copy) command → Created shadow file backup
+2. User "Alice" → Added to sudoers group
+3. backupuser account → Modified by root
+4. `malicious_mod.ko` → Kernel module inserted
+5. Root user → Successful SSH authentication
+
+**Analysis:** This is NOT normal system operations. This is privilege escalation + persistence behavior.
 
 ### Privilege Escalation Alerts Investigated
 
 **High-Severity Alerts Triaged:**
-- **Linux PrivEsc - Kernel Module Insertion** (3 events, 3 entities, Privilege Escalation tactic)
+- **Linux PrivEsc - Kernel Module Insertion** (3 events, 3 entities, Privilege Escalation)
 - **Linux PrivEsc - Polkit Exploit Attempt**
 - **Linux PrivEsc - Sudo Shadow Access**
 - **Linux PrivEsc - User Added to Sudo Group**
@@ -188,96 +202,117 @@ Investigating `app-02`, I discovered this suspicious sequence:
 - websrv-01
 - storage-01
 
-**Attack Patterns Identified:**
-- Root SSH logins from external IPs (Initial Access)
-- SUID binary discovery (Privilege Escalation reconnaissance)
-- Kernel module insertion (Persistence)
-- Sudoers group modification (Privilege Escalation)
-- Shadow file access (Credential harvesting)
+**Attack Patterns Identified Across Hosts:**
+
+| Attack Stage | Technique | Example Finding |
+|-------------|-----------|-----------------|
+| Initial Access | Root SSH from external IPs | Successful authentication from untrusted sources |
+| Privilege Escalation (Recon) | SUID binary discovery | Searching for escalation opportunities |
+| Privilege Escalation (Execution) | User added to sudoers | Alice account granted admin rights |
+| Privilege Escalation (Execution) | Shadow file access | Credential harvesting attempts |
+| Persistence | Kernel module insertion | malicious_mod.ko loaded at boot |
+
+**Complete Attack Flow:**
+```
+External SSH → Gain access as root
+       ↓
+SUID discovery → Find escalation paths
+       ↓
+Add user to sudoers → Create backup admin account
+       ↓
+Access shadow file → Harvest credentials
+       ↓
+Insert kernel module → Ensure persistence
+       ↓
+Attacker maintains access even after reboot
+```
 
 ---
 
 ## 🛠️ Tools & Techniques Used
 
 ### Tools
-1. **Microsoft Sentinel** - Cloud-native SIEM platform (Azure)
+1. **Microsoft Sentinel** - Cloud-native SIEM (Azure)
 2. **KQL (Kusto Query Language)** - Log querying and analysis
-3. **Azure Portal** - Cloud infrastructure management interface
+3. **Azure Portal** - Cloud infrastructure management
 4. **Syslog_CL** - Custom log table for Linux system logs
 
 ### Techniques
-- **Alert triage** - Systematic prioritization using 4-factor model
-- **Incident correlation** - Linking alerts by common entities
-- **Timeline reconstruction** - Building sequence of events
-- **Log analysis** - Deep-dive investigation using KQL queries
-- **Attack chain mapping** - Identifying progression from initial access to persistence
-- **Entity analysis** - Tracking users, hosts, IPs across multiple alerts
-- **Evidence validation** - Confirming malicious activity vs. false positives
+- **Alert triage** (4-factor systematic prioritization)
+- **Incident correlation** (linking alerts by common entities)
+- **Timeline reconstruction** (building attack sequences)
+- **KQL log analysis** (deep-dive investigation)
+- **Attack chain mapping** (initial access → persistence)
+- **Entity analysis** (tracking users, hosts, IPs across alerts)
+- **Evidence validation** (confirming malicious vs. false positive)
 
 ---
 
 ## 🤔 Challenges I Faced
 
-**Lots of Content - Everything is New:** This challenge was overwhelming because almost everything was new to me. The volume of information to process was significant.
+**Lots of Content — Everything is New:**
+This was overwhelming. Volume of information to process was significant. Almost everything was new territory.
 
-**KQL Query Language is Hard:** KQL was particularly challenging because I have **no background in programming** or anything related to coding. The only similar experience was SPL from Day 3, but **I forgot most of Day 3** by the time I reached Day 10. Starting fresh with a new query language without programming foundations was difficult.
+**KQL is Hard:**
+Particularly challenging because **I have no programming background**. Only similar experience was SPL from Day 3, but **I forgot most of Day 3** by Day 10. Starting fresh with a new query language without programming foundation was difficult.
 
-**What Made It Hard:**
-- **New SIEM platform** - Microsoft Sentinel vs. Splunk (different interface, different workflow)
-- **Cloud environment** - Azure portal navigation was unfamiliar
-- **Query syntax** - KQL operators (`|`, `where`, `project`) were confusing at first
-- **Alert correlation** - Understanding how to link multiple alerts to same entity
-- **Attack chain thinking** - Visualizing progression from initial access → privilege escalation → persistence
+**Specific Challenges:**
+- **New SIEM platform:** Microsoft Sentinel vs. Splunk (different interface, workflow)
+- **Cloud environment:** Azure portal navigation unfamiliar
+- **Query syntax:** KQL operators (`|`, `where`, `project`) confusing initially
+- **Alert correlation:** Linking multiple alerts to same entity took time to grasp
+- **Attack chain thinking:** Visualizing progression (access → escalation → persistence)
 
 **What Made It Take 3 Hours:**
-- Reading and re-reading triage methodology
+- Reading/re-reading triage methodology
 - Trial and error with KQL queries
 - Understanding Sentinel interface navigation
 - Correlating 8+ incidents across 4 hosts
 - Answering detailed investigation questions
 
-**Overall Experience:** Still fun to explore despite the difficulty! Learning real SOC workflows and cloud SIEM was valuable even though it was challenging. The hands-on incident investigation made the concepts click better than just reading theory.
+**Overall:** Still fun despite difficulty! Learning real SOC workflows and cloud SIEM was valuable. Hands-on incident investigation made concepts click better than theory alone.
 
 ---
 
 ## ✅ How This Helps My Career
 
-**This is THE most important challenge so far for my SOC Analyst career goal.**
+**THIS IS THE MOST IMPORTANT CHALLENGE FOR MY SOC ANALYST CAREER GOAL.**
 
-**Why Alert Triage Matters:**
+### Why Alert Triage Matters
+
+**Statistics:**
 - **90% of SOC Analyst job postings** mention alert triage/incident investigation
-- Alert triage is the **#1 daily responsibility** of SOC Analysts
+- Alert triage = **#1 daily responsibility** of SOC Analysts
 - This challenge simulates **real SOC work** more than any previous day
 
 **Direct SOC Analyst Applications:**
 
 **Daily Operations:**
-- Triage incoming alerts using 4-factor model (Severity, Time, Attack Stage, Impact)
+- Triage incoming alerts using 4-factor model (Severity, Time, Stage, Impact)
 - Prioritize which incidents need immediate attention
-- Correlate multiple alerts to identify attack campaigns
+- Correlate multiple alerts → identify attack campaigns
 - Investigate high-severity privilege escalation alerts
-- Document findings and escalate to incident response team
+- Document findings, escalate to incident response team
 
 **Cloud Security (High Demand):**
 - Microsoft Sentinel experience (Azure cloud SIEM)
 - 60% of companies use cloud infrastructure (Azure, AWS, GCP)
-- Cloud security skills are in high demand and growing
+- Cloud security skills in high demand and growing
 - Understanding cloud-native SIEM platforms sets me apart
 
 **SIEM Skills (Industry-Standard):**
 - Alert correlation across multiple data sources
-- Log analysis using query languages (KQL, similar to SPL)
+- Log analysis using query languages (KQL ≈ SPL)
 - Timeline reconstruction from raw events
-- Evidence validation and false positive reduction
+- Evidence validation, false positive reduction
 
 **Incident Investigation Methodology:**
 - Systematic 6-step investigation process
-- Attack chain mapping (initial access → privilege escalation → persistence)
+- Attack chain mapping (access → escalation → persistence)
 - Entity tracking (users, hosts, IPs)
 - Documentation and escalation procedures
 
-**Real-World Scenarios:**
-This challenge mirrors actual SOC work:
+**Real-World Scenarios This Mirrors:**
 - Multiple simultaneous alerts
 - Privilege escalation attacks
 - Linux server compromises
@@ -285,13 +320,13 @@ This challenge mirrors actual SOC work:
 - Time pressure to triage effectively
 
 **Career Skills Developed:**
-- **SIEM proficiency** - Microsoft Sentinel (cloud), previously learned Splunk (on-prem)
-- **Query languages** - KQL (Azure), SPL (Splunk)
-- **Cloud platforms** - Azure Portal, cloud security concepts
-- **Incident response** - Triage → Investigation → Escalation → Documentation
-- **Critical thinking** - Distinguishing real threats from false positives
+- ✅ **SIEM proficiency:** Microsoft Sentinel (cloud), Splunk (on-prem from Day 3)
+- ✅ **Query languages:** KQL (Azure), SPL (Splunk)
+- ✅ **Cloud platforms:** Azure Portal, cloud security concepts
+- ✅ **Incident response:** Triage → Investigation → Escalation → Documentation
+- ✅ **Critical thinking:** Distinguishing real threats from false positives
 
-**Interview Talking Point:** "I have hands-on experience with SOC alert triage using Microsoft Sentinel in Azure cloud environments. I can systematically prioritize alerts using severity, timestamp, attack stage, and affected asset analysis. I've investigated real privilege escalation attack chains, correlated multiple alerts to identify coordinated intrusions, and used KQL to perform deep-dive log analysis. I understand the complete SOC analyst workflow from initial triage through investigation, escalation, and documentation. This experience directly applies to the daily responsibilities of monitoring, triaging, and investigating security alerts in a production SOC environment."
+**Interview Talking Point:** "I have hands-on experience with SOC alert triage using Microsoft Sentinel in Azure cloud environments. I can systematically prioritize alerts using a 4-factor model: severity, timestamp, attack stage, and affected asset. I've investigated real privilege escalation attack chains across multiple Linux hosts, correlated alerts to identify coordinated intrusions, and used KQL to perform deep-dive log analysis that revealed complete attack progressions from initial SSH access through privilege escalation to kernel module persistence. I understand the complete SOC analyst workflow from initial triage through detailed investigation, evidence validation, escalation decisions, and documentation. This hands-on experience directly applies to the daily responsibilities of monitoring, triaging, and investigating security alerts in a production SOC environment, which is why this challenge is the most valuable for my career goal."
 
 ---
 
@@ -305,13 +340,279 @@ This challenge mirrors actual SOC work:
 
 ## 📸 Evidence
 
-![Microsoft Sentinel Incidents Dashboard](../07-Screenshots/day-10/sentinel-incidents-overview.png)
-*Reviewed 8 incidents (4 high-severity, 4 medium-severity) in Microsoft Sentinel, prioritizing privilege escalation alerts*
+**🔔 SCREENSHOT REMINDER:** This is your 3rd and FINAL strategic screenshot day! Go back and capture:
+1. Microsoft Sentinel Incidents Dashboard (8 incidents: 4 high, 4 medium)
+2. KQL query + results showing app-02 attack chain
+3. Alert correlation view showing multiple alerts for same entity
 
-![KQL Log Analysis - app-02](../07-Screenshots/day-10/kql-attack-chain-app02.png)
-*Used KQL query to investigate app-02, revealing attack chain: shadow backup → Alice added to sudoers → kernel module insertion → root SSH login*
+### Key Findings (Documented):
+- Triaged 8 incidents total (4 high-severity, 4 medium-severity)
+- Investigated Linux PrivEsc - Kernel Module Insertion (3 events, 3 entities)
+- Used KQL to investigate app-02: shadow backup → Alice to sudoers → malicious_mod.ko → root SSH
+- Correlated alerts across 4 hosts (app-01, app-02, websrv-01, storage-01)
+- Mapped complete attack chain: Initial Access → Privilege Escalation → Persistence
 
-![Alert Correlation Timeline](../07-Screenshots/day-10/alert-correlation-entities.png)
-*Correlated multiple alerts across same entities (hosts, users, IPs) to map complete attack progression from initial access to persistence*
+---
+
+## 📚 Key Takeaways for Future Reference
+
+### Alert Triage 4-Factor Model (Memorize This)
+
+```
+Factor 1: SEVERITY
+Question: How bad is this?
+Scale: Informational → Low → Medium → High → Critical
+Action: Always start with High/Critical
+
+Factor 2: TIMESTAMP & FREQUENCY
+Question: When did this happen? Repeating?
+Purpose: Build timeline, identify ongoing attacks
+Action: Check before/after activity
+
+Factor 3: ATTACK STAGE
+Question: Where in the kill chain?
+Stages: Recon → Access → Escalation → Persistence → Exfiltration
+Action: Understand attacker progression
+
+Factor 4: AFFECTED ASSET
+Question: Who/what is hit?
+Assessment: Criticality to business operations
+Action: Prioritize high-value targets
+```
+
+### 6-Step Investigation Process (SOC Workflow)
+
+```
+1. Investigate Alert Details
+   → Entities, event data, detection logic
+   → Confirm malicious vs. benign
+
+2. Check Related Logs
+   → Examine log sources
+   → Look for patterns
+
+3. Correlate Multiple Alerts
+   → Same user/IP/device?
+   → Broader attack sequence?
+
+4. Build Timeline
+   → Combine timestamps + actions
+   → Reconstruct events
+   → Ongoing or contained?
+
+5. Decide Action
+   → Escalate (IOCs exist)
+   → Investigate further (need more evidence)
+   → Close (false positive)
+
+6. Document
+   → Analysis + decisions + remediation
+   → Continuous improvement
+```
+
+### Microsoft Sentinel Navigation
+
+**Access Path:**
+```
+Azure Portal → Search "Microsoft Sentinel"
+→ Select Sentinel instance
+→ Threat Management → Incidents tab
+→ << button (expand view)
+```
+
+**Alert Detail Workflow:**
+```
+Incidents tab → Click alert
+→ Right panel shows: events, entities, severity, tactics
+→ "View full details" button
+→ Incident Timeline + Similar Incidents
+→ Evidence section → raw event data
+```
+
+**Switching to KQL Query Mode:**
+```
+Evidence section → Events
+→ Simple mode dropdown (upper-right)
+→ Select "KQL mode"
+→ Modify query
+→ Run button
+```
+
+### KQL Quick Reference (Sentinel)
+
+**Basic Query Template:**
+```kql
+set query_now = datetime(YYYY-MM-DDTHH:MM:SS.MMMMMMMZ);
+Syslog_CL
+| where host_s == 'hostname'
+| project _timestamp_t, host_s, Message
+```
+
+**Essential Operators:**
+```kql
+| where            # Filter
+| project          # Select columns
+| sort by          # Order results
+| take 10          # Limit results
+| summarize count  # Aggregate
+```
+
+**Common Filters:**
+```kql
+where host_s == 'app-02'              # Exact match
+where Message contains 'sudo'          # Substring search
+where _timestamp_t > datetime(...)     # Time filter
+```
+
+### Attack Chain Recognition Patterns
+
+**Privilege Escalation Attack Sequence:**
+```
+Stage 1: Initial Access
+- Root SSH from external IP
+- Successful authentication
+→ Detection: Unusual source IP, time-of-day
+
+Stage 2: Privilege Escalation (Recon)
+- SUID binary discovery
+- Searching for escalation paths
+→ Detection: Enumeration commands
+
+Stage 3: Privilege Escalation (Execution)
+- User added to sudoers
+- Shadow file accessed
+→ Detection: File modifications
+
+Stage 4: Persistence
+- Kernel module insertion
+→ Detection: Unusual kernel activity
+```
+
+**Red Flags to Watch:**
+- Root logins from external/unexpected IPs
+- Users added to sudoers group
+- Shadow file (`/etc/shadow`) access attempts
+- Kernel module insertion (`insmod`, `.ko` files)
+- Backup of sensitive files (`cp /etc/shadow`)
+
+### Entity Correlation Strategy
+
+**When Multiple Alerts Fire:**
+```
+Step 1: Identify common entities
+- Same host?
+- Same user?
+- Same source IP?
+
+Step 2: Check timestamps
+- Close together? (likely same attack)
+- Spread out? (different attacks or persistent threat)
+
+Step 3: Map to attack stages
+- Access → Escalation → Persistence?
+
+Step 4: Prioritize
+- Early stages + ongoing = URGENT
+- Late stages + old timestamps = investigate but not emergency
+```
+
+### Linux Privilege Escalation Indicators
+
+**Commands to Flag:**
+```bash
+find / -perm -4000          # SUID binary discovery
+usermod -aG sudo <user>     # Add user to sudoers
+echo '<user> ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers  # Sudoers modification
+cp /etc/shadow              # Shadow file backup
+insmod <module>.ko          # Kernel module insertion
+modprobe <module>           # Kernel module loading
+```
+
+**Files to Monitor:**
+```
+/etc/passwd           # User accounts
+/etc/shadow           # Password hashes
+/etc/sudoers          # Sudo permissions
+/etc/ssh/sshd_config  # SSH configuration
+/lib/modules/         # Kernel modules
+```
+
+### Cloud SIEM vs. On-Prem SIEM
+
+**Microsoft Sentinel (Cloud):**
+- Azure-native integration
+- KQL query language
+- Cloud-scale data ingestion
+- SOAR capabilities built-in
+- Pay-as-you-go pricing
+
+**Splunk (On-Prem from Day 3):**
+- Self-hosted or cloud
+- SPL query language
+- Established market leader
+- Extensive app ecosystem
+- License by data volume
+
+**Key Similarity:**
+Both require systematic triage, correlation, investigation, and documentation workflows.
+
+### SOC Analyst Daily Workflow (Based on This Challenge)
+
+```
+Morning Shift Start:
+1. Check incident dashboard
+2. Review overnight alerts
+3. Triage by 4-factor model
+4. Prioritize high-severity first
+
+Investigation:
+5. Open alert details
+6. Check evidence/raw logs
+7. Correlate related alerts
+8. Build attack timeline
+9. Validate true positive vs. false positive
+
+Action:
+10. Escalate (if IOCs found)
+11. Document findings
+12. Update ticket
+13. Move to next alert
+
+End of Shift:
+14. Handoff notes to next shift
+15. Update SOC metrics
+```
+
+### Interview Preparation — SOC Triage
+
+**Questions to Expect:**
+
+**Q: "How do you prioritize alerts when you have 50+ incidents?"**
+A: "I use a 4-factor triage model: severity level, timestamp/frequency, attack stage, and affected asset. I start with critical/high severity, focus on alerts showing ongoing activity or late-stage attacks like persistence, and prioritize alerts affecting business-critical assets."
+
+**Q: "Walk me through your incident investigation process."**
+A: "I follow a 6-step process: [describe each step from methodology above]"
+
+**Q: "How do you identify if multiple alerts are part of the same attack?"**
+A: "I look for common entities—same host, user, or source IP. I check timestamps to see if they're close together. Then I map them to attack stages to see if they form a logical progression like initial access, privilege escalation, then persistence."
+
+**Q: "Have you used Microsoft Sentinel?"**
+A: "Yes, I have hands-on experience triaging incidents in Sentinel. I've used KQL to investigate Linux privilege escalation attacks, correlated multiple alerts across entities, and reconstructed attack timelines from raw log data."
+
+---
+
+## 🎉 **CONGRATULATIONS — DAYS 1-10 REVISION COMPLETE!** 🎉
+
+All 10 days enhanced with:
+✅ Professional-grade documentation
+✅ Key Takeaways for future reference
+✅ Career-focused content
+✅ Interview talking points
+✅ Real-world applications
+
+**Screenshot Reminders:**
+🔔 Day 3 (Splunk)
+🔔 Day 6 (Malware Analysis)  
+🔔 Day 10 (Sentinel) ← Go get these now!
 
 ---
