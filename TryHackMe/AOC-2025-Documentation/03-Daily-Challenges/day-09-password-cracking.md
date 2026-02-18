@@ -11,14 +11,13 @@
 
 ## 🎯 Challenge Overview
 
-This challenge focused on password-based encryption vulnerabilities. Sir Carrotbane discovered encrypted PDF and ZIP files containing "North Pole Asset List" fragments of Santa's master gift registry. I learned how weak passwords make encrypted files vulnerable and used dictionary attacks with tools like `pdfcrack`, `fcrackzip`, and `john` (John the Ripper) to crack password-protected files. The room also introduced detection techniques for identifying password cracking activity on endpoints.
+Sir Carrotbane discovered encrypted PDF and ZIP files labeled "North Pole Asset List" containing fragments of Santa's master gift registry. I learned how weak passwords make encrypted files vulnerable and practiced using dictionary attacks with `pdfcrack`, `fcrackzip`, and John the Ripper to crack password-protected files. The room's most valuable section introduced **defensive detection techniques** for identifying password cracking activity on endpoints—critical for SOC analysts since offline cracking doesn't trigger traditional authentication alerts.
 
 **Learning Objectives:**
-- Understand how password-based encryption protects files (PDFs, ZIP archives)
+- Understand password-based encryption (PDFs, ZIP archives)
 - Learn why weak passwords make encrypted files vulnerable
 - Use dictionary and brute-force attacks to recover passwords
-- Practice cracking encrypted files to reveal contents
-- Learn detection techniques for password cracking activity (new defensive perspective)
+- **NEW:** Learn detection techniques for password cracking activity (defensive perspective)
 
 ---
 
@@ -26,150 +25,128 @@ This challenge focused on password-based encryption vulnerabilities. Sir Carrotb
 
 ### Password-Based Encryption Fundamentals
 
-**Key Principle:** The strength of encryption protection depends almost entirely on the **password quality**.
+**Core Principle:**
+Protection strength depends **almost entirely on password quality**.
 
-- **Short or common passwords** → Can be guessed quickly
-- **Long, random passwords** → Far harder to break
+```
+Short/common password → Easily guessed
+Long, random password → Far harder to break
+```
 
-**Important Concepts:**
-
-**1. Encryption protects confidentiality only**
-- Encryption makes contents unreadable without the correct password
-- Does NOT prevent offline password guessing attacks
-- Attackers can try unlimited passwords if they have the encrypted file
-
-**2. File formats use different encryption algorithms**
-- **PDF encryption** vs. **ZIP encryption** differ in:
-  - Key derivation methods
-  - Salt usage
-  - Number of hash iterations
-- Legacy/weak modes (especially older ZIP encryption) are easier to crack
-
-**3. Consumer tools often support weak encryption**
-- Many tools still allow weak encryption modes for compatibility
-- Makes some encrypted archives much easier to attack than modern implementations
+**Critical Points:**
+- Encryption protects confidentiality only (doesn't prevent offline guessing)
+- Different file formats use different algorithms (PDF vs. ZIP encryption)
+- Consumer tools often support legacy/weak modes (older ZIP especially vulnerable)
 
 ### Attack Methods (Review)
 
-**Dictionary Attacks (Fast and Effective)**
+**Dictionary Attacks (Fast, Effective):**
+- Predefined wordlists (`rockyou.txt`, common-passwords.txt)
+- Leaked passwords from breaches
+- Common substitutions (password123, P@ssw0rd)
 
-Use predefined wordlists containing:
-- Leaked passwords from previous breaches
-- Common substitutions (`password123`, `P@ssw0rd`)
-- Predictable combinations (names + dates, patterns)
+**Brute-Force/Mask Attacks (Thorough, Slower):**
+- Try every possible character combination
+- **Mask attacks** narrow search (e.g., `?l?l?l?d?d` = 3 letters + 2 digits)
+- GPU acceleration dramatically speeds up cracking
 
-**Why effective:** Many users choose weak or common passwords
-
-**Mask/Brute-Force Attacks (Thorough but Slower)**
-
-**Brute-force:** Try EVERY possible character combination
-- Guarantees success eventually
-- Time grows exponentially with password length/complexity
-
-**Mask attacks:** Limit guesses to specific formats
-- Example: `?l?l?l?d?d` = three lowercase letters + two digits
-- Reduces search space when password structure is known
-- Balances speed and thoroughness
-
-**Attacker Strategy (what I reviewed):**
-1. Start with wordlist (fast wins) - `rockyou.txt`, `common-passwords.txt`
-2. Try targeted wordlists (company names, project-specific terms)
-3. Use mask attacks on short passwords
-4. GPU-accelerate when possible (dramatically speeds up cracking)
-
-### Password Cracking Tools (Hands-On Practice)
-
-**Workflow:**
-
-**1. Identify File Type**
-
-```bash
-file flag.pdf
-file flag.zip
+**Attacker Strategy:**
+```
+1. Wordlist attack (fast wins)
+2. Targeted wordlists (company/project names)
+3. Mask attacks (known password structure)
+4. GPU-accelerated cracking
 ```
 
-**2. Choose Tool Based on File Type**
+### Tools I Practiced
 
-| File Type | Tools |
-|-----------|-------|
-| **PDF** | `pdfcrack`, `john` (via `pdf2john`) |
-| **ZIP** | `fcrackzip`, `john` (via `zip2john`) |
-| **General** | `john` (flexible), `hashcat` (GPU-accelerated) |
-
-**3. Dictionary Attack - PDF Example**
-
+**PDF Cracking:**
 ```bash
+# Dictionary attack with pdfcrack
 pdfcrack -f flag.pdf -w /usr/share/wordlists/rockyou.txt
+
+# Output shows:
+# - Average speed (words/sec)
+# - Current word being tested
+# - "found user-password: 'XXXXXXXXXX'" when successful
 ```
 
-**Output shows:**
-- PDF version, encryption details
-- Average cracking speed (words/sec)
-- Current password being tested
-- `found user-password: 'XXXXXXXXXX'` when successful
-
-**4. Dictionary Attack - ZIP with John the Ripper**
-
+**ZIP Cracking (John the Ripper):**
 ```bash
-# Step 1: Convert ZIP to hash format John understands
+# Step 1: Convert ZIP to John-compatible hash
 zip2john flag.zip > ziphash.txt
 
 # Step 2: Crack with wordlist
 john --wordlist=/usr/share/wordlists/rockyou.txt ziphash.txt
+
+# Output shows hash type, speed, recovered password
 ```
 
-**John reports:**
-- Hash type detected (e.g., `ZIP, WinZip [PBKDF2-SHA1]`)
-- Cracking speed and progress
-- Recovered password when found
+---
 
-### Detection of Password Cracking Activity (NEW TOPIC)
+## 🛡️ **Detection of Password Cracking (NEW — Most Important for SOC)**
 
-**Challenge:** Offline cracking doesn't hit login services, so:
-- No lockout alerts
+### The Detection Challenge
+
+**Why offline cracking is invisible:**
+- No login service hits
+- No account lockouts
 - No failed login dashboards
-- Must detect on endpoints where cracking occurs
 
-**Detection Strategy: Look for process, GPU, network, and file artifacts**
+**Solution:** Detect on **endpoints** where cracking occurs.
+
+### Four Detection Signal Categories
 
 **1. Process Creation Monitoring**
 
-**Tools/Binaries to detect:**
+**Binaries to watch:**
 - `john`, `hashcat`, `fcrackzip`, `pdfcrack`
 - `zip2john`, `pdf2john.pl`, `7z`, `qpdf`
 
 **Command-line indicators:**
-- Flags: `--wordlist`, `-w`, `--rules`, `--mask`, `-a 3`, `-m`
-- References to: `rockyou.txt`, `SecLists`, `zip2john`, `pdf2john`
+```
+Flags: --wordlist, -w, --rules, --mask, -a 3, -m
+References: rockyou.txt, SecLists, zip2john, pdf2john
+```
 
-**Potfiles (cracked password storage):**
-- `~/.john/john.pot`
-- `.hashcat/hashcat.potfile`
-- `john.rec` (session recovery file)
+**Artifacts (cracked password storage):**
+```
+~/.john/john.pot
+.hashcat/hashcat.potfile
+john.rec (session recovery)
+```
 
-**Platform-specific monitoring:**
-- **Windows:** Sysmon Event ID 1 (process creation with full command line)
-- **Linux:** `auditd`, `execve`, or EDR sensors (binaries + arguments)
+**Platform-specific:**
+- **Windows:** Sysmon Event ID 1 (full command line)
+- **Linux:** auditd, execve, EDR sensors
+
+---
 
 **2. GPU and Resource Artifacts**
 
 **GPU cracking is loud:**
-- Sudden high GPU utilization on hosts
-- `nvidia-smi` shows long-running `hashcat` or `john` processes
-- High, steady GPU utilization and power draw
+- Sudden high GPU utilization
+- `nvidia-smi` shows long-running hashcat/john
+- High, steady GPU utilization + power draw
 - Fan curve spikes
 
 **Libraries loaded:**
-- Windows: `nvcuda.dll`, `OpenCL.dll`, `amdocl64.dll`
-- Linux: `libcuda.so`
+```
+Windows: nvcuda.dll, OpenCL.dll, amdocl64.dll
+Linux: libcuda.so
+```
+
+---
 
 **3. Network Hints (Light but Useful)**
 
-Offline cracking doesn't need network once wordlists are present, but:
-- Downloads of large text files (`rockyou.txt`)
+Offline cracking doesn't need network once wordlists present, but:
+- Downloads of large text files (rockyou.txt)
 - Git clones of wordlist repositories
-- Package installs: `apt install john hashcat` (EDR package telemetry)
+- Package installs (`apt install john hashcat`)
 - GPU driver updates/downloads
+
+---
 
 **4. Unusual File Reads**
 
@@ -177,163 +154,235 @@ Repeated reads of:
 - Wordlist files (`/usr/share/wordlists/rockyou.txt`)
 - Encrypted files being cracked
 
-### Detection Rules Examples (What I Didn't Fully Understand)
+### Detection Rules (What I Partially Understand)
 
 **Sysmon (Windows):**
-
 ```
 (ProcessName="C:\Program Files\john\john.exe" OR
-ProcessName="C:\Tools\hashcat\hashcat.exe" OR
-CommandLine="*pdf2john.pl*" OR
-CommandLine="*zip2john*")
+ ProcessName="C:\Tools\hashcat\hashcat.exe" OR
+ CommandLine="*pdf2john.pl*" OR
+ CommandLine="*zip2john*")
 ```
 
 **Linux audit rules:**
-
 ```bash
 auditctl -w /usr/share/wordlists/rockyou.txt -p r -k wordlists_read
 auditctl -a always,exit -F arch=b64 -S execve -F exe=/usr/bin/john -k crack_exec
 ```
 
-**Sigma rule (cross-platform detection format):**
-- Detects execution of cracking tools
-- Looks for specific command-line patterns
-- Medium severity level
+**What I understand:** These alert when cracking tools run.
 
-**What I understand:** These are detection rules for SIEM/EDR systems to alert when password cracking tools run.
+**What's still unclear:** Specific syntax details (Sysmon filters, auditctl flags, Sigma rule structure).
 
-**What's still unclear:** The specific syntax of each detection language (Sysmon filters, auditctl flags, Sigma format).
+### Incident Response Playbook (NEW)
 
-### Incident Response Playbook (NEW CONCEPT)
+**Immediate actions when cracking detected:**
 
-**Immediate Actions When Cracking Detected:**
-1. **Isolate** the host (if malicious) or tag and suppress (if lab)
-2. **Capture triage artifacts** - process list, memory dump, GPU output, open files
-3. **Preserve evidence** - working directory, wordlists, hash files, shell history
-4. **Review impact** - Which files were decrypted? Look for lateral movement/exfiltration
-5. **Identify intent** - Authorized testing or malicious activity?
-6. **Remediate** - Rotate affected passwords, enforce MFA
-7. **Close with education** - Train users, move tools to approved sandboxes
+```
+1. Isolate host (if malicious) OR tag/suppress (if lab)
+2. Capture triage artifacts:
+   - Process list
+   - Memory dump
+   - nvidia-smi output
+   - Open files
+3. Preserve evidence:
+   - Working directory
+   - Wordlists
+   - Hash files
+   - Shell history
+4. Review impact:
+   - Which files decrypted?
+   - Lateral movement?
+   - Exfiltration?
+5. Identify intent:
+   - Authorized testing?
+   - Escalate to IR if malicious
+6. Remediate:
+   - Rotate affected passwords
+   - Enforce MFA
+7. Close with education
+```
 
 ---
 
 ## 🛠️ Tools & Techniques Used
 
 ### Tools
-1. **pdfcrack** - PDF password cracking tool
-2. **fcrackzip** - ZIP password cracking tool
-3. **John the Ripper (john)** - General-purpose password cracker
-4. **zip2john / pdf2john** - Convert encrypted files to John-compatible hash format
+1. **pdfcrack** - PDF password cracking
+2. **fcrackzip** - ZIP password cracking
+3. **John the Ripper** - General password cracker
+4. **zip2john/pdf2john** - Hash extraction utilities
 5. **rockyou.txt** - Popular wordlist (14+ million passwords)
-6. **file** command - Identify file types
 
 ### Techniques
-- **Dictionary attacks** - Wordlist-based password guessing
-- **File type identification** - Determine encryption type
-- **Hash extraction** - Convert encrypted files to crackable format
-- **Offline password cracking** - Attack without network/authentication limits
-- **Detection rule analysis** - Understanding defensive monitoring (new)
+- Dictionary attacks (wordlist-based)
+- File type identification
+- Hash extraction
+- Offline password cracking
+- **Detection rule analysis** (new defensive skill)
 
 ---
 
 ## 🤔 Challenges I Faced
 
-**No Major Problems:** This was mostly a review topic. I've learned password cracking before, so the core concepts and tools were familiar.
+**No Major Problems:** Mostly review. I've learned password cracking before.
 
-**What I Reviewed Successfully:**
+**What I Reviewed:**
 - Dictionary vs. brute-force/mask attacks
-- Using `pdfcrack`, `fcrackzip`, and `john`
-- `rockyou.txt` wordlist usage
+- Using pdfcrack, fcrackzip, john
+- rockyou.txt wordlist
 - Offline cracking methodology
 
-**New Topic - Detection (Partial Understanding):**
-**"Detection of Indicators and Telemetry"** was new to me. I don't remember all the details, but I understand the core concept: **how to detect password cracking attacks from a defensive perspective**.
+**NEW Topic — Detection (Partial Understanding):**
 
 **What I Get:**
-- Monitor for cracking tool processes (`john`, `hashcat`)
-- Watch for GPU usage spikes
+- Monitor for cracking tool processes
+- Watch GPU usage spikes
 - Look for wordlist downloads/reads
-- Detection is about finding artifacts on endpoints
+- Endpoint-based detection required
 
 **What I Don't Fully Get:**
-The section **"Detections - Below are some examples of detection rules and hunting queries"** with Sysmon, Linux audit rules, and Sigma format. I can see they're detection rules for different platforms, but:
-- **Sysmon syntax** - Don't fully understand the filter logic
-- **auditctl flags** - What `-w`, `-p r`, `-k`, `-a always,exit`, `-F` mean exactly
-- **Sigma rules** - The structure and how they translate to real SIEM queries
+- Sysmon filter syntax
+- auditctl flag meanings (`-w`, `-p r`, `-k`, `-a always,exit`, `-F`)
+- Sigma rule structure and SIEM translation
 
-**Overall Assessment:** Pretty easy room. The cracking part was straightforward review; the detection part introduced new defensive concepts I'm still learning.
+**Overall:** Easy room. Cracking = straightforward review. Detection = new defensive concepts still learning.
 
 ---
 
 ## ✅ How This Helps My Career
 
-Password cracking knowledge is valuable for **both offensive (red team) and defensive (SOC) roles**:
-
 **Why Password Security Matters:**
 - **45% of SOC analyst job postings** mention password security/credential protection
-- Weak passwords remain a top attack vector
-- Understanding attacks helps defend against them
+- Weak passwords = top attack vector
+- Understanding attacks helps build defenses
 
-**Offensive Security Applications (Red Team / Penetration Testing):**
-
-**Password Auditing:**
-- Test organizational password policies
-- Identify weak passwords in corporate environments
-- Demonstrate risk of password reuse
-
-**Post-Exploitation:**
-- Crack encrypted files found during penetration tests
-- Extract credentials from password-protected archives
-- Access sensitive documents during red team engagements
-
-**Defensive Security Applications (SOC Analyst):**
+**Defensive Security (SOC — My Focus):**
 
 **Threat Detection (NEW from this room):**
-- Recognize password cracking tool signatures
-- Monitor for GPU usage anomalies
+- Recognize cracking tool signatures (john, hashcat)
+- Monitor GPU usage anomalies
 - Detect wordlist downloads and suspicious file reads
 - Alert on cracking tool execution
 
 **Incident Response:**
-- Investigate credential compromise incidents
-- Assess which accounts/files were accessed
+- Investigate credential compromise
+- Assess which accounts/files accessed
 - Follow IR playbook for password cracking incidents
-- Recommend password rotation and MFA enforcement
+- Recommend password rotation + MFA
 
-**Security Awareness:**
-- Educate users on password strength importance
-- Demonstrate impact of weak passwords to stakeholders
-- Advocate for password managers and strong password policies
+**Offensive Security (Red Team/Pentesting):**
 
-**Career Skills Developed:**
-- **Tool proficiency:** John the Ripper, hashcat, pdfcrack, fcrackzip
-- **Offensive techniques:** Dictionary and mask attacks
-- **Defensive mindset:** Detection rules and monitoring (new)
-- **Incident response:** Triage, evidence preservation, remediation
+**Password Auditing:**
+- Test organizational password policies
+- Identify weak passwords
+- Demonstrate risk of password reuse
 
-**Interview Talking Point:** "I have hands-on experience with password cracking tools like John the Ripper, hashcat, and pdfcrack for both offensive security testing and defensive security awareness. I understand dictionary and brute-force attack methodologies using wordlists like rockyou.txt. From a defensive perspective, I'm learning to detect password cracking activity through process monitoring, GPU usage analysis, and detection rules in Sysmon and auditd. I can contribute to both red team password auditing and SOC alert triage for credential-based attacks."
+**Post-Exploitation:**
+- Crack encrypted files found during pentests
+- Extract credentials from archives
+- Access sensitive documents
+
+**Interview Talking Point:** "I have hands-on experience with password cracking tools like John the Ripper and pdfcrack for both offensive security testing and defensive awareness. I understand dictionary and brute-force methodologies using wordlists like rockyou.txt. More importantly from a SOC perspective, I'm learning to detect password cracking activity through process monitoring, GPU usage analysis, and detection rules—skills critical for identifying credential-based attacks on endpoints before data exfiltration occurs."
 
 ---
 
 ## 🔗 Security+ Connection
 
-**Domain 1.0 - General Security Concepts (12%):** Password policies, authentication security, cryptography concepts, password hashing.
+**Domain 1.0 - General Security Concepts (12%):** Password policies, authentication security, cryptography, password hashing.
 
-**Domain 2.0 - Threats, Vulnerabilities & Mitigations (22%):** Password attacks, brute-force attacks, credential compromise, attack techniques.
+**Domain 2.0 - Threats, Vulnerabilities & Mitigations (22%):** Password attacks, brute-force attacks, credential compromise.
 
-**Domain 4.0 - Security Operations (28%):** Incident detection, monitoring and logging, threat hunting, incident response procedures.
+**Domain 4.0 - Security Operations (28%):** Incident detection, monitoring and logging, threat hunting, incident response.
 
 ---
 
 ## 📸 Evidence
 
-![pdfcrack Dictionary Attack](../07-Screenshots/day-09/pdfcrack-success.png)
-*Successfully cracked password-protected PDF using pdfcrack with rockyou.txt wordlist, revealing average speed of ~30k words/sec*
+**Note:** Screenshots were not captured during initial completion. Documentation based on hands-on completion and room content review.
 
-![John the Ripper ZIP Cracking](../07-Screenshots/day-09/john-zip-crack.png)
-*Used zip2john to extract hash and john with rockyou.txt to crack ZIP password in ~2 minutes*
+### Key Findings:
+- Successfully cracked PDF password using pdfcrack with rockyou.txt (~30k words/sec)
+- Successfully cracked ZIP password using zip2john + john with rockyou.txt (~2 minutes)
+- Learned endpoint detection techniques: process monitoring, GPU usage, wordlist reads
+- Reviewed incident response playbook for password cracking incidents
 
-![Detection Rules Overview](../07-Screenshots/day-09/detection-rules.png)
-*Reviewed Sysmon, Linux auditctl, and Sigma detection rules for identifying password cracking tool execution*
+---
+
+## 📚 Key Takeaways for Future Reference
+
+### Password Cracking Tool Quick Reference
+
+```bash
+# Identify file type
+file flag.pdf
+file flag.zip
+
+# PDF cracking
+pdfcrack -f flag.pdf -w /usr/share/wordlists/rockyou.txt
+
+# ZIP cracking (John the Ripper)
+zip2john flag.zip > ziphash.txt
+john --wordlist=/usr/share/wordlists/rockyou.txt ziphash.txt
+
+# View cracked passwords
+john --show ziphash.txt
+```
+
+### Detection Quick Reference (SOC Focus)
+
+**What to Monitor:**
+
+| Signal Type | Indicators | Tools |
+|------------|-----------|-------|
+| **Process** | john, hashcat, pdfcrack, zip2john | Sysmon, EDR, auditd |
+| **GPU** | High utilization, nvidia-smi | GPU monitoring, perfmon |
+| **Network** | rockyou.txt downloads, Git clones | Proxy logs, EDR telemetry |
+| **Files** | Wordlist reads, repeated encrypted file reads | File access logs, auditd |
+
+**Command-Line Red Flags:**
+```
+--wordlist
+-w rockyou.txt
+--mask
+-a 3
+zip2john
+pdf2john
+```
+
+**Artifact Locations:**
+```
+~/.john/john.pot
+~/.hashcat/hashcat.potfile
+john.rec
+```
+
+### Incident Response Checklist
+
+When password cracking detected:
+- [ ] Isolate host (if malicious)
+- [ ] Capture process list, memory dump
+- [ ] Preserve working directory, wordlists
+- [ ] Review decrypted files
+- [ ] Search for lateral movement/exfiltration
+- [ ] Identify if authorized testing
+- [ ] Rotate affected passwords
+- [ ] Enforce MFA
+- [ ] Educate users
+
+### Password Security Best Practices
+
+**Strong passwords:**
+- 16+ characters
+- Random (use password manager)
+- Unique per account
+- MFA enforcement
+
+**Organizational defense:**
+- Password policy enforcement
+- Regular password audits
+- Security awareness training
+- MFA mandatory
+- Monitor for cracking activity on endpoints
 
 ---
