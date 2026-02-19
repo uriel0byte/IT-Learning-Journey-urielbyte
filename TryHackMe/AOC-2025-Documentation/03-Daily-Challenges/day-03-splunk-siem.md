@@ -679,6 +679,7 @@ Server compromised → Search all logs for that server IP → Identify initial a
 ![sum-c2-firewall-logs](../07-Screenshots/Day3-4.png)
 
 *Correlated firewall logs to confirm outbound C2 communication from compromised server (10.10.1.5) to attacker infrastructure at [C2_IP]. Analysis revealed ACTION=ALLOWED entries with REASON=C2_CONTACT, indicating the attacker established persistent command-and-control channel. Total data exfiltration calculated using stats sum(bytes_transferred) showed [126167] GB transferred, confirming successful data theft.*
+
 ---
 
 ### Key Findings:
