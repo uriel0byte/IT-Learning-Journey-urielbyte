@@ -669,12 +669,17 @@ Server compromised → Search all logs for that server IP → Identify initial a
 
 ## 📸 Evidence
 
-**🔔 REMINDER:** Go back to this room and take 2-3 screenshots:
-1. Timeline visualization showing traffic spike
-2. SPL query filtering attacker IP
-3. C2 communication in firewall logs
+![traffic-spike-timeline](../07-Screenshots/Day3-1.png)
+*Identified suspicious traffic spike indicating attack window using Splunk timeline visualization. The dramatic increase in events on [10-12-2025] revealed the timeframe when HopSec's attack against TBFC infrastructure occurred, allowing me to narrow investigation focus to this critical period.*
 
-**Note:** Screenshots were not captured during initial completion. Documentation based on hands-on completion and room content review.
+![attacker-ip-correlation](../07-Screenshots/Day3-2.png)
+*Used SPL to isolate attacker IP and trace activity across reconnaissance, exploitation, and exfiltration phases. By filtering benign user agents (Mozilla, Chrome) and aggregating by client_ip, I identified the primary threat actor's IP address generating [7876] suspicious requests, including path traversal attempts, SQL injection probes, and webshell uploads.*
+
+![c2-firewall-logs](../07-Screenshots/Day3-3.png)
+![sum-c2-firewall-logs](../07-Screenshots/Day3-4.png)
+
+*Correlated firewall logs to confirm outbound C2 communication from compromised server (10.10.1.5) to attacker infrastructure at [C2_IP]. Analysis revealed ACTION=ALLOWED entries with REASON=C2_CONTACT, indicating the attacker established persistent command-and-control channel. Total data exfiltration calculated using stats sum(bytes_transferred) showed [126167] GB transferred, confirming successful data theft.*
+---
 
 ### Key Findings:
 - Successfully identified attacker IP via suspicious user agent filtering
