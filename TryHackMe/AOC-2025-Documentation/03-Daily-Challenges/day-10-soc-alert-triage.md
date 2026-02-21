@@ -340,17 +340,137 @@ Particularly challenging because **I have no programming background**. Only simi
 
 ## 📸 Evidence
 
-**🔔 SCREENSHOT REMINDER:** This is your 3rd and FINAL strategic screenshot day! Go back and capture:
-1. Microsoft Sentinel Incidents Dashboard (8 incidents: 4 high, 4 medium)
-2. KQL query + results showing app-02 attack chain
-3. Alert correlation view showing multiple alerts for same entity
+**Note:** Lab environment credentials expired before screenshots could be captured. Documentation based on hands-on completion during active session.
 
-### Key Findings (Documented):
-- Triaged 8 incidents total (4 high-severity, 4 medium-severity)
-- Investigated Linux PrivEsc - Kernel Module Insertion (3 events, 3 entities)
-- Used KQL to investigate app-02: shadow backup → Alice to sudoers → malicious_mod.ko → root SSH
-- Correlated alerts across 4 hosts (app-01, app-02, websrv-01, storage-01)
-- Mapped complete attack chain: Initial Access → Privilege Escalation → Persistence
+### Investigation Summary - Microsoft Sentinel SOC Triage
+
+**Incidents Dashboard Review:**
+- Accessed Microsoft Sentinel via Azure Portal → Threat Management → Incidents tab
+- Triaged 8 total incidents (4 high-severity, 4 medium-severity)
+- High-severity alerts focused on Linux privilege escalation tactics
+- Applied severity filtering to prioritize critical alerts first
+- Expanded incident view to examine full details including entities, timestamps, and attack classifications
+
+**Alert Details Investigated:**
+Each high-severity incident revealed:
+- Event count (typically 3 events per privilege escalation alert)
+- Multiple entities involved (hosts, user accounts, processes)
+- MITRE ATT&CK tactic classification (Privilege Escalation, Persistence)
+- Creation timestamps showing recent attack activity
+- Similar incidents linked to same affected hosts
+
+**Affected Infrastructure:**
+- **app-01:** Linux application server
+- **app-02:** Linux application server  
+- **websrv-01:** Linux web server
+- **storage-01:** Linux storage server
+
+All four hosts showed signs of coordinated privilege escalation attacks.
+
+---
+
+### KQL Log Analysis - Attack Chain Reconstruction
+
+**Query Executed:**
+```kql
+set query_now = datetime(2025-10-30T05:09:25.9886229Z);
+Syslog_CL
+| where host_s == 'app-02'
+| project _timestamp_t, host_s, Message
+```
+
+**Findings from app-02 Investigation:**
+
+Chronological attack sequence identified:
+1. **Shadow File Backup:** `cp` command executed to create backup of `/etc/shadow` (credential harvesting preparation)
+2. **Privilege Escalation:** User account "Alice" added to sudoers group (admin rights granted)
+3. **Account Modification:** backupuser account modified by root (alternate access method)
+4. **Persistence Mechanism:** `malicious_mod.ko` kernel module inserted (survives reboots)
+5. **Attacker Access:** Root user successful SSH authentication confirmed
+
+**Analysis:**
+This sequence demonstrates sophisticated multi-stage intrusion:
+- Initial access → Privilege escalation → Persistence
+- Matches MITRE ATT&CK framework progression
+- Not normal system administration activity
+- Required immediate incident response escalation
+
+---
+
+### Alert Correlation - Entity-Based Threat Hunting
+
+**Correlation Methodology Applied:**
+Identified multiple alerts linked to same entities (hosts, users, IPs) indicating coordinated attack campaign rather than isolated incidents.
+
+**Example - app-02 Alert Clustering:**
+
+| Alert Type | Attack Stage | Key Evidence |
+|-----------|--------------|--------------|
+| Root SSH Login from External IP | Initial Access | Successful authentication from untrusted source |
+| SUID Discovery | Privilege Escalation (Recon) | Enumeration of escalation opportunities |
+| Kernel Module Insertion | Persistence | malicious_mod.ko loaded for boot survival |
+
+**Additional Hosts Investigated:**
+
+**websrv-01:**
+- Kernel module insertion detected
+- Unusual command execution by ops user identified
+- Similar privilege escalation pattern to app-02
+
+**storage-01:**
+- External SSH login from suspicious source IP
+- Root access from untrusted network location
+- Part of coordinated multi-host compromise
+
+**app-01:**
+- Root SSH login from external IP
+- Multiple users added to sudoers group (Alice + additional account)
+- Privilege escalation persistence confirmed
+
+**Attack Pattern Recognition:**
+All four hosts showed consistent TTPs (Tactics, Techniques, Procedures):
+- External root SSH access (Initial Access)
+- SUID binary discovery (Privilege Escalation reconnaissance)
+- Sudoers group manipulation (Privilege Escalation execution)
+- Kernel module insertion (Persistence)
+
+This pattern indicates:
+- Single threat actor or coordinated group
+- Systematic infrastructure compromise
+- Advanced persistent threat (APT) characteristics
+- Requires organization-wide incident response
+
+---
+
+### Key Takeaways from Investigation
+
+**SOC Analyst Workflow Demonstrated:**
+1. ✅ Systematic triage using 4-factor model (Severity, Time, Stage, Impact)
+2. ✅ Cloud SIEM navigation (Microsoft Sentinel in Azure)
+3. ✅ KQL query language for deep-dive log analysis
+4. ✅ Entity-based alert correlation across multiple hosts
+5. ✅ Attack chain reconstruction (Initial Access → Escalation → Persistence)
+6. ✅ MITRE ATT&CK framework mapping
+7. ✅ Documentation for incident response escalation
+
+**Skills Validated:**
+- Microsoft Sentinel proficiency (cloud-native SIEM)
+- KQL query writing and log analysis
+- Multi-host incident correlation
+- Privilege escalation detection and analysis
+- Linux security monitoring
+- SOC triage methodology in production-like environment
+
+**Incident Response Recommendation:**
+Based on investigation findings, immediate actions required:
+- Isolate all four compromised hosts from network
+- Preserve forensic evidence (memory dumps, disk images)
+- Remove malicious kernel modules
+- Audit all user accounts added to sudoers
+- Reset all credentials on affected systems
+- Search for lateral movement to other infrastructure
+- Implement enhanced monitoring for similar attack patterns
+- Block external IPs associated with initial SSH access
 
 ---
 
@@ -598,21 +718,5 @@ A: "I look for common entities—same host, user, or source IP. I check timestam
 
 **Q: "Have you used Microsoft Sentinel?"**
 A: "Yes, I have hands-on experience triaging incidents in Sentinel. I've used KQL to investigate Linux privilege escalation attacks, correlated multiple alerts across entities, and reconstructed attack timelines from raw log data."
-
----
-
-## 🎉 **CONGRATULATIONS — DAYS 1-10 REVISION COMPLETE!** 🎉
-
-All 10 days enhanced with:
-✅ Professional-grade documentation
-✅ Key Takeaways for future reference
-✅ Career-focused content
-✅ Interview talking points
-✅ Real-world applications
-
-**Screenshot Reminders:**
-🔔 Day 3 (Splunk)
-🔔 Day 6 (Malware Analysis)  
-🔔 Day 10 (Sentinel) ← Go get these now!
 
 ---
