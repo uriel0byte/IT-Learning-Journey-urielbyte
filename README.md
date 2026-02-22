@@ -42,6 +42,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 - **Python and Shell scripting** Basic Automation and scripting.
 - **Computer Architecture basics**
 - **Web basics**
+- **Operating Systems**
 
 ---
 
