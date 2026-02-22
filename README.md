@@ -61,7 +61,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ## Networking
 - [] Networking For Hackers! (Common Network Protocols): https://www.youtube.com/watch?v=p3vaaD9pn9I
-- [] Networking For Beginners : https://www.youtube.com/watch?v=z_CU-IeOEzU
+- [DONE] TryHackMe Network Fundamentals Module [Network Fundamentals](https://tryhackme.com/module/network-fundamentals)
 - [] HTB Network Foundations: https://academy.hackthebox.com/module/details/289
 - [DONE] Watch videos from Professor Messer's [CompTIA Network+ N10-009 Playlist](https://youtube.com/playlist?list=PLG49S3nxzAnl_tQe3kvnmeMid0mjF8Le8&si=3rUsqmrdsNK3izh6)
 - [DONE] HTB Introduction to Networking: https://academy.hackthebox.com/module/details/34
@@ -73,6 +73,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 ---
 
 ## Security+
+- [] TryHackMe Attacks and Defenses Moduel [Attack and Defenses](https://tryhackme.com/module/attacks-and-defenses)
 - [DONE] Watch the videos from Professor Messer's [CompTIA Security+ SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
 
 ### Practical Hands-on Lab
@@ -95,11 +96,19 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ## Computer Architecture basics
 - [] Watch videos from Professor Messer's [CompTIA A+ 220-1202 Playlist](https://www.youtube.com/watch?v=IhcZqUs1IF8&list=PLG49S3nxzAnn7PDGQ17m5AYbDRhnW7vOb)
+- [] TryHackMe Computer Fundamentals Module [Computer Fundamentals](https://tryhackme.com/module/computer-fundamentals)
 
 ---
 
 ## Webs
-- [] TryHackMe How The Web Works Module just free rooms [How The Web Works](https://tryhackme.com/module/how-the-web-works)
+- [DONE] TryHackMe How The Web Works Module just free rooms [How The Web Works](https://tryhackme.com/module/how-the-web-works)
+
+---
+
+## Operating Systems
+- [] TryHackMe Operating Systems Basics Module [Operating Systems Basics](https://tryhackme.com/module/operating-systems-basics)
+
+---
 
 ## 📘 My Learning Platforms & Resources
 
@@ -155,4 +164,4 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 [![roadmap.sh](https://roadmap.sh/card/tall/68a1ad2ddb704a26333adc9f?variant=dark)](https://roadmap.sh)
 
-_Last Updated: [2026-02-08]_
+_Last Updated: [2026-02-22]_
