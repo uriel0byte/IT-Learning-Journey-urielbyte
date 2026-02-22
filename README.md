@@ -75,6 +75,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ## Security+
 - [] TryHackMe Attacks and Defenses Moduel [Attack and Defenses](https://tryhackme.com/module/attacks-and-defenses)
+- [] CyberSecurity for Beginner [Youtube](https://www.youtube.com/watch?v=Ieegg45Pojw)
 - [DONE] Watch the videos from Professor Messer's [CompTIA Security+ SY0-701 Playlist](https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv)
 
 ### Practical Hands-on Lab
@@ -108,6 +109,17 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ## Operating Systems
 - [] TryHackMe Operating Systems Basics Module [Operating Systems Basics](https://tryhackme.com/module/operating-systems-basics)
+
+---
+
+## Preparing For Certificates
+
+### Security+
+- [Skillcert](https://skillcertpro.tech/product/comptia-security-sy0-701-exam-questions/)
+- [MyFreeAcademy](https://www.youtube.com/playlist?list=PLPgV_umjzuLbzdEIiPmqsPfbvKJIGyrRL)
+
+### Network+
+- [MyFreeAcademy](https://www.youtube.com/playlist?list=PLPgV_umjzuLZB0U-9j6JUCt6nHu4bnDCr)
 
 ---
 
