@@ -98,7 +98,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 
 ## Computer Architecture basics
 - [] Watch videos from Professor Messer's [CompTIA A+ 220-1202 Playlist](https://www.youtube.com/watch?v=IhcZqUs1IF8&list=PLG49S3nxzAnn7PDGQ17m5AYbDRhnW7vOb)
-- [] TryHackMe Computer Fundamentals Module [Computer Fundamentals](https://tryhackme.com/module/computer-fundamentals)
+- [DONE] TryHackMe Computer Fundamentals Module [Computer Fundamentals](https://tryhackme.com/module/computer-fundamentals)
 
 ---
 
