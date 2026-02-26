@@ -402,11 +402,10 @@ Every skill learned aligns directly with SOC Analyst responsibilities: alert tri
 - **GitHub:** [github.com/uriel0byte](https://github.com/uriel0byte)
 - **Email:** poseidon.smash@gmail.com
 - **LinkedIn:** [Coming Soon]
-- **TryHackMe Profile:** [Coming Soon]
+- **TryHackMe Profile:** [THM Profile](https://tryhackme.com/p/poseidon.smash)
 
 **Portfolio Highlights:**
 - 24/24 AOC 2025 Challenges Completed
-- Enhanced Professional Documentation (Days 1-10)
 - Focus: SOC Analyst / Blue Team / Defensive Security
 - Currently pursuing: Security+ Certification
 
