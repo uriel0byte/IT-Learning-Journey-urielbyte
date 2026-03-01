@@ -5,7 +5,7 @@
 | Skill Category | AOC Days | Tools/Technologies | Proficiency | SOC Analyst Application | Job Match |
 |---------------|----------|-------------------|-------------|------------------------|-----------| 
 | **SIEM & Log Analysis** | 3, 10, 15, 22 | Splunk, Microsoft Sentinel, RITA, Zeek, SPL, KQL | ⭐⭐⭐⭐☆ | Alert triage, threat detection, log correlation, incident investigation, C2 detection | 78% of SOC jobs |
-| **Network Security** | 7, 22, 24 | Nmap, Netcat, dig, FTP, Wireshark, RITA, Zeek | ⭐⭐⭐⭐☆ | Service discovery, port scanning, protocol analysis, traffic monitoring, threat hunting | 65% of SOC jobs |
+| **Network Security** | 7, 22, 24 | Nmap, Netcat, dig, FTP, RITA, Zeek | ⭐⭐⭐⭐☆ | Service discovery, port scanning, protocol analysis, traffic monitoring, threat hunting | 65% of SOC jobs |
 | **Malware Detection** | 6, 13, 21 | PeStudio, ProcMon, Regshot, YARA, pluma, CyberChef | ⭐⭐⭐⭐☆ | Static/dynamic analysis, IOC identification, threat hunting, sandbox analysis, HTA analysis | 60% of SOC jobs |
 | **Email Security** | 2, 12 | SET, Email headers, SPF/DKIM/DMARC | ⭐⭐⭐⭐☆ | Phishing detection, email triage, header analysis, social engineering awareness | 55% of SOC jobs |
 | **Web Security** | 5, 11, 20, 24 | Browser DevTools, Burp Suite, JavaScript, cURL | ⭐⭐⭐☆☆ | Vulnerability assessment, XSS/IDOR detection, race conditions, API testing, CLI exploitation | 50% of SOC jobs |
@@ -17,7 +17,7 @@
 | **Windows Forensics** | 16 | Registry Explorer, Registry hives, regedit | ⭐⭐⭐☆☆ | Persistence detection, artifact recovery, incident response, registry analysis | 65% of SOC jobs |
 | **ICS/OT Security** | 19 | Python, pymodbus, Modbus TCP | ⭐⭐☆☆☆ | Critical infrastructure monitoring, protocol analysis, OT threat hunting, SCADA systems | 40% of SOC jobs (critical) |
 | **Container Security** | 14 | Docker, Docker CLI, container escape | ⭐⭐☆☆☆ | Container escape detection, image analysis, runtime security, misconfigurations | 50% of SOC jobs (growing) |
-| **C2 Detection & Analysis** | 22 | RITA, Zeek, Wireshark, PCAP analysis | ⭐⭐⭐⭐☆ | Beacon detection, threat hunting, network forensics, DNS tunneling analysis | 75% of SOC jobs |
+| **C2 Detection & Analysis** | 22 | RITA, Zeek, PCAP analysis | ⭐⭐⭐⭐☆ | Beacon detection, threat hunting, network forensics, DNS tunneling analysis | 75% of SOC jobs |
 | **Cloud Security (AWS)** | 23 | AWS CLI, IAM, S3 | ⭐⭐⭐☆☆ | Cloud infrastructure security, privilege escalation, data exfiltration detection, role assumption | 80% of SOC jobs (growing) |
 | **Command-line Exploitation** | 24 | cURL, bash scripting, HTTP manipulation | ⭐⭐⭐☆☆ | HTTP manipulation, API testing, automated exploitation, User-Agent spoofing | 45% of SOC jobs |
 
@@ -111,7 +111,7 @@
 ## Tool Proficiency Breakdown
 
 ### SIEM & Analytics
-**Days:** 3, 10, 15, 22
+**Days:** 3, 10, 15, 22  
 **Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
 **Tools Mastered:**
@@ -130,7 +130,7 @@
 - Analyze network traffic for threats
 
 ### Network Analysis
-**Days:** 7, 22, 24
+**Days:** 7, 22, 24  
 **Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
 **Tools Mastered:**
@@ -138,7 +138,6 @@
 - Netcat (port connectivity, banner grabbing, data transfer)
 - dig (DNS queries, TXT record retrieval)
 - FTP (anonymous access, file transfer)
-- Wireshark (packet capture, protocol analysis)
 - RITA (network traffic analysis, C2 detection)
 - Zeek (network flow analysis)
 
@@ -147,11 +146,10 @@
 - Identify running services and versions
 - Enumerate network resources
 - Understand network protocols (TCP, UDP, DNS, FTP, HTTP)
-- Analyze captured network traffic
 - Detect command & control communications
 
 ### Malware Analysis
-**Days:** 6, 13, 21
+**Days:** 6, 13, 21  
 **Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
 **Tools Mastered:**
@@ -172,7 +170,7 @@
 - Decode obfuscated malware code
 
 ### Web Security
-**Days:** 5, 8, 11, 20, 24
+**Days:** 5, 8, 11, 20, 24  
 **Proficiency:** ⭐⭐⭐☆☆ Intermediate
 
 **Tools Mastered:**
@@ -191,7 +189,7 @@
 - Command-line HTTP manipulation
 
 ### Email Security
-**Days:** 2, 12
+**Days:** 2, 12  
 **Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
 **Tools Mastered:**
@@ -207,7 +205,7 @@
 - Validate email authentication mechanisms
 
 ### Password & Cryptography
-**Days:** 9, 17, 18
+**Days:** 9, 17, 18  
 **Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
 **Tools Mastered:**
@@ -226,7 +224,7 @@
 - Deobfuscate encoded malware
 
 ### Cloud Security
-**Days:** 10, 14, 23
+**Days:** 10, 14, 23  
 **Proficiency:** ⭐⭐⭐☆☆ Intermediate
 
 **Tools Mastered:**
@@ -246,7 +244,7 @@
 - Exploit AWS IAM misconfigurations
 
 ### ICS/OT Security
-**Days:** 19
+**Days:** 19  
 **Proficiency:** ⭐⭐☆☆☆ Novice-Intermediate
 
 **Tools Mastered:**
@@ -261,7 +259,7 @@
 - Basic protocol fuzzing
 
 ### Forensics & Analysis
-**Days:** 15, 16
+**Days:** 15, 16  
 **Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
 **Tools Mastered:**
@@ -281,13 +279,12 @@
 - Timeline reconstruction
 
 ### Threat Detection & Hunting
-**Days:** 22
+**Days:** 22  
 **Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
 **Tools Mastered:**
 - RITA (Real Intelligence Threat Analytics)
 - Zeek (Network IDS/flow monitoring)
-- Wireshark (packet capture analysis)
 - PCAP analysis tools
 
 **Capabilities:**
@@ -298,7 +295,7 @@
 - Correlate network indicators across datasets
 
 ### Operating Systems
-**Days:** 1, 6
+**Days:** 1, 6  
 **Proficiency:** ⭐⭐⭐⭐☆ Advanced
 
 **Tools Mastered:**
