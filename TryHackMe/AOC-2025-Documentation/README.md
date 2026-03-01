@@ -173,19 +173,7 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 │   └── README.md                      # Note: Case studies integrated into daily challenges
 │
 ├── /07-Screenshots                    # Visual evidence
-│   ├── day-03/                        # Splunk SIEM investigation
-│   │   ├── traffic-spike-timeline.png
-│   │   ├── attacker-ip-correlation.png
-│   │   └── c2-firewall-logs.png
-│   ├── day-06/                        # Malware analysis
-│   │   ├── pestudio-sha256-strings.png
-│   │   ├── regshot-before-after.png
-│   │   └── procmon-tcp-filter.png
-│   ├── day-10/                        # SOC alert triage
-│   │   ├── sentinel-incidents-overview.png
-│   │   ├── kql-attack-chain-app02.png
-│   │   └── alert-correlation-entities.png
-│   └── ... (other days as captured)
+│  
 │
 └── /09-Certificates                   # Completion evidence
     └── aoc-2025-certificate.pdf       # Official TryHackMe certificate
