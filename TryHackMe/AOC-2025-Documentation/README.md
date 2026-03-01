@@ -133,28 +133,28 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 
 ---
 
-## 📖 Repository Structure
+# 📖 Repository Structure
 
 ```
 /AOC-2025-Documentation
 │
-├── README.md (This file)
-├── /01-Executive-Summary
-│   └── overview.md
-├── /02-Skills-Matrix
-│   └── mapping.md
-├── /03-Daily-Challenges
-│   ├── day-01-linux-cli.md 
-│   ├── day-02-phishing.md 
-│   ├── day-03-splunk-basics.md 
-│   ├── day-04-ai-security.md 
-│   ├── day-05-idor.md 
-│   ├── day-06-malware-analysis.md 
-│   ├── day-07-network-discovery.md 
-│   ├── day-08-prompt-injection.md 
-│   ├── day-09-password-cracking.md 
-│   ├── day-10-soc-alert-triage.md 
-│   ├── day-11-xss.md
+├── README.md                          # Main portfolio landing page
+│
+├── /02-Skills-Matrix                  # Technical skills inventory
+│   └── mapping.md                     # Complete skills breakdown with proficiency levels
+│
+├── /03-Daily-Challenges               # Core portfolio content ⭐
+│   ├── day-01-linux-cli.md          
+│   ├── day-02-phishing.md           
+│   ├── day-03-splunk-basics.md       
+│   ├── day-04-ai-security.md        
+│   ├── day-05-idor.md               
+│   ├── day-06-malware-analysis.md    
+│   ├── day-07-network-discovery.md   
+│   ├── day-08-prompt-injection.md    
+│   ├── day-09-password-cracking.md  
+│   ├── day-10-soc-alert-triage.md    
+│   ├── day-11-xss.md                
 │   ├── day-12-phishing-detection.md
 │   ├── day-13-yara-rules.md
 │   ├── day-14-containers.md
@@ -168,26 +168,77 @@ Advent of Cyber is TryHackMe's annual beginner-friendly cybersecurity event feat
 │   ├── day-22-c2-detection.md
 │   ├── day-23-aws-iam.md
 │   └── day-24-curl-exploitation.md
-├── /04-Case-Studies
-│   ├── case-study-splunk-log-analysis.md
-│   ├── case-study-soc-alert-triage.md
-│   └── case-study-network-discovery.md
-├── /05-Technical-Skills
-│   └── tools-inventory.md
-├── /06-Learning-Journey
-│   ├── narrative.md
-│   └── reflections.md
-├── /07-Screenshots
-│   ├── day-01/
-│   ├── day-03/ 
-│   ├── day-06/ 
-│   ├── day-10/ 
-│   └── ... (organized by day)
-├── /08-Resources
-│   └── references.md
-└── /09-Certificates
-    └── aoc-2025-certificate.pdf
+│
+├── /04-Case-Studies                   # Investigation write-ups
+│   └── README.md                      # Note: Case studies integrated into daily challenges
+│
+├── /07-Screenshots                    # Visual evidence
+│   ├── day-03/                        # Splunk SIEM investigation
+│   │   ├── traffic-spike-timeline.png
+│   │   ├── attacker-ip-correlation.png
+│   │   └── c2-firewall-logs.png
+│   ├── day-06/                        # Malware analysis
+│   │   ├── pestudio-sha256-strings.png
+│   │   ├── regshot-before-after.png
+│   │   └── procmon-tcp-filter.png
+│   ├── day-10/                        # SOC alert triage
+│   │   ├── sentinel-incidents-overview.png
+│   │   ├── kql-attack-chain-app02.png
+│   │   └── alert-correlation-entities.png
+│   └── ... (other days as captured)
+│
+└── /09-Certificates                   # Completion evidence
+    └── aoc-2025-certificate.pdf       # Official TryHackMe certificate
+
 ```
+
+---
+
+## 📂 Folder Descriptions
+
+### `/02-Skills-Matrix`
+**Purpose:** Quick reference showing all skills developed, tools used, and proficiency levels  
+**Key File:** `mapping.md` - Comprehensive skills inventory with Security+ domain mapping
+
+### `/03-Daily-Challenges` ⭐ **Core Portfolio**
+**Purpose:** Complete documentation of all 24 AOC challenges  
+**Features:**
+- Days 1-10: Enhanced with professional Key Takeaways sections
+- Days 11-24: Standard documentation with learning reflections
+- Each file includes: Challenge overview, technical depth, tools used, personal reflections, career applications
+
+### `/04-Case-Studies`
+**Purpose:** Links to detailed investigation write-ups  
+**Note:** Case studies are integrated into daily challenge documentation (Days 3, 6, 10, 15, 22) to avoid redundancy
+
+### `/07-Screenshots`
+**Purpose:** Visual evidence of hands-on work  
+**Strategic Coverage:** Days 3 (Splunk), 6 (Malware), 10 (Sentinel) - the most important SOC investigations
+
+### `/09-Certificates`
+**Purpose:** Official completion evidence  
+**Contents:** TryHackMe Advent of Cyber 2025 certificate
+
+---
+
+## 🎯 Navigation Tips
+
+**For Recruiters:**
+1. Start with main `README.md` for overview
+2. Review `/02-Skills-Matrix/mapping.md` for technical inventory
+3. Read enhanced daily challenges (Days 1-10) for depth
+4. Check `/07-Screenshots` for visual proof
+
+**For Interview Prep:**
+- Days 3, 10, 22: Best SIEM/SOC examples
+- Days 6, 13, 21: Malware analysis demonstrations
+- Days 15, 16: Forensics investigations
+- Day 7: Network security fundamentals
+
+**For Learning Reference:**
+- Enhanced days (1-10) contain comprehensive Key Takeaways
+- Command references, investigation workflows, detection rules
+- Quick reference tables and cheat sheets
 
 
 ---
