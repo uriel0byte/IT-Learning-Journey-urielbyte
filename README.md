@@ -90,7 +90,7 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
 ---
 
 ## Python
-- [] Codecademy's Learn Python Track: https://codecademy.com/learn/learn-python
+- [WORKING] Codecademy's Learn Python Track: https://codecademy.com/learn/learn-python
 - [] LabEx Learn Python by Labs: https://labex.io/free-labs/python
 - [] CheckIO: https://checkio.org/
 
@@ -177,4 +177,4 @@ This is where I document my completed projects. Each link goes to a sub-folder w
 
 [![roadmap.sh](https://roadmap.sh/card/tall/68a1ad2ddb704a26333adc9f?variant=dark)](https://roadmap.sh)
 
-_Last Updated: [2026-02-22]_
+_Last Updated: [2026-03-04]_
