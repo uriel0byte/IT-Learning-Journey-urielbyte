@@ -132,11 +132,12 @@ This phase is dedicated to building a strong foundation in core IT concepts and 
     * OverTheWire
         - OverTheWire Bandit: [Over The Wire Bandit](OverTheWire-Bandit/README.md)
     * PicoCTF: [PicoCTF Profile](https://play.picoctf.org/users/urielbyte)
+    * LetsDefend: []
     * CyberDefenders: [CyberDef Profile](https://cyberdefenders.org/p/poseidon.smash)
-    * Rootme: [Rootme]
+    * Rootme: []
     * Cybrary: [Cybrary](https://app.cybrary.it/browse/urielbyte)
-    * DFIR: [Diva DFIR Trainning]
-    * Blue Team Labs: [Blue Team]
+    * DFIR: []
+    * Blue Team Labs: []
     * Interesting additional resources :
         - Hacker101: https://www.hacker101.com/start-here
 
