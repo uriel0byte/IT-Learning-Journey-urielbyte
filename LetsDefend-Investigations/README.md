@@ -17,7 +17,7 @@ Hands-on SOC alert investigations completed on the LetsDefend platform. Each rep
 | SOC141 | Phishing URL Detected | Phishing / Initial Access | True Positive — Credentials Potentially Compromised | [View](SOC141_PhishingURLDetected.md) |
 | SOC140 | Phishing Mail Detected - Suspicious Task Scheduler | Phishing / Initial Access | True Positive — Delivery Blocked | [View](SOC140_PhishingMailDetected.md) |
 | SOC114 | Malicious Attachment Detected - Phishing Alert | Phishing / Execution | True Positive — Host Compromised | [View](SOC114_MaliciousAttachmentDetected.md) |
-| SOC138 | Detected Suspicious Xls File | Malware / Execution | True Positive — Host Potentially Compromised | [View](SOC138_DetectedSuspiciousXlsFile.md) |
+| SOC138 | Detected Suspicious Xls File | Malware / Execution | True Positive — Host Compromised | [View](SOC138_DetectedSuspiciousXlsFile.md) |
 
 ---
 
