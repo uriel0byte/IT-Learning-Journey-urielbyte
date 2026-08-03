@@ -27,7 +27,7 @@ The alert provided the MD5 hash `7ccf88c0bbe3b29bf19d877c4596a8d4` for `ORDER SH
 | --- | --- |
 | LetsDefend TI | No data returned. |
 | VirusTotal | 45/64 vendors flagged the file as malicious. Tags: `xlsx`, `auto-open`, `open-file`, `macro-run-file`, `cve-2017-11882`, `run-dll`, `clipboard`, `run-file`, `macros`, `executes-dropped-file`, `long-sleeps`, `exploit`, `exe-pattern`, `calls-wmi`, `checks-user-input`, `write-file`, `detect-debug-environment`. Popular threat label: Trojan.acao/doc8. Threat categories: trojan, dropper, downloader. Family labels: acao, doc8, valyria. |
-| Hybrid Analysis | Confirmed malicious. CrowdStrike Falcon and MetaDefender both returned malicious verdicts. Falcon Sandbox ran the file across six different Windows environments, all returned malicious results labeled CVE-2017-1882. Risk Assessment flagged evasion, exploit, persistence, fingerprinting, network, and spyware behaviors. |
+| Hybrid Analysis | Confirmed malicious. CrowdStrike Falcon and MetaDefender both returned malicious verdicts. Falcon Sandbox ran the file across six different Windows environments, all returned malicious results labeled CVE-2017-11882. Risk Assessment flagged evasion, exploit, persistence, fingerprinting, network, and spyware behaviors. |
 
 VirusTotal's code insights broke down what the macro actually does:
 
