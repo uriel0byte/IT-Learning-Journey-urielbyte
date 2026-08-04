@@ -114,6 +114,7 @@ Linux CLI, file operations, encoding/decoding, Git, scripting, and basic network
 | plumbing | nc output piping to file + grep | nc, grep | ✅ |
 | useless | man pages | man | ✅ |
 | dont-you-love-banners | symlinks | ln -s | ✅ | 
+| chrono | Automated tasks(Cron Jobs) | crontab | ✅ | 
 | Based | Multi-base encoding | — | 🔄 In Progress |
 
 ---
