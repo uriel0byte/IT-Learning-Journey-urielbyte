@@ -18,6 +18,7 @@ Hands-on SOC alert investigations completed on the LetsDefend platform. Each rep
 | SOC140 | Phishing Mail Detected - Suspicious Task Scheduler | Phishing / Initial Access | True Positive — Delivery Blocked | [View](SOC140_PhishingMailDetected.md) |
 | SOC114 | Malicious Attachment Detected - Phishing Alert | Phishing / Execution | True Positive — Host Compromised | [View](SOC114_MaliciousAttachmentDetected.md) |
 | SOC138 | Detected Suspicious Xls File | Malware / Execution | True Positive — Host Compromised | [View](SOC138_DetectedSuspiciousXlsFile.md) |
+| SOC335 | CVE-2024-49138 Exploitation Detected | Privilege Escalation / Malware Execution | True Positive — Host Compromised | [View](SOC335_CVE-2024-49138ExploitationDetected.md) |
 
 ---
 
